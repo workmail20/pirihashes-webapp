@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
-<link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+<link href="//vjs.zencdn.net/8.3.0/video-js.min.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/8.3.0/video.min.js"></script>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"></script>
 <script>
@@ -161,24 +162,21 @@
             </div>
             <div class="flex-item-right">
                              <center> 
-                                  <video
-    id="my-video"
+                                 <video
+    id="my-player"
     class="video-js"
     controls
     preload="auto"
-    width="640"
-    height="264"
-    data-setup="{}"
-  >
-    <source src="https://fileshares23.blob.core.windows.net/videos/videopromo.mp4" type="video/mp4" />
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
+    data-setup='{}'>
+ <source src="https://fileshares23.blob.core.windows.net/videos/videopromo.mp4" type="video/mp4" />
+  <p class="vjs-no-js">
+    To view this video please enable JavaScript, and consider upgrading to a
+    web browser that
+    <a href="https://videojs.com/html5-video-support/" target="_blank">
+      supports HTML5 video
+    </a>
+  </p>
+</video>
 </center> 
                 <br>
                 <p>
@@ -230,7 +228,6 @@
     </main>
     <br><br><br>
     <center><a href="/policy">Privacy policy</a></center>
-    <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
     
     <script>
         let slideIndex = 1;
