@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -221,6 +221,7 @@
         </div>
     </div>
     <script>
+        $(window).on("load",function () {
         var modal = document.getElementById("myModal");
 
         // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -239,7 +240,8 @@
         span.onclick = function () {
             modal.style.display = "none";
         }
-
+    });
+    
         $(window).on("load", function () {
             $('.slideshow-container').height($('.slideshow-container').width() / 1.32);
             $(window).resize(function () {
