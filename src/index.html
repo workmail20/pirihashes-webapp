@@ -15,8 +15,8 @@
 
 
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" id="css0" disabled>
-    <link rel="stylesheet" href="/style/video-js.css" id="css1" disabled>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" id="css0">
+    <link rel="stylesheet" href="/style/video-js.css" id="css1">
 </head>
 
 <body>
@@ -208,10 +208,12 @@
     </div>
 
     <script src="/js/jquery.js"></script>
-    <script async src="/js/video.min.js"></script>
+    <!-- <script async src="/js/video.min.js"></script>
+    
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"></script> -->
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -219,7 +221,33 @@
 
         gtag('config', 'G-LTGW85D79N');
     </script>
+
     <script>
+
+        function loadJSasync(){
+        var jsLinks = ["/js/video.min.js",
+            "https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"];
+        for (let js of jsLinks) {
+            var usedLaterScript = document.createElement('script');
+            usedLaterScript.src = js;
+            document.body.appendChild(usedLaterScript);
+        }
+    }
+    function loadCSSasync(){
+        var asyncStyleSheets = ["./style.css",
+            "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap",
+            "/style/video-js.css"];
+        for (let ss of asyncStyleSheets) {
+            var link = document.createElement('link');
+            link.setAttribute('rel', 'stylesheet');
+            link.setAttribute('href', ss);
+            document.head.appendChild(link);
+        }
+    }
+
+        window.addEventListener('load', loadJSasync, false);
+        window.addEventListener('load', loadCSSasync, false);
+
         var modal = document.getElementById("myModal");
         var imgs = document.getElementsByClassName("img0");
         var modalImg = document.getElementById("img01");
