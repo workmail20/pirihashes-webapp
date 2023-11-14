@@ -158,12 +158,14 @@ ms-store-badge::part(img) {
   .modal-content {
     margin: auto;
     display: block;
+    position: absolute;
     max-width:-moz-fit-content;
     max-width: fit-content;
     width: 80%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
   }
   
   #caption {
