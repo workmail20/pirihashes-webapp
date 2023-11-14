@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="The Software for generation hashes(crypto-pairs from pub/private keys) of the PiriChain system.">
+    <meta name="description"
+        content="The Software for generation hashes(crypto-pairs from pub/private keys) of the PiriChain system.">
 
     <title>PIRI Hashes Generator</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -14,8 +15,8 @@
 
 
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="/style/video-js.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" id="css0" disabled>
+    <link rel="stylesheet" href="/style/video-js.css" id="css1" disabled>
 </head>
 
 <body>
@@ -233,7 +234,14 @@
             modal.style.display = "none";
         }
 
+        function toggleEnabled(stylesheet) {
+            stylesheet.disabled = !stylesheet.disabled;
+        }
+
         $(window).on("load", function () {
+            toggleEnabled(document.getElementById('css0'));
+            toggleEnabled(document.getElementById('css1'));
+
             $('.slideshow-container').height($('.slideshow-container').width() / 1.32);
             $(window).resize(function () {
                 $('.slideshow-container').height($('.slideshow-container').width() / 1.32);
