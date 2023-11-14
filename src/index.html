@@ -31,31 +31,15 @@
                 font-family: 'Chakra Petch', sans-serif;
             }
 
-            * {
-                box-sizing: border-box;
-            }
-
             .flex-container {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
+                flex: 500px;
             }
 
-            .flex-item-left {
-                padding: 10px;
-                flex: 50%;
-                height: 500px;
-            }
-
-            .flex-item-right {
-                padding: 10px;
-                flex: 50%;
-            }
-
-            /* Responsive layout - makes a one column-layout instead of two-column layout */
-            @media (max-width: 890px) {
-                .flex-container {
-                    flex-direction: column;
-                }
+            .flex-item{
+                align-items: center;
+                justify-content: space-around;
             }
 
             .img0 {
@@ -68,24 +52,22 @@
             }
         </style>
         <main>
-            <h1 style="padding: 4% 0 0 3%;font-size:1.4em;text-align:center"><strong>PIRI Hashes Generator, v1.0.3.0</strong></h1>
-            <div class="flex-container" style="max-width: 750px;align-items:center">
-                <div class="" style="text-align:center;">
-<center>
-                    <div id="videozone" style="max-width: 600px;">
-                        <video id="my-video" class="video-js" controls preload="auto" 
-                            data-setup='{"fluid": true}'>
-                            <source src="https://fileshares23.blob.core.windows.net/videos/videopromo.mp4"
-                                type="video/mp4" />
-                            <p class="vjs-no-js">
-                                To view this video please enable JavaScript, and consider upgrading to a
-                                web browser that
-                                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
-                                    video</a>
-                            </p>
-                        </video>
-                    </div>
-                </center>
+            <h1 style="padding: 4% 0 0 3%;font-size:1.4em;text-align:center"><strong>PIRI Hashes Generator,
+                    v1.0.3.0</strong></h1>
+            <div class="flex-container">
+                <div class="flex-item">
+                        <div id="videozone" style="max-width: 600px;">
+                            <video id="my-video" class="video-js" controls preload="auto" data-setup='{"fluid": true}'>
+                                <source src="https://fileshares23.blob.core.windows.net/videos/videopromo.mp4"
+                                    type="video/mp4" />
+                                <p class="vjs-no-js">
+                                    To view this video please enable JavaScript, and consider upgrading to a
+                                    web browser that
+                                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                                        video</a>
+                                </p>
+                            </video>
+                        </div>
                     <br>
                     <p>
                         The Software for generation hashes(crypto-pairs from pub/private keys) of the PiriChain
@@ -171,29 +153,29 @@
 
                     </div>
 
-                        <div style="text-align:center">
-                            <span class="dot" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span>
-                            <span class="dot" onclick="currentSlide(4)"></span>
-                            <span class="dot" onclick="currentSlide(5)"></span>
-                            <span class="dot" onclick="currentSlide(6)"></span>
-                            <span class="dot" onclick="currentSlide(7)"></span>
-                            <span class="dot" onclick="currentSlide(8)"></span>
-                            <span class="dot" onclick="currentSlide(9)"></span>
-                            <span class="dot" onclick="currentSlide(10)"></span>
-                            <span class="dot" onclick="currentSlide(11)"></span>
-                            <span class="dot" onclick="currentSlide(12)"></span>
-                            <span class="dot" onclick="currentSlide(13)"></span>
-                            <span class="dot" onclick="currentSlide(14)"></span>
-                            <span class="dot" onclick="currentSlide(15)"></span>
-                            <span class="dot" onclick="currentSlide(16)"></span>
-                            <span class="dot" onclick="currentSlide(17)"></span>
-                            <span class="dot" onclick="currentSlide(18)"></span>
-                            <span class="dot" onclick="currentSlide(19)"></span>
-                        </div>
-    
-                  
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                        <span class="dot" onclick="currentSlide(7)"></span>
+                        <span class="dot" onclick="currentSlide(8)"></span>
+                        <span class="dot" onclick="currentSlide(9)"></span>
+                        <span class="dot" onclick="currentSlide(10)"></span>
+                        <span class="dot" onclick="currentSlide(11)"></span>
+                        <span class="dot" onclick="currentSlide(12)"></span>
+                        <span class="dot" onclick="currentSlide(13)"></span>
+                        <span class="dot" onclick="currentSlide(14)"></span>
+                        <span class="dot" onclick="currentSlide(15)"></span>
+                        <span class="dot" onclick="currentSlide(16)"></span>
+                        <span class="dot" onclick="currentSlide(17)"></span>
+                        <span class="dot" onclick="currentSlide(18)"></span>
+                        <span class="dot" onclick="currentSlide(19)"></span>
+                    </div>
+
+
                     <hr>
                     <h2>Purchase zone</h2>
                     <div>
@@ -236,8 +218,8 @@
             </div>
             <br><br>
             <div style="text-align: center;">
-            <a href="/policy">Privacy Policy</a>
-            <a href="/terms">Terms and Conditions</a>
+                <a href="/policy">Privacy Policy</a>
+                <a style="padding-left: 30px;" href="/terms">Terms and Conditions</a>
             </div>
         </main>
         <script>
