@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -204,10 +205,8 @@
     </div>
 
     <script src="/js/jquery.js"></script>
+
     <!-- <script async src="/js/video.min.js"></script>
-    
-
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"></script> -->
 
     <script>
@@ -220,29 +219,30 @@
 
     <script>
 
-        function loadJSasync(){
-        var jsLinks = ["/js/video.min.js",
-            "https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"];
-        for (let js of jsLinks) {
-            var usedLaterScript = document.createElement('script');
-            usedLaterScript.src = js;
-            document.body.appendChild(usedLaterScript);
+        function loadJSasync() {
+            var jsLinks = ["/js/video.min.js",
+                "https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"];
+            for (let js of jsLinks) {
+                var usedLaterScript = document.createElement('script');
+                usedLaterScript.src = js;
+                document.body.appendChild(usedLaterScript);
+            }
         }
-    }
-    function loadCSSasync(){
-        var asyncStyleSheets = ["./style.css",
-            "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap",
-            "/style/video-js.css"];
-        for (let ss of asyncStyleSheets) {
-            var link = document.createElement('link');
-            link.setAttribute('rel', 'stylesheet');
-            link.setAttribute('href', ss);
-            document.head.appendChild(link);
+        function loadCSSasync() {
+            var asyncStyleSheets = ["./style.css",
+                "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap",
+                "/style/video-js.css"];
+            for (let ss of asyncStyleSheets) {
+                var link = document.createElement('link');
+                link.setAttribute('rel', 'stylesheet');
+                link.setAttribute('href', ss);
+                document.head.appendChild(link);
+            }
         }
-    }
 
         window.addEventListener('load', loadJSasync, false);
         window.addEventListener('load', loadCSSasync, false);
+
 
         var modal = document.getElementById("myModal");
         var imgs = document.getElementsByClassName("img0");
@@ -258,13 +258,7 @@
             modal.style.display = "none";
         }
 
-        function toggleEnabled(stylesheet) {
-            stylesheet.disabled = !stylesheet.disabled;
-        }
-
         $(window).on("load", function () {
-            toggleEnabled(document.getElementById('css0'));
-            toggleEnabled(document.getElementById('css1'));
 
             $('.slideshow-container').height($('.slideshow-container').width() / 1.32);
             $(window).resize(function () {
@@ -275,12 +269,10 @@
         let slideIndex = 1;
         showSlides(slideIndex);
 
-        // Next/previous controls
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
 
-        // Thumbnail image controls
         function currentSlide(n) {
             showSlides(slideIndex = n);
         }
