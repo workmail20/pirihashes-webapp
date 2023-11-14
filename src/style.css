@@ -15,6 +15,18 @@ html *:not(#videozone *) {
     max-width: 635px;
 }
 
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-item {
+    padding: 20px;
+}
+
 .img0 {
     max-width: 100%;
     max-height: 500px;
