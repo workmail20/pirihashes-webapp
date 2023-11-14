@@ -86,11 +86,11 @@
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="images/screen_1.png" class="img0" onclick="modalImg">
+                    <img src="images/screen_1.png" class="img0" onclick="modalImg()">
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="images/screen_2.png" class="img0" onclick="modalImg">
+                    <img src="images/screen_2.png" class="img0" onclick="modalImg()">
                 </div>
                 <div class="mySlides fade">
                     <img src="images/screen_3.png" class="img0">
@@ -241,7 +241,7 @@
             modal.style.display = "none";
         }
     });
-    
+
         $(window).on("load", function () {
             $('.slideshow-container').height($('.slideshow-container').width() / 1.32);
             $(window).resize(function () {
