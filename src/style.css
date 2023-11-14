@@ -10,8 +10,7 @@ html *:not(#videozone *) {
 }
 
 .flex-item {
-    justify-content: space-around;
-    width: auto;
+    width: 100%;
     min-width: 200px;
     max-width: 635px;
 }
