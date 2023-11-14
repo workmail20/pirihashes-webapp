@@ -25,240 +25,236 @@
 </head>
 
 <body>
-    <div>
-        <style>
-            div {
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-              }
-              
-            div:not(#videozone *) {
-                font-family: 'Chakra Petch', sans-serif;
-            }
+    <style>
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
 
-            .flex-container {
-                display: flex;
-                flex-direction: column;
-                flex: 500px;
-            }
+        div:not(#videozone *) {
+            font-family: 'Chakra Petch', sans-serif;
+        }
 
-            .flex-item{
-                align-items: center;
-                justify-content: space-around;
-            }
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            flex: 500px;
+        }
 
-            .img0 {
-                max-width: 100%;
-                max-height: 500px;
-            }
+        .flex-item {
+            align-items: center;
+            justify-content: space-around;
+        }
 
-            ms-store-badge::part(img) {
-                max-height: 60px;
-            }
-        </style>
-        <main>
-            <h1 style="padding: 4% 0 0 3%;font-size:1.4em;text-align:center"><strong>PIRI Hashes Generator,
-                    v1.0.3.0</strong></h1>
-            <div class="flex-container">
-                <div class="flex-item">
-                        <div id="videozone" style="max-width: 600px;">
-                            <video id="my-video" class="video-js" controls preload="auto" data-setup='{"fluid": true}'>
-                                <source src="https://fileshares23.blob.core.windows.net/videos/videopromo.mp4"
-                                    type="video/mp4" />
-                                <p class="vjs-no-js">
-                                    To view this video please enable JavaScript, and consider upgrading to a
-                                    web browser that
-                                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
-                                        video</a>
-                                </p>
-                            </video>
-                        </div>
-                    <br>
-                    <p>
-                        The Software for generation hashes(crypto-pairs from pub/private keys) of the PiriChain
-                        system.<br>
-                        Sending, receiving, controlling transactions in the system.<br>
-                        Reading and writing data to the blockchain database.<br>
-                        <br>
-                        <strong>Features:</strong><br>
-                        &emsp;1. Support to export PDF, CSV, XLS, DOCX, HTML, TXT<br>
-                        &emsp;2. Importing third party hashes, from another users<br>
-                        &emsp;3. QR`s codes scanning/generation<br>
-                        &emsp;4. Creating encrypted(BlowFish with static key), encrypted(BlowFish with custom key), not
-                        encrypted hash containers<br>
-                        &emsp;5. Taskbar notifications of income transactions<br>
-                        &emsp;6. Sound notifications<br>
-                        <br>
-                        To randomize secret phrases, we use a [BIP39-NET, 1.0.1] library with checksum check.<br>
-                        The program has been tested and is guaranteed to work with the English mnemonic.<br><br>
-                        <strong>Windows only x32/x64, Minimum support version Windows 10 - 17763.0</strong><br><br>
+        .img0 {
+            max-width: 100%;
+            max-height: 500px;
+        }
 
-                    </P>
-                    <div class="slideshow-container" style="max-width: 600px;">
-                        <div class="mySlides fade">
-                            <img src="images/screen_1.png" class="img0">
-                        </div>
-
-                        <div class="mySlides fade">
-                            <img src="images/screen_2.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_3.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_4.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_5.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_6.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_7.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_8.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_9.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_10.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_11.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_12.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_13.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_14.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_15.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_16.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_17.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_18.png" class="img0">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="images/screen_19.png" class="img0">
-                        </div>
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                    </div>
-
-                    <div style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                        <span class="dot" onclick="currentSlide(4)"></span>
-                        <span class="dot" onclick="currentSlide(5)"></span>
-                        <span class="dot" onclick="currentSlide(6)"></span>
-                        <span class="dot" onclick="currentSlide(7)"></span>
-                        <span class="dot" onclick="currentSlide(8)"></span>
-                        <span class="dot" onclick="currentSlide(9)"></span>
-                        <span class="dot" onclick="currentSlide(10)"></span>
-                        <span class="dot" onclick="currentSlide(11)"></span>
-                        <span class="dot" onclick="currentSlide(12)"></span>
-                        <span class="dot" onclick="currentSlide(13)"></span>
-                        <span class="dot" onclick="currentSlide(14)"></span>
-                        <span class="dot" onclick="currentSlide(15)"></span>
-                        <span class="dot" onclick="currentSlide(16)"></span>
-                        <span class="dot" onclick="currentSlide(17)"></span>
-                        <span class="dot" onclick="currentSlide(18)"></span>
-                        <span class="dot" onclick="currentSlide(19)"></span>
-                    </div>
-
-
-                    <hr>
-                    <h2>Purchase zone</h2>
-                    <div>
-                        <p>Make a purchase using cryptocurrencies: Bitcoin, Bitcoin Cash, Dogecoin, Litecoin, Tether,
-                            USD
-                            Coin, Matic. <br>
-                            Be sure to provide the correct E-mail to receive a software. <br>
-                            Delivery time depends on the load of the blockchain network, <br>
-                            and can take from 10 to 60 minutes.</p>
-                        <h3>Advantages:</h3>
-                        <div>
-                            <p style="font-size:1em">
-                                <img style="margin-bottom:-0.5em" src="images/delivery.png" alt="" width="32"
-                                    height="32" />
-                                Automatic delivery<br>
-                                <img style="margin-bottom:-0.5em" src="images/crypto.png" alt="" width="32"
-                                    height="32" />
-                                Cryptocurrency friendly<br><br>
-                                &#x2022; <strong>Support:</strong> mail@hashesgenerator.com
-                            </p>
-                        </div>
-                        <hr>
-                        <p style="font-size:1.2em;text-align: end;">
-                            Price: <strong>15.00$</strong>
+        ms-store-badge::part(img) {
+            max-height: 60px;
+        }
+    </style>
+    <main class="flex-container">
+        <h1 style="padding: 4% 0 0 3%;font-size:1.4em;text-align:center"><strong>PIRI Hashes Generator,
+                v1.0.3.0</strong></h1>
+        <div class="flex-container">
+            <div class="flex-item">
+                <div id="videozone" style="max-width: 600px;">
+                    <video id="my-video" class="video-js" controls preload="auto" data-setup='{"fluid": true}'>
+                        <source src="https://fileshares23.blob.core.windows.net/videos/videopromo.mp4"
+                            type="video/mp4" />
+                        <p class="vjs-no-js">
+                            To view this video please enable JavaScript, and consider upgrading to a
+                            web browser that
+                            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                                video</a>
                         </p>
-                        <div style="text-align: end;">
-                            <a class="buy-with-crypto"
-                                href="https://commerce.coinbase.com/checkout/90080b7b-cc58-44ca-9129-b8771e100950">
-                                Buy with Crypto
-                            </a>
-                            <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
-                            </script>
-                        </div>
+                    </video>
+                </div>
+                <br>
+                <p>
+                    The Software for generation hashes(crypto-pairs from pub/private keys) of the PiriChain
+                    system.<br>
+                    Sending, receiving, controlling transactions in the system.<br>
+                    Reading and writing data to the blockchain database.<br>
+                    <br>
+                    <strong>Features:</strong><br>
+                    &emsp;1. Support to export PDF, CSV, XLS, DOCX, HTML, TXT<br>
+                    &emsp;2. Importing third party hashes, from another users<br>
+                    &emsp;3. QR`s codes scanning/generation<br>
+                    &emsp;4. Creating encrypted(BlowFish with static key), encrypted(BlowFish with custom key), not
+                    encrypted hash containers<br>
+                    &emsp;5. Taskbar notifications of income transactions<br>
+                    &emsp;6. Sound notifications<br>
+                    <br>
+                    To randomize secret phrases, we use a [BIP39-NET, 1.0.1] library with checksum check.<br>
+                    The program has been tested and is guaranteed to work with the English mnemonic.<br><br>
+                    <strong>Windows only x32/x64, Minimum support version Windows 10 - 17763.0</strong><br><br>
 
-
+                </P>
+                <div class="slideshow-container" style="max-width: 600px;">
+                    <div class="mySlides fade">
+                        <img src="images/screen_1.png" class="img0">
                     </div>
+
+                    <div class="mySlides fade">
+                        <img src="images/screen_2.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_3.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_4.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_5.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_6.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_7.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_8.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_9.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_10.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_11.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_12.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_13.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_14.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_15.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_16.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_17.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_18.png" class="img0">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/screen_19.png" class="img0">
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                </div>
+
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                    <span class="dot" onclick="currentSlide(8)"></span>
+                    <span class="dot" onclick="currentSlide(9)"></span>
+                    <span class="dot" onclick="currentSlide(10)"></span>
+                    <span class="dot" onclick="currentSlide(11)"></span>
+                    <span class="dot" onclick="currentSlide(12)"></span>
+                    <span class="dot" onclick="currentSlide(13)"></span>
+                    <span class="dot" onclick="currentSlide(14)"></span>
+                    <span class="dot" onclick="currentSlide(15)"></span>
+                    <span class="dot" onclick="currentSlide(16)"></span>
+                    <span class="dot" onclick="currentSlide(17)"></span>
+                    <span class="dot" onclick="currentSlide(18)"></span>
+                    <span class="dot" onclick="currentSlide(19)"></span>
+                </div>
+
+
+                <hr>
+                <h2>Purchase zone</h2>
+                <div>
+                    <p>Make a purchase using cryptocurrencies: Bitcoin, Bitcoin Cash, Dogecoin, Litecoin, Tether,
+                        USD
+                        Coin, Matic. <br>
+                        Be sure to provide the correct E-mail to receive a software. <br>
+                        Delivery time depends on the load of the blockchain network, <br>
+                        and can take from 10 to 60 minutes.</p>
+                    <h3>Advantages:</h3>
+                    <div>
+                        <p style="font-size:1em">
+                            <img style="margin-bottom:-0.5em" src="images/delivery.png" alt="" width="32" height="32" />
+                            Automatic delivery<br>
+                            <img style="margin-bottom:-0.5em" src="images/crypto.png" alt="" width="32" height="32" />
+                            Cryptocurrency friendly<br><br>
+                            &#x2022; <strong>Support:</strong> mail@hashesgenerator.com
+                        </p>
+                    </div>
+                    <hr>
+                    <p style="font-size:1.2em;text-align: end;">
+                        Price: <strong>15.00$</strong>
+                    </p>
+                    <div style="text-align: end;">
+                        <a class="buy-with-crypto"
+                            href="https://commerce.coinbase.com/checkout/90080b7b-cc58-44ca-9129-b8771e100950">
+                            Buy with Crypto
+                        </a>
+                        <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
+                        </script>
+                    </div>
+
 
                 </div>
 
             </div>
-            <br><br>
-            <div style="text-align: center;">
-                <a href="/policy">Privacy Policy</a>
-                <a style="padding-left: 30px;" href="/terms">Terms and Conditions</a>
-            </div>
-        </main>
-        <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
 
-            // Next/previous controls
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
-
-            // Thumbnail image controls
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                if (n > slides.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = slides.length }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-            }
-        </script>
+        </div>
+    </main>
+    <br><br>
+    <div style="text-align: center;">
+        <a href="/policy">Privacy Policy</a>
+        <a style="padding-left: 30px;" href="/terms">Terms and Conditions</a>
     </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
 </body>
 
 </html>
