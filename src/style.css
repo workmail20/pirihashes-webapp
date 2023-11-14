@@ -148,7 +148,6 @@ ms-store-badge::part(img) {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -156,14 +155,16 @@ ms-store-badge::part(img) {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
   }
   
   /* Modal Content (Image) */
   .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    width: auto;
+    padding: 40px;
   }
   
   /* Caption of Modal Image (Image Text) - Same Width as the Image */
