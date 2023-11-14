@@ -39,7 +39,6 @@ ms-store-badge::part(img) {
 /* Slideshow container */
 .slideshow-container {
     width: 100%;
-    min-height: 400px;
     position: relative;
     margin: auto;
     align-items: center;
