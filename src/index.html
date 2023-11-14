@@ -193,11 +193,25 @@
         </div>
     </main>
     <br><br>
-    <div style="text-align: center;">
-        <a href="/policy">Privacy Policy</a>
-        <a style="padding-left: 30px;" href="/terms">Terms and Conditions</a><a style="padding-left: 30px;" href="/cookies">Cookie Policy</a>
+    <div class="footer">
+        <div class="footer-item">
+            <a href="/policy">Privacy Policy</a>
+        </div>
+        <div class="footer-item">
+            <a href="/terms">Terms and Conditions</a>
+        </div>
+        <div class="footer-item">
+            <a  href="/cookies">Cookie Policy</a>
+        </div>
     </div>
     <script>
+        $(window).load(function(){
+            $('.slideshow-container').height($('.slideshow-container').width() / 1.591);
+            $(window).resize(function(){
+                $('.slideshow-container').height($('.slideshow-container').width() / 1.591);
+            });
+        });
+
         let slideIndex = 1;
         showSlides(slideIndex);
 
