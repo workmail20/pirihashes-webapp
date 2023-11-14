@@ -41,14 +41,14 @@ ms-store-badge::part(img) {
     width: 100%;
     position: relative;
     margin: auto;
+    align-items: center;
+    display: flex;
 }
 
 .mySlides {
     display: none;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center;
+    position: relative;
 }
 
 .prev,
@@ -161,6 +161,9 @@ ms-store-badge::part(img) {
     max-width:-moz-fit-content;
     max-width: fit-content;
     width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
   
   #caption {
