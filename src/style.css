@@ -145,7 +145,7 @@ ms-store-badge::part(img) {
   
   /* The Modal (background) */
   .modal {
-    display: none; /* Hidden by default */
+    display: flex; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -163,8 +163,8 @@ ms-store-badge::part(img) {
   .modal-content {
     margin: auto;
     display: block;
-    width: auto;
-    padding: 40px;
+    max-width: fit-content;
+    width: 80%;
   }
   
   /* Caption of Modal Image (Image Text) - Same Width as the Image */
