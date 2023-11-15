@@ -471,13 +471,11 @@
             box-shadow: 0 0 2em rgba(5, 0, 31, 0.15);
             text-align: justify;
             line-height: 1.8em;
-            padding: 2em 1.4em;
             border-radius: 6px;
             transition: all 0.5s ease-in;
         }
 
         #cookiePopup p {
-            text-align: center;
             margin: 1.4em 0;
         }
 
@@ -533,7 +531,7 @@
         }
 
         .ingdpr-item {
-            
+
         }
     </style>
     <div class="gdpr-container" id="cookiePopup">
@@ -548,12 +546,14 @@
                     </p>
                 </div>
                 <div class="ingdpr-item" style="width: 20%;">
-                    <img src="/images/cookie.png" />
+                    <img src="/images/cookie.png" alt="cookies"/>
                 </div>
             </div>
         </div>
         <div class="gdpr-item">
-            <button id="closeCookie">Close</button> <button id="acceptCookie">Accept</button>
+            <div style="display: flex;flex-direction:row;">
+            <button type="button" id="closeCookie">Close</button> <button type="button" id="acceptCookie">Accept</button>
+        </div>
         </div>
     </div>
     <script>
