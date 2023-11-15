@@ -284,16 +284,16 @@
                     }
                 },
                 run: function () {
-                    var _this = this; 
-                    _this.loadCSSasync();
-                    _this.modalLoad();
-                    _this.imgResize();
+                    this.loadCSSasync();
+                    this.modalLoad();
+                    this.imgResize();
                 }
             };
 
             let lw = new LoadWorker();
-            lw.run();
-            $(window).on("DOMContentLoaded", lw.run);
+            $(window).on("DOMContentLoaded", function(){
+                lw.run();
+            });
         })();
 
 
