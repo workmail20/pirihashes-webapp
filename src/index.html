@@ -126,8 +126,8 @@
                 <div class="mySlides fade">
                     <img src="images/screen_19.png" class="img0" loading="lazy" alt="screenshot">
                 </div>
-                <a class="prev" href="javascript:void(0)" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" href="javascript:void(0)" onclick="plusSlides(1)">&#10095;</a>
+                <a class="prev" href="#" onclick="plusSlides(event,-1)">&#10094;</a>
+                <a class="next" href="#" onclick="plusSlides(event,1)">&#10095;</a>
 
             </div>
 
@@ -269,7 +269,8 @@
         let slideIndex = 1;
         showSlides(slideIndex);
 
-        function plusSlides(n) {
+        function plusSlides(event,n) {
+            event.preventDefault();
             showSlides(slideIndex += n);
         }
 
