@@ -246,7 +246,7 @@
                     usedLaterScript.src = js;
                     document.body.appendChild(usedLaterScript);
                 }
-            }
+            };
             loadCSSasync() {
                 var asyncStyleSheets = [
                     "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap",
@@ -257,14 +257,14 @@
                     link.setAttribute('href', ss);
                     document.head.appendChild(link);
                 }
-            }
+            };
             imgResize() {
 
                 $('.slideshow-container').height($('.slideshow-container').width() / 1.32);
                 $(window).resize(function () {
                     $('.slideshow-container').height($('.slideshow-container').width() / 1.32);
                 });
-            }
+            };
             modalLoad() {
                 var modal = document.getElementById("myModal");
                 var imgs = document.getElementsByClassName("img0");
@@ -279,12 +279,12 @@
                 span.onclick = function () {
                     modal.style.display = "none";
                 }
-            }
+            };
             run() {
-                loadCSSasync();
-                modalLoad();
-                imgResize();
-            }
+                this.loadCSSasync();
+                this.modalLoad();
+                this.imgResize();
+            };
         }
 
         let lw = new LoadWorker();
