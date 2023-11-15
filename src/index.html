@@ -266,8 +266,8 @@
         </div>
 
         <div class="flex-item" id="videozone" style="aspect-ratio:1.768; margin-bottom: 15px;">
-            <img style="cursor: pointer;aspect-ratio:1.76;" width="100%" height="auto" id="imgPlay" src="/images/play.jpg"
-                onclick="startPlayer()" alt="player"/>
+            <img style="cursor: pointer;aspect-ratio:1.76;" width="100%" height="auto" id="imgPlay"
+                src="/images/play.jpg" onclick="startPlayer()" alt="player" />
             <video style="display:none; aspect-ratio:1.768;" id="my-video" class="video-js" controls preload="none"
                 data-setup='{"fluid": true}' width="100%" height="auto">
                 <source src="https://fileshares23.blob.core.windows.net/videos/videopromo.mp4" type="video/mp4" />
@@ -463,6 +463,88 @@
         </div>
     </div>
 
+    <style>
+        #cookiePopup {
+            background-color: #ffffff;
+            position: absolute;
+            font-size: 14px;
+            width: 70vw;
+            max-width: 42.85em;
+            box-shadow: 0 0 2em rgba(5, 0, 31, 0.15);
+            font-family: "Poppins", sans-serif;
+            text-align: justify;
+            line-height: 1.8em;
+            padding: 2em 1.4em;
+            border-radius: 6px;
+            transition: all 0.5s ease-in;
+        }
+
+        #cookiePopup img {
+            display: block;
+            width: 3.75em;
+            transform: translateZ(0);
+            position: relative;
+            margin: auto;
+        }
+
+        #cookiePopup p {
+            text-align: center;
+            margin: 1.4em 0;
+        }
+
+        #cookiePopup button {
+            background-color: #6859fe;
+            border: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            padding: 1em 1.4em;
+            display: block;
+            position: relative;
+            margin: auto;
+            border-radius: 5px;
+        }
+
+        #cookiePopup a {
+            color: #6859fe;
+        }
+
+        .hidec {
+            visibility: hidden;
+            bottom: 0;
+            right: 2em;
+        }
+
+        .showc {
+            visibility: visible;
+            bottom: 2em;
+            right: 2em;
+        }
+
+        @media only screen and (max-width: 37.5em) {
+            #cookiePopup {
+                width: 100%;
+            }
+
+            .hidec {
+                bottom: 2em;
+                right: 0;
+            }
+
+            .showc {
+                right: 0;
+                bottom: 0;
+            }
+        }
+    </style>
+    <div id="cookiePopup" class="hidec">
+        <img src="/images/cookie.png" />
+        <p>
+            Our website uses cookies to provide your browsing experience and
+            relevant information. Before continuing to use our website, you agree &
+            accept of our <a href="/cookies">Cookie Policy & Privacy.</a>
+        </p>
+        <button id="acceptCookie">Accept</button>
+    </div>
 
     <script>
         /*! jQuery v3.7.1 | (c) OpenJS Foundation and other contributors | jquery.org/license */
@@ -473,10 +555,11 @@
         };
         GenLoadWorker.prototype = {
             loadJSasync: function () {
-                let jsLinks = ["/js/video.min.js"];
+                let jsLinks = ["https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"];
                 for (let js of jsLinks) {
                     let usedLaterScript = document.createElement('script');
                     usedLaterScript.src = js;
+                    usedLaterScript.async = true;
                     document.body.appendChild(usedLaterScript);
                 }
             },
@@ -510,7 +593,10 @@
             run: function () {
                 this.imgResize();
                 //   this.loadCSSasync();
-                //  this.loadJSasync();
+                let gdprA = localStorage.getItem("gdprAccepted");
+                if (gdprA === "true") {
+                    this.loadJSasync();
+                }
                 this.modalLoad();
             }
         };
@@ -518,6 +604,25 @@
         var GGenLoadWorker = new GenLoadWorker();
         $(window).on("DOMContentLoaded", function () {
             GGenLoadWorker.run();
+        });
+        $(window).on("load", function () {
+            setTimeout(function () {
+                let popUp = document.getElementById("cookiePopup");
+                document.getElementById("acceptCookie").addEventListener("click", () => {
+                    localStorage.setItem("gdprAccepted", "true");
+                    popUp.classList.add("hide");
+                    popUp.classList.remove("show");
+
+                });
+                let gdprA = localStorage.getItem("gdprAccepted");
+                if (gdprA === "true") {
+                    popUp.classList.add("hide");
+                    popUp.classList.remove("show");
+                } else {
+                    popUp.classList.add("show");
+                    popUp.classList.remove("hide");
+                }
+            }, 2000);
         });
 
 
