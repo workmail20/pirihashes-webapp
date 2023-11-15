@@ -532,14 +532,14 @@
                 },
                 run: function () {
                     this.imgResize();
-                    this.loadCSSasync();
-                    this.loadJSasync();
+                 //   this.loadCSSasync();
+                  //  this.loadJSasync();
                     this.modalLoad();
                 }
             };
 
             let lw = new LoadWorker();
-            $(window).on("load", function () {
+            $(window).on("DOMContentLoaded", function () {
                 lw.run();
             });
         })();
