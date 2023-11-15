@@ -590,9 +590,10 @@
                 document.body.appendChild(usedLaterScript);
             }
             document.head.appendChild(link);
-            setTimeout(() => {
+            let int = setInterval(() => {
                 if ((player !== undefined) && (player.play != undefined)) {
                     player.play();
+                    clearInterval(int);
                 }
             }, 100);
         }
