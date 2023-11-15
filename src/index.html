@@ -550,6 +550,7 @@
         }
 
         function startPlayer() {
+            var g_player;
             let playimg = document.getElementById("imgPlay");
             playimg.style.display = "none";
             let player = document.getElementById("my-video");
@@ -559,15 +560,12 @@
             let link = document.createElement('link');
             link.setAttribute('rel', 'stylesheet');
             link.setAttribute('href', "/style/video-js.css");
-
             link.onload = () => {
                 let usedLaterScript = document.createElement('script');
                 usedLaterScript.src = "/js/video.min.js";
                 usedLaterScript.async = false;
                 usedLaterScript.onload = () => {
-
-                    var _player = videojs('my-video');
-
+                    let _player = videojs('my-video');
                     _player.on('ready', function () {
                         g_player = _player;
                     });
@@ -575,17 +573,14 @@
                 document.body.appendChild(usedLaterScript);
             }
             document.head.appendChild(link);
-            let int = setInterval(() => {
-                if ((g_player !== undefined) && (g_player.play != undefined)) {
+
+            let _int = setInterval(() => {
+                if ((g_player !== undefined) && (g_player.play !== undefined)) {
                     g_player.play();
-                    clearInterval(int);
+                    clearInterval(_int);
                 }
-            }, 100);
+            }, 15);
         }
-
-
-
-
 
     </script>
 </body>
