@@ -299,7 +299,7 @@
         </div>
 
         <div class="flex-item">
-            <div id="videozone" style="max-width: 650px;">
+            <div id="videozone" style="max-width: 650px;width: 635px;height: 358px;">
                 <video id="my-video" class="video-js" controls preload="none" data-setup='{"fluid": true}' width="100%" height="auto">
                     <source src="https://fileshares23.blob.core.windows.net/videos/videopromo.mp4" type="video/mp4" />
                     <p class="vjs-no-js">
@@ -495,7 +495,7 @@
         </div>
     </div>
 
-    <script async src="/js/video.min.js"></script>
+    <!-- <script async src="/js/video.min.js"></script> -->
     <!-- <script src="/js/jquery.js"></script> -->
     <script>
         /*! jQuery v3.7.1 | (c) OpenJS Foundation and other contributors | jquery.org/license */
@@ -535,8 +535,7 @@
             };
             LoadWorker.prototype = {
                 loadJSasync: function () {
-                    var jsLinks = ["/js/video.min.js",
-                        "https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"];
+                    var jsLinks = ["/js/video.min.js"];
                     for (let js of jsLinks) {
                         var usedLaterScript = document.createElement('script');
                         usedLaterScript.src = js;
@@ -575,9 +574,10 @@
                     }
                 },
                 run: function () {
-                    this.loadCSSasync();
-                    this.modalLoad();
                     this.imgResize();
+                    this.loadCSSasync();
+                    this.loadJSasync();
+                    this.modalLoad();
                 }
             };
 
