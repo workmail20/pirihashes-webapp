@@ -566,33 +566,18 @@
                 usedLaterScript.async = false;
                 usedLaterScript.onload = () => {
 
-                    var options = {};
+                    var _player = videojs('my-video');
 
-                    var player = videojs('my-video', options, function onPlayerReady() {
-                        videojs.log('Your player is ready!');
-
-                        // In this context, `this` is the player that was created by Video.js.
-                        this.play();
-
-                        // How about an event listener?
-                        this.on('ended', function () {
-                            videojs.log('Awww...over so soon?!');
-                        });
+                    _player.on('ready', function () {
+                        g_player = _player;
                     });
-
-
-                    //   let player = videojs('my-video');
-
-                    //    player.on('ready', function() {
-                    //       player.play();
-                    // }); 
                 }
                 document.body.appendChild(usedLaterScript);
             }
             document.head.appendChild(link);
             let int = setInterval(() => {
-                if ((player !== undefined) && (player.play != undefined)) {
-                    player.play();
+                if ((g_player !== undefined) && (g_player.play != undefined)) {
+                    g_player.play();
                     clearInterval(int);
                 }
             }, 100);
