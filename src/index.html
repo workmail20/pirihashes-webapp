@@ -319,7 +319,7 @@
             };
 
             let lw = new LoadWorker();
-            $(window).on("load", function(){
+            $(document).ready(function(){
                 lw.run();
             });
         })();
