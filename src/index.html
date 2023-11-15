@@ -624,20 +624,21 @@
         });
         $(window).on("load", function () {
             setTimeout(function () {
-                let popUp = document.getElementById("cookiePopup");
                 document.getElementById("acceptCookie").addEventListener("click", () => {
                     localStorage.setItem("gdprAccepted", "true");
-                    popUp.classList.add("hidec");
-                    popUp.classList.remove("showc");
-
+                    let popUp = document.getElementById("cookiePopup");
+                    popUp.style.display = "none";
+                });
+                document.getElementById("closeCookie").addEventListener("click", () => {
+                    let popUp = document.getElementById("cookiePopup");
+                    popUp.style.display = "none";
                 });
                 let gdprA = localStorage.getItem("gdprAccepted");
                 if (gdprA === "true") {
-                    popUp.classList.add("hidec");
-                    popUp.classList.remove("showc");
+                    GGenLoadWorker.loadJSasync();
                 } else {
-                    popUp.classList.add("showc");
-                    popUp.classList.remove("hidec");
+                    let popUp = document.getElementById("cookiePopup");
+                    popUp.style.display = "block";
                 }
             }, 2000);
         });
