@@ -262,7 +262,7 @@
     <main class="flex-container">
         <div id="myModal" class="modal" style="display: none;">
             <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
+            <img class="modal-content" id="img01" alt="Screenshot"/>
         </div>
 
         <div class="flex-item" id="videozone" style="aspect-ratio:1.768; margin-bottom: 15px;">
@@ -469,7 +469,6 @@
             position: fixed;
             box-shadow: 0 0 2em rgba(5, 0, 31, 1.15);
             text-align: justify;
-            line-height: 24px;
             border-radius: 6px;
             transition: all 0.5s ease-in;
             bottom: 10px;
@@ -632,14 +631,15 @@
                     localStorage.setItem("gdprAccepted", "true");
                     let popUp = document.getElementById("cookiePopup");
                     popUp.style.display = "none";
+                    GGenLoadWorker.loadJSasync();
                 });
                 document.getElementById("closeCookie").addEventListener("click", () => {
                     let popUp = document.getElementById("cookiePopup");
                     popUp.style.display = "none";
                 });
+
                 let gdprA = localStorage.getItem("gdprAccepted");
                 if (gdprA === "true") {
-                    GGenLoadWorker.loadJSasync();
                 } else {
                     let popUp = document.getElementById("cookiePopup");
                     popUp.style.display = "block";
