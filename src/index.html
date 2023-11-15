@@ -237,58 +237,62 @@
     </script>
 
     <script>
-        class LoadWorker {
-            loadJSasync() {
-                var jsLinks = ["/js/video.min.js",
-                    "https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"];
-                for (let js of jsLinks) {
-                    var usedLaterScript = document.createElement('script');
-                    usedLaterScript.src = js;
-                    document.body.appendChild(usedLaterScript);
-                }
+        (function () {
+            var LoadWorker = function () {
             };
-            loadCSSasync() {
-                var asyncStyleSheets = [
-                    "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap",
-                    "/style/video-js.css"];
-                for (let ss of asyncStyleSheets) {
-                    var link = document.createElement('link');
-                    link.setAttribute('rel', 'stylesheet');
-                    link.setAttribute('href', ss);
-                    document.head.appendChild(link);
-                }
-            };
-            imgResize() {
-
-                $('.slideshow-container').height($('.slideshow-container').width() / 1.32);
-                $(window).resize(function () {
-                    $('.slideshow-container').height($('.slideshow-container').width() / 1.32);
-                });
-            };
-            modalLoad() {
-                var modal = document.getElementById("myModal");
-                var imgs = document.getElementsByClassName("img0");
-                var modalImg = document.getElementById("img01");
-                for (let item of imgs) {
-                    item.onclick = function () {
-                        modal.style.display = "flex";
-                        modalImg.src = this.src;
+            LoadWorker.prototype = {
+                loadJSasync: function () {
+                    var jsLinks = ["/js/video.min.js",
+                        "https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"];
+                    for (let js of jsLinks) {
+                        var usedLaterScript = document.createElement('script');
+                        usedLaterScript.src = js;
+                        document.body.appendChild(usedLaterScript);
                     }
-                }
-                var span = document.getElementsByClassName("close")[0];
-                span.onclick = function () {
-                    modal.style.display = "none";
-                }
-            };
-            run(p) {
-                p.loadCSSasync();
-                p.modalLoad();
-                p.imgResize();
-            };
-        }
+                },
+                loadCSSasync: function () {
+                    var asyncStyleSheets = [
+                        "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap",
+                        "/style/video-js.css"];
+                    for (let ss of asyncStyleSheets) {
+                        var link = document.createElement('link');
+                        link.setAttribute('rel', 'stylesheet');
+                        link.setAttribute('href', ss);
+                        document.head.appendChild(link);
+                    }
+                },
+                imgResize: function () {
 
-        let lw = new LoadWorker();
-        $(window).on("DOMContentLoaded", lw.run, lw);
+                    $('.slideshow-container').height($('.slideshow-container').width() / 1.32);
+                    $(window).resize(function () {
+                        $('.slideshow-container').height($('.slideshow-container').width() / 1.32);
+                    });
+                },
+                modalLoad: function () {
+                    var modal = document.getElementById("myModal");
+                    var imgs = document.getElementsByClassName("img0");
+                    var modalImg = document.getElementById("img01");
+                    for (let item of imgs) {
+                        item.onclick = function () {
+                            modal.style.display = "flex";
+                            modalImg.src = this.src;
+                        }
+                    }
+                    var span = document.getElementsByClassName("close")[0];
+                    span.onclick = function () {
+                        modal.style.display = "none";
+                    }
+                },
+                run: function () {
+                    this.loadCSSasync();
+                    this.modalLoad();
+                    this.imgResize();
+                }
+            };
+
+            let lw = new LoadWorker();
+            $(window).on("DOMContentLoaded", lw.run);
+        })();
 
 
         let slideIndex = 1;
