@@ -476,9 +476,14 @@
             z-index: 21;
             
         }
-        @media (min-width: 537px) {
+        @media (max-width: 537px) {
             #cookiePopup{
               left: 10px;
+            }
+          }
+          @media (min-width: 537px) {
+            #cookiePopup{
+              left:unset;
             }
           }
 
