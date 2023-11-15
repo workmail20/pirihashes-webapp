@@ -15,8 +15,6 @@
 
     <link rel="stylesheet" href="./style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
-    <script src="/js/jquery.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"></script>
     <script>
@@ -236,7 +234,8 @@
     </div>
 
     <script async src="/js/video.min.js"></script>
-
+    <script src="/js/jquery.js"></script>
+    
     <script>
         let slideIndex = 1;
         showSlides(slideIndex);
@@ -280,7 +279,7 @@
                     }
                 },
                 loadCSSasync: function () {
-                    var asyncStyleSheets = [
+                    var asyncStyleSheets = ["https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap",
                         "/style/video-js.css"];
                     for (let ss of asyncStyleSheets) {
                         var link = document.createElement('link');
