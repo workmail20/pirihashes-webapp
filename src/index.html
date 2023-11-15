@@ -280,15 +280,15 @@
                     modal.style.display = "none";
                 }
             };
-            run() {
-                this.loadCSSasync();
-                this.modalLoad();
-                this.imgResize();
+            run(p) {
+                p.loadCSSasync();
+                p.modalLoad();
+                p.imgResize();
             };
         }
 
         let lw = new LoadWorker();
-        $(window).on("DOMContentLoaded", lw.run);
+        $(window).on("DOMContentLoaded", lw.run, lw);
 
 
         let slideIndex = 1;
