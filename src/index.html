@@ -72,8 +72,8 @@
         .flex-container {
             display: flex;
             flex-direction: column;
-            align-items: start;
-            justify-content: center;
+            align-items: center;
+            justify-content: start;
         }
 
         .flex-item {
@@ -85,8 +85,8 @@
         .footer-container {
             display: flex;
             flex-direction: row;
-            align-items: start;
-            justify-content: center;
+            align-items: center;
+            justify-content: start;
             flex-wrap: wrap;
         }
 
@@ -96,7 +96,6 @@
 
         .img0 {
             width: 100%;
-            max-height: 500px;
         }
 
         .slideshow-container {
@@ -264,7 +263,7 @@
             <img class="modal-content" id="img01">
         </div>
 
-        <div class="flex-item" id="videozone" style="width: 100%;min-height: 358px;margin-bottom: 10px;">
+        <div class="flex-item" id="videozone" style="aspect-ratio:1.768; margin-bottom: 15px;">
             <video id="my-video" class="video-js" controls preload="none" data-setup='{"fluid": true}' width="100%" height="auto">
                 <source src="https://fileshares23.blob.core.windows.net/videos/videopromo.mp4" type="video/mp4" />
                 <p class="vjs-no-js">
@@ -275,7 +274,7 @@
                 </p>
             </video>
         </div>
-        <div class="flex-item" id="article" style="width: 100%;min-height: 358px;margin-bottom: 10px;">
+        <div class="flex-item" id="article" style="margin-bottom: 15px;">
             <p>
                 The Software for generation hashes(crypto-pairs from pub/private keys) of the PiriChain
                 system.<br>
@@ -299,8 +298,8 @@
 
             </P>
         </div>
-        <div class="flex-item" id="slideshowzone" style="width: 100%;min-height: 454px; margin-bottom: 10px;">
-            <div class="slideshow-container" style="width: 100%;min-height:454px;">
+        <div class="flex-item" id="slideshowzone" style="aspect-ratio:1.264; margin-bottom: 15px;">
+            <div class="slideshow-container" style="width: 100%;">
 
                 <div class="mySlides fade">
                     <img src="images/screen_1.png" class="img0" loading="lazy" alt="screenshot" width="100%"
@@ -406,7 +405,7 @@
                 <span class="dot" onclick="currentSlide(19)"></span>
             </div>
         </div>
-        <div class="flex-item" id="checkoutzone" style="width: 100%;min-height: 358px;margin-bottom: 10px;">
+        <div class="flex-item" id="checkoutzone" style="margin-bottom: 15px;">
             <hr>
             <h2>Purchase zone</h2>
             <div>
