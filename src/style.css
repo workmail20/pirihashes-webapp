@@ -67,6 +67,7 @@ ms-store-badge::part(img) {
     border-radius: 0 3px 3px 0;
     user-select: none;
     background-color: brown;
+    text-decoration: none;
 }
 .prev{
     left: 0px;
