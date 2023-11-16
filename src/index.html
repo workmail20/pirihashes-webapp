@@ -522,7 +522,7 @@
         }
 
         .gdpr-container {
-            display: flex;
+            display: none;
             flex-direction: column;
             flex-wrap: wrap;
             justify-content: center;
@@ -646,7 +646,7 @@
                     let gdprI = localStorage.getItem("gdprInit");
                     if ((Math.floor(Date.now() / 1000) - parseInt(gdprI)) > 86400 * 3) {
                         let popUp = document.getElementById("cookiePopup");
-                        popUp.style.display = "block";
+                        popUp.style.display = "flex";
                     }
                 }
             }, 2000);
