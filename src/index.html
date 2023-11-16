@@ -546,9 +546,9 @@
         <div class="ingdpr-container">
             <div style="width: 75%;">
                 <p>
-                    Our website uses cookies to provide your browsing experience and
-                    relevant information. Before continuing to use our website, you need agree &
-                    accept of our <a href="/cookies">Cookie Policy & Privacy</a>
+                    Our website uses cookies and Google Analytics, to provide your browsing experience and
+                    relevant information. Before continuing to use our website, you need agree and
+                    accept our <a href="/cookies">Cookie Policy</a> & <a href="/policy"> Privacy Policy</a>
                 </p>
             </div>
             <div style="width: 20%;">
@@ -633,6 +633,9 @@
                     GGenLoadWorker.loadJSasync();
                 });
                 document.getElementById("closeCookie").addEventListener("click", () => {
+                    localStorage.setItem("gdprAccepted", "false");
+                    localStorage.setItem("gdprInit", Math.floor(Date.now() / 1000));
+
                     let popUp = document.getElementById("cookiePopup");
                     popUp.style.display = "none";
                 });
@@ -640,8 +643,11 @@
                 let gdprA = localStorage.getItem("gdprAccepted");
                 if (gdprA === "true") {
                 } else {
-                    let popUp = document.getElementById("cookiePopup");
-                    popUp.style.display = "block";
+                    let gdprI = localStorage.getItem("gdprInit");
+                    if ((Math.floor(Date.now() / 1000) - parseInt(gdprI)) > 86400 * 3) {
+                        let popUp = document.getElementById("cookiePopup");
+                        popUp.style.display = "block";
+                    }
                 }
             }, 2000);
         });
