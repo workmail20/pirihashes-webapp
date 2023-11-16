@@ -644,9 +644,11 @@
                 if (gdprA === "true") {
                 } else {
                     let gdprI = localStorage.getItem("gdprInit");
-                    if ((Math.floor(Date.now() / 1000) - parseInt(gdprI)) > 86400 * 3) {
-                        let popUp = document.getElementById("cookiePopup");
-                        popUp.style.display = "flex";
+                    if ((gdprI !== undefined) && (gdprI != null)) {
+                        if ((Math.floor(Date.now() / 1000) - parseInt(gdprI)) > 86400 * 3) {
+                            let popUp = document.getElementById("cookiePopup");
+                            popUp.style.display = "flex";
+                        }
                     }
                 }
             }, 2000);
