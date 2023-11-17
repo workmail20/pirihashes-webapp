@@ -836,6 +836,7 @@
             });
 
             BuyWithCrypto.registerCallback('onFailure', function (e) {
+                return;
                 if (checkoutDone === false) {
                     checkoutDone = true;
                     let audio = new Audio('sounds/notification.wav');
