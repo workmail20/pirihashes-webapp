@@ -825,10 +825,11 @@
             BuyWithCrypto.registerCallback('onSuccess', function (e) {
                 if (checkoutDone === false) {
                     checkoutDone = true;
-
+                    let audio = new Audio('sounds/notification.wav');
                     setTimeout(function () {
                         let toast = document.getElementById("toast");
                         document.getElementById("oid").innerText = e.code;
+                        audio.play();
                         toast.className = "show";
                     }, 1000);
                 }
@@ -837,10 +838,11 @@
             BuyWithCrypto.registerCallback('onFailure', function (e) {
                 if (checkoutDone === false) {
                     checkoutDone = true;
-
+                    let audio = new Audio('sounds/notification.wav');
                     setTimeout(function () {
                         let toast = document.getElementById("toast");
                         document.getElementById("oid").innerText = e.code;
+                        audio.play();
                         toast.className = "show";
                     }, 1000);
                 }
@@ -849,10 +851,11 @@
             BuyWithCrypto.registerCallback('onPaymentDetected', function (e) {
                 if (checkoutDone === false) {
                     checkoutDone = true;
-
+                    let audio = new Audio('sounds/notification.wav');
                     setTimeout(function () {
                         let toast = document.getElementById("toast");
                         document.getElementById("oid").innerText = e.code;
+                        audio.play();
                         toast.className = "show";
                     }, 1000);
                 }
