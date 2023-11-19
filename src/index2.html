@@ -703,11 +703,8 @@
             border: none;
             color: #000000;
             font-size: 1.2em;
-            display: block;
             margin: auto;
             cursor: pointer;
-
-            position: fixed;
             box-shadow: 0 0 2em rgba(5, 0, 31, 1.15);
             text-align: justify;
             border-radius: 6px;
@@ -740,7 +737,7 @@
             align-items: center;
             min-width: 200px;
             max-width: 500px;
-            display: flex;  
+            display: flex;
         }
 
         .loader {
@@ -918,7 +915,8 @@
             id="checkout2-wait">
             <span class="loader"></span>
         </div>
-        <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;" id="checkout2-input">
+        <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
+            id="checkout2-input">
             <form style="
                 display: flex;
                 flex-direction: column;
@@ -930,8 +928,15 @@
                 <button class="button-42" role="button">Next</button>
             </form>
         </div>
-        <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;" id="checkout2-qr">
-            <div class="countdown">
+        <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
+            id="checkout2-qr">
+            <div class="countdown" style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-sizing: border-box;
+            margin: 0px;">
                 <span class="countdown__number">10</span>
                 <svg class="countdown__icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 130" overflow="visible"
@@ -940,22 +945,32 @@
                         d="M5,64.8a59.8,59.8 0 1,0 119.6,0a59.8,59.8 0 1,0 -119.6,0" />
                 </svg>
             </div>
-            <p>
-                Please transfer the full amount to the specified PIRI address.<br>
-                You have only 60 minutes, then an address will not be valid and your payment will not be
-                confirmed<br>
-            <h3>QR Code</h3>
-            <img src="" id="checkout2-QRimage" /><br>
-            PIRI Address:<span id="checkout2-Address"></span><br>
-            Amount:<span id="checkout2-Amount"></span><br>
-            Name:<span id="checkout2-Name"></span><br>
-            Email:<span id="checkout2-Email"></span><br>
+            <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
+                id="">
+                <p>
+                    Please transfer the full amount to the specified PIRI address.<br>
+                    You have only 60 minutes, then an address will not be valid and your payment will not be
+                    confirmed<br>
+                <h3>QR Code</h3>
+                <img src="" id="checkout2-QRimage" /><br>
+                PIRI Address:<span id="checkout2-Address"></span><br>
+                Amount:<span id="checkout2-Amount"></span><br>
+                Name:<span id="checkout2-Name"></span><br>
+                Email:<span id="checkout2-Email"></span><br>
 
-            </p>
-            <button class="button-29" role="button">Click if paid</button>
+                </p>
+                <button class="button-29" role="button">Click if paid</button>
+            </div>
         </div>
-        <div style="width: 100%;justify-content: center;align-items: center;display: flex;flex-direction: column;" id="checkout2-wait">
-            <div class="countdown">
+        <div style="width: 100%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
+            id="checkout2-wait">
+            <div class="countdown" style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-sizing: border-box;
+            margin: 0px;">
                 <span class="countdown__number"></span>
                 <svg class="countdown__icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 130" overflow="visible"
@@ -968,7 +983,10 @@
                 Please wait for confirmation<br>
             </p>
         </div>
-        <div id="checkout2-confirmed">
+        <div id="checkout2-confirmed" style="
+        justify-content: center;
+        align-items: center;
+        display: flex;">
             <svg enable-background="new 0 0 59.577 58.667" height="48" id="Layer_1" version="1.1"
                 viewBox="0 0 59.577 58.667" width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -979,7 +997,10 @@
             </svg>
             <p style="color: #47d764;">Confirmed</p>
         </div>
-        <div id="checkout2-error">
+        <div id="checkout2-error" style="
+        justify-content: center;
+        align-items: center;
+        display: flex;">
             <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32" width="48"
                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g>
