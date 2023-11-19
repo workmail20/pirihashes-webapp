@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- scarlett -->
 
 <head>
     <meta charset="UTF-8">
@@ -645,11 +646,11 @@
     </div>
 
     <style>
-        #piricheckout p {
+        #checkout2 p {
             margin-left: 15px;
         }
 
-        #piricheckout {
+        #checkout2 {
             background-color: #ffffff;
             border: none;
             color: #000000;
@@ -661,7 +662,7 @@
             cursor: pointer;
         }
 
-        #closepiricheckout {
+        #close-checkout2 {
             background-color: #A80000;
             border: none;
             color: #ffffff;
@@ -673,11 +674,11 @@
             cursor: pointer;
         }
 
-        #piricheckoutPopup a {
+        #checkout2-Popup a {
             color: #000699;
         }
 
-        .piricheckout-container {
+        .checkout2-container {
             display: none;
             flex-direction: column;
             flex-wrap: wrap;
@@ -689,74 +690,95 @@
         }
 
         .loader {
-            font-size: 10px;
-            margin: 50px auto;
-            text-indent: -9999em;
-            width: 11em;
-            height: 11em;
-            border-radius: 50%;
-            background: #ff0000;
-            background: -moz-linear-gradient(left, #ff0000 10%, rgba(255, 0, 0, 0) 42%);
-            background: -webkit-linear-gradient(left, #ff0000 10%, rgba(255, 0, 0, 0) 42%);
-            background: -o-linear-gradient(left, #ff0000 10%, rgba(255, 0, 0, 0) 42%);
-            background: -ms-linear-gradient(left, #ff0000 10%, rgba(255, 0, 0, 0) 42%);
-            background: linear-gradient(to right, #ff0000 10%, rgba(255, 0, 0, 0) 42%);
+            box-sizing: border-box;
+            display: inline-block;
+            width: 50px;
+            height: 80px;
+            border-top: 5px solid #fff;
+            border-bottom: 5px solid #fff;
             position: relative;
-            -webkit-animation: load3 1.4s infinite linear;
-            animation: load3 1.4s infinite linear;
-            -webkit-transform: translateZ(0);
-            -ms-transform: translateZ(0);
-            transform: translateZ(0);
+            background: linear-gradient(#FF3D00 30px, transparent 0) no-repeat;
+            background-size: 2px 40px;
+            background-position: 50% 0px;
+            animation: spinx 5s linear infinite;
         }
 
-        .loader:before {
-            width: 50%;
-            height: 50%;
-            background: #ff0000;
-            border-radius: 100% 0 0 0;
+        .loader:before,
+        .loader:after {
+            content: "";
+            width: 40px;
+            left: 50%;
+            height: 35px;
             position: absolute;
             top: 0;
-            left: 0;
-            content: '';
+            transform: translatex(-50%);
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 0 0 20px 20px;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: 0 0px;
+            animation: lqt 5s linear infinite;
         }
 
         .loader:after {
-            background: #ff0000;
-            width: 75%;
-            height: 75%;
-            border-radius: 50%;
-            content: '';
-            margin: auto;
-            position: absolute;
-            top: 0;
-            left: 0;
+            top: auto;
             bottom: 0;
-            right: 0;
+            border-radius: 20px 20px 0 0;
+            animation: lqb 5s linear infinite;
         }
 
-        @-webkit-keyframes load3 {
+        @keyframes lqt {
+
+            0%,
+            100% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0% 0px;
+            }
+
+            50% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0% 40px;
+            }
+
+            50.1% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0% -40px;
+            }
+        }
+
+        @keyframes lqb {
             0% {
-                -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0 40px;
             }
 
             100% {
-                -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0 -40px;
             }
         }
 
-        @keyframes load3 {
-            0% {
-                -webkit-transform: rotate(0deg);
+        @keyframes spinx {
+
+            0%,
+            49% {
                 transform: rotate(0deg);
+                background-position: 50% 36px;
+            }
+
+            51%,
+            98% {
+                transform: rotate(180deg);
+                background-position: 50% 4px;
             }
 
             100% {
-                -webkit-transform: rotate(360deg);
                 transform: rotate(360deg);
+                background-position: 50% 36px;
             }
         }
+
+
 
         /* CSS */
         .button-42 {
@@ -798,16 +820,50 @@
         .input1 {
             font-size: 1.2em;
         }
+
+        /**
+ * Countdown Styles
+ */
+        .countdown {
+            position: relative;
+            width: 74px;
+            height: 74px;
+            border-radius: 50%;
+            background-color: #121b1c;
+            background-size: cover;
+            background-position: center center;
+            border: 3px solid grey;
+            transform-origin: center bottom;
+        }
+
+        .countdown__icon {
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            width: 80px;
+            fill: transparent;
+            stroke: #76e19e;
+            stroke-width: 10px;
+            stroke-linecap: round;
+        }
+
+        .countdown__icon__circle {
+            stroke-dasharray: 375.787322998;
+        }
+
+        .countdown__number {
+            color: #fff;
+        }
     </style>
-    <div class="piricheckout-container" id="piricheckout">
+
+
+    <div class="checkout2-container" id="checkout2">
         <h3>PIRI Chain checkout</h3>
         <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
-        <div style="width: 75%;" id="piriwait">
-            <div class="loader">
-
-            </div>
+        <div style="width: 75%;" id="checkout2-wait">
+            <span class="loader"></span>
         </div>
-        <div style="width: 75%;" id="piriinput">
+        <div style="width: 75%;" id="checkout2-input">
             <form style="
                 display: flex;
                 flex-direction: column;
@@ -819,27 +875,45 @@
                 <button class="button-42" role="button">Next</button>
             </form>
         </div>
-        <div style="width: 100%;" id="piriqr">
+        <div style="width: 100%;" id="checkout2-qr">
+            <div class="countdown">
+                <span class="countdown__number">10</span>
+                <svg class="countdown__icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 130" overflow="visible"
+                    enable-background="new 0 0 130 130">
+                    <path class="countdown__icon__circle"
+                        d="M5,64.8a59.8,59.8 0 1,0 119.6,0a59.8,59.8 0 1,0 -119.6,0" />
+                </svg>
+            </div>
             <p>
                 Please transfer the full amount to the specified PIRI address.<br>
                 You have only 60 minutes, then an address will not be valid and your payment will not be
                 confirmed<br>
             <h3>QR Code</h3>
-            <img src="" id="piriAddress" /><br>
-            PIRI Address:<span id="piriAddress"></span><br>
-            Amount:<span id="piriAmount"></span><br>
-            Name:<span id="piriName"></span><br>
-            Email:<span id="piriEmail"></span><br>
+            <img src="" id="checkout2-QRimage" /><br>
+            PIRI Address:<span id="checkout2-Address"></span><br>
+            Amount:<span id="checkout2-Amount"></span><br>
+            Name:<span id="checkout2-Name"></span><br>
+            Email:<span id="checkout2-Email"></span><br>
 
             </p>
-            <button type="button" style="margin: 5px;height: 37px;width: 100px;" id="payedpiricheckout">Close</button>
+            <button type="button" style="margin: 5px;height: 37px;width: 100px;" id="payed-checkout2">Close</button>
         </div>
-        <div style="width: 100%;" id="piriqr">
+        <div style="width: 100%;" id="checkout2-wait">
+            <div class="countdown">
+                <span class="countdown__number"></span>
+                <svg class="countdown__icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 130" overflow="visible"
+                    enable-background="new 0 0 130 130">
+                    <path class="countdown__icon__circle"
+                        d="M5,64.8a59.8,59.8 0 1,0 119.6,0a59.8,59.8 0 1,0 -119.6,0" />
+                </svg>
+            </div>
             <p>
                 Please wait for confirmation<br>
             </p>
         </div>
-        <div id="piriconfirmed">
+        <div id="checkout2-confirmed">
             <svg enable-background="new 0 0 59.577 58.667" height="48" id="Layer_1" version="1.1"
                 viewBox="0 0 59.577 58.667" width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -849,7 +923,7 @@
                     d="M52.071,13.208c-0.7,0.443-0.909,1.369-0.466,2.069c2.657,4.201,4.062,9.062,4.062,14.057  c0,14.521-11.813,26.333-26.333,26.333S3,43.854,3,29.333C3,14.813,14.813,3,29.333,3c5.963,0,11.587,1.943,16.262,5.621  c0.652,0.511,1.595,0.4,2.106-0.252c0.513-0.651,0.399-1.594-0.251-2.106C42.241,2.166,35.976,0,29.333,0  C13.159,0,0,13.159,0,29.333c0,16.174,13.159,29.333,29.333,29.333c16.174,0,29.333-13.159,29.333-29.333  c0-5.563-1.565-10.979-4.526-15.66C53.698,12.973,52.77,12.764,52.071,13.208z" />
             </svg>
         </div>
-        <div id="pirierror">
+        <div id="checkout2-error">
             <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32" width="48"
                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g>
@@ -865,7 +939,7 @@
         </div>
         <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
         <div style="width: 80%;justify-content: center;display: flex;flex-direction: row;    margin-bottom: 11px;">
-            <button type="button" style="margin: 5px;height: 37px;width: 100px;" id="closepiricheckout">Close</button>
+            <button type="button" style="margin: 5px;height: 37px;width: 100px;" id="close-checkout2">Close</button>
         </div>
     </div>
 
@@ -1167,6 +1241,14 @@
 
         var PIRICheckout = function () {
             var invoiceJSON;
+
+            let jsLinks = ["https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"];
+            for (let js of jsLinks) {
+                let usedLaterScript = document.createElement('script');
+                usedLaterScript.src = js;
+                usedLaterScript.async = true;
+                document.body.appendChild(usedLaterScript);
+            }
         };
         PIRICheckout.prototype = {
             createInvoice: async function (name, email, product) {
@@ -1185,6 +1267,91 @@
                 });
                 invoiceJSON = response.json();
 
+            },
+            showQRCountdown: function () {
+
+
+
+                var $circleBorder = $('.countdown__icon__circle').get(0);
+                var $countdown = $('.countdown');
+
+                var length = $circleBorder.getTotalLength();
+                var counter = {
+                    var: 10
+                };
+
+                var tl = new TimelineMax({
+                    delay: 0.75,
+                    repeatDelay: 1,
+                    repeat: -1,
+                });
+
+                tl.play();
+
+                tl.set($countdown, {
+                    scale: 0,
+                }).to($countdown, 0.4, {
+                    scale: 1,
+                    ease: Back.easeOut.config(1.4),
+                }).to($circleBorder, 10, {
+                    strokeDashoffset: length,
+                    stroke: '#FB7593',
+                    ease: Power0.easeNone
+                }).to(counter, 10, {
+                    var: 0,
+                    onUpdate: function () {
+                        $('.countdown__number').html(Math.ceil(counter.var));
+                    },
+                    ease: Power0.easeNone
+                }, '-= 10')
+                    .to($countdown, 0.4, {
+                        scale: 0,
+                        ease: Back.easeIn.config(1.4),
+                        onComplete: function () {
+                            $('.countdown__number').html('10');
+                        }
+                    });
+            },
+            showConfirmationCountdown: function () {
+                var $circleBorder = $('.countdown__icon__circle').get(0);
+                var $countdown = $('.countdown');
+
+                var length = $circleBorder.getTotalLength();
+                var counter = {
+                    var: 10
+                };
+
+                var tl = new TimelineMax({
+                    delay: 0.75,
+                    repeatDelay: 1,
+                    repeat: -1,
+                });
+
+                tl.play();
+
+                tl.set($countdown, {
+                    scale: 0,
+                }).to($countdown, 0.4, {
+                    scale: 1,
+                    ease: Back.easeOut.config(1.4),
+                }).to($circleBorder, 10, {
+                    strokeDashoffset: length,
+                    stroke: '#FB7593',
+                    ease: Power0.easeNone
+                }).to(counter, 10, {
+                    var: 0,
+                    onUpdate: function () {
+                        $('.countdown__number').html(Math.ceil(counter.var));
+                    },
+                    ease: Power0.easeNone
+                }, '-= 10')
+                    .to($countdown, 0.4, {
+                        scale: 0,
+                        ease: Back.easeIn.config(1.4),
+                        onComplete: function () {
+                            $('.countdown__number').html('10');
+                        }
+                    });
             },
             showInvoice: function () {
                 let piricheckout = document.getElementById("piricheckout");
