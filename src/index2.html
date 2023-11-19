@@ -237,10 +237,8 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0, 0, 0);
             background-color: rgba(0, 0, 0, 0.9);
             justify-content: center;
-            align-items: center;
         }
 
         .close {
@@ -357,6 +355,295 @@
         .button-29:active {
             box-shadow: #3c4fe0 0 3px 7px inset;
             transform: translateY(2px);
+        }
+
+
+        #cookiePopup {
+            background-color: #bbbbbb;
+            position: fixed;
+            box-shadow: 0 0 2em rgba(5, 0, 31, 1.15);
+            text-align: justify;
+            border-radius: 6px;
+            transition: all 0.5s ease-in;
+            bottom: 38px;
+            right: 10px;
+            z-index: 21;
+        }
+
+        @media (max-width: 537px) {
+            #cookiePopup {
+                left: 10px;
+            }
+        }
+
+        @media (min-width: 537px) {
+            #cookiePopup {
+                left: unset;
+            }
+        }
+
+        #cookiePopup p {
+            margin-left: 15px;
+        }
+
+        #acceptCookie {
+            background-color: #3520FE;
+            border: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            display: block;
+            position: relative;
+            margin: auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #closeCookie {
+            background-color: #A80000;
+            border: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            display: block;
+            position: relative;
+            margin: auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #cookiePopup a {
+            color: #000699;
+        }
+
+        .gdpr-container {
+            display: none;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-width: 200px;
+            max-width: 500px;
+
+        }
+
+        .ingdpr-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        #checkout2 p {
+            margin-left: 15px;
+        }
+
+
+        #checkout2 {
+            background-color: #ffffff;
+            border: none;
+            color: #000000;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 0 2em rgba(5, 0, 31, 1.15);
+            text-align: justify;
+            border-radius: 6px;
+            transition: all 0.5s ease-in;
+            bottom: 38px;
+            right: 10px;
+            z-index: 21;
+        }
+
+        #close-checkout2 {
+            background-color: #A80000;
+            border: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            display: block;
+            position: relative;
+            margin: auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #checkout2-Popup a {
+            color: #000699;
+        }
+
+        .checkout2-container {
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-width: 200px;
+            max-width: 500px;
+            display: flex;
+        }
+
+        .loader {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 50px;
+            height: 80px;
+            border-top: 5px solid #fff;
+            border-bottom: 5px solid #fff;
+            position: relative;
+            background: linear-gradient(#FF3D00 30px, transparent 0) no-repeat;
+            background-size: 2px 40px;
+            background-position: 50% 0px;
+            animation: spinx 5s linear infinite;
+        }
+
+        .loader:before,
+        .loader:after {
+            content: "";
+            width: 40px;
+            left: 50%;
+            height: 35px;
+            position: absolute;
+            top: 0;
+            transform: translatex(-50%);
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 0 0 20px 20px;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: 0 0px;
+            animation: lqt 5s linear infinite;
+        }
+
+        .loader:after {
+            top: auto;
+            bottom: 0;
+            border-radius: 20px 20px 0 0;
+            animation: lqb 5s linear infinite;
+        }
+
+        @keyframes lqt {
+
+            0%,
+            100% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0% 0px;
+            }
+
+            50% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0% 40px;
+            }
+
+            50.1% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0% -40px;
+            }
+        }
+
+        @keyframes lqb {
+            0% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0 40px;
+            }
+
+            100% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0 -40px;
+            }
+        }
+
+        @keyframes spinx {
+
+            0%,
+            49% {
+                transform: rotate(0deg);
+                background-position: 50% 36px;
+            }
+
+            51%,
+            98% {
+                transform: rotate(180deg);
+                background-position: 50% 4px;
+            }
+
+            100% {
+                transform: rotate(360deg);
+                background-position: 50% 36px;
+            }
+        }
+
+
+
+        /* CSS */
+        .button-42 {
+            background-color: initial;
+            background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+            height: 40px;
+            line-height: 40px;
+            outline: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            pointer-events: auto;
+            position: relative;
+            text-align: center;
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+            vertical-align: top;
+            white-space: nowrap;
+            width: 100%;
+            z-index: 9;
+            border: 0;
+            transition: box-shadow .2s;
+        }
+
+        .button-42:hover {
+            box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+        }
+
+        .error {
+            border: 1px solid red;
+        }
+
+        .input1 {
+            font-size: 1.2em;
+        }
+
+        /**
+ * Countdown Styles
+ */
+        .countdown {
+            position: relative;
+            width: 74px;
+            height: 74px;
+            border-radius: 50%;
+            background-color: #121b1c;
+            background-size: cover;
+            background-position: center center;
+            border: 3px solid grey;
+            transform-origin: center bottom;
+        }
+
+        .countdown__icon {
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            width: 80px;
+            fill: transparent;
+            stroke: #76e19e;
+            stroke-width: 10px;
+            stroke-linecap: round;
+        }
+
+        .countdown__icon__circle {
+            stroke-dasharray: 375.787322998;
+        }
+
+        .countdown__number {
+            color: #fff;
         }
     </style>
 </head>
@@ -576,109 +863,6 @@
         </div>
     </div>
 
-    <style>
-        #cookiePopup {
-            background-color: #bbbbbb;
-            position: fixed;
-            box-shadow: 0 0 2em rgba(5, 0, 31, 1.15);
-            text-align: justify;
-            border-radius: 6px;
-            transition: all 0.5s ease-in;
-            bottom: 38px;
-            right: 10px;
-            z-index: 21;
-
-        }
-
-        @media (max-width: 537px) {
-            #cookiePopup {
-                left: 10px;
-            }
-        }
-
-        @media (min-width: 537px) {
-            #cookiePopup {
-                left: unset;
-            }
-        }
-
-        #cookiePopup p {
-            margin-left: 15px;
-        }
-
-        #acceptCookie {
-            background-color: #3520FE;
-            border: none;
-            color: #ffffff;
-            font-size: 1.2em;
-            display: block;
-            position: relative;
-            margin: auto;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #closeCookie {
-            background-color: #A80000;
-            border: none;
-            color: #ffffff;
-            font-size: 1.2em;
-            display: block;
-            position: relative;
-            margin: auto;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #cookiePopup a {
-            color: #000699;
-        }
-
-        .gdpr-container {
-            display: none;
-            flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            min-width: 200px;
-            max-width: 500px;
-
-        }
-
-        .ingdpr-container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-
-
-        #cookiePopup {
-            background-color: #bbbbbb;
-            position: fixed;
-            box-shadow: 0 0 2em rgba(5, 0, 31, 1.15);
-            text-align: justify;
-            border-radius: 6px;
-            transition: all 0.5s ease-in;
-            bottom: 38px;
-            right: 10px;
-            z-index: 21;
-
-        }
-
-        @media (max-width: 537px) {
-            #cookiePopup {
-                left: 10px;
-            }
-        }
-
-        @media (min-width: 537px) {
-            #cookiePopup {
-                left: unset;
-            }
-        }
-    </style>
     <div class="gdpr-container" id="cookiePopup">
         <h3>Our cookies policy</h3>
         <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
@@ -704,220 +888,7 @@
         </div>
     </div>
 
-    <style>
-        #checkout2 p {
-            margin-left: 15px;
-        }
 
-
-        #checkout2 {
-            background-color: #ffffff;
-            border: none;
-            color: #000000;
-            font-size: 1.2em;
-            margin: auto;
-            cursor: pointer;
-            box-shadow: 0 0 2em rgba(5, 0, 31, 1.15);
-            text-align: justify;
-            border-radius: 6px;
-            transition: all 0.5s ease-in;
-            bottom: 38px;
-            right: 10px;
-            z-index: 21;
-        }
-
-        #close-checkout2 {
-            background-color: #A80000;
-            border: none;
-            color: #ffffff;
-            font-size: 1.2em;
-            display: block;
-            position: relative;
-            margin: auto;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #checkout2-Popup a {
-            color: #000699;
-        }
-
-        .checkout2-container {
-            flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            min-width: 200px;
-            max-width: 500px;
-            display: flex;
-        }
-
-        .loader {
-            box-sizing: border-box;
-            display: inline-block;
-            width: 50px;
-            height: 80px;
-            border-top: 5px solid #fff;
-            border-bottom: 5px solid #fff;
-            position: relative;
-            background: linear-gradient(#FF3D00 30px, transparent 0) no-repeat;
-            background-size: 2px 40px;
-            background-position: 50% 0px;
-            animation: spinx 5s linear infinite;
-        }
-
-        .loader:before,
-        .loader:after {
-            content: "";
-            width: 40px;
-            left: 50%;
-            height: 35px;
-            position: absolute;
-            top: 0;
-            transform: translatex(-50%);
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 0 0 20px 20px;
-            background-size: 100% auto;
-            background-repeat: no-repeat;
-            background-position: 0 0px;
-            animation: lqt 5s linear infinite;
-        }
-
-        .loader:after {
-            top: auto;
-            bottom: 0;
-            border-radius: 20px 20px 0 0;
-            animation: lqb 5s linear infinite;
-        }
-
-        @keyframes lqt {
-
-            0%,
-            100% {
-                background-image: linear-gradient(#FF3D00 40px, transparent 0);
-                background-position: 0% 0px;
-            }
-
-            50% {
-                background-image: linear-gradient(#FF3D00 40px, transparent 0);
-                background-position: 0% 40px;
-            }
-
-            50.1% {
-                background-image: linear-gradient(#FF3D00 40px, transparent 0);
-                background-position: 0% -40px;
-            }
-        }
-
-        @keyframes lqb {
-            0% {
-                background-image: linear-gradient(#FF3D00 40px, transparent 0);
-                background-position: 0 40px;
-            }
-
-            100% {
-                background-image: linear-gradient(#FF3D00 40px, transparent 0);
-                background-position: 0 -40px;
-            }
-        }
-
-        @keyframes spinx {
-
-            0%,
-            49% {
-                transform: rotate(0deg);
-                background-position: 50% 36px;
-            }
-
-            51%,
-            98% {
-                transform: rotate(180deg);
-                background-position: 50% 4px;
-            }
-
-            100% {
-                transform: rotate(360deg);
-                background-position: 50% 36px;
-            }
-        }
-
-
-
-        /* CSS */
-        .button-42 {
-            background-color: initial;
-            background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
-            border-radius: 6px;
-            box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
-            color: #FFFFFF;
-            cursor: pointer;
-            display: inline-block;
-            font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
-            height: 40px;
-            line-height: 40px;
-            outline: 0;
-            overflow: hidden;
-            padding: 0 20px;
-            pointer-events: auto;
-            position: relative;
-            text-align: center;
-            touch-action: manipulation;
-            user-select: none;
-            -webkit-user-select: none;
-            vertical-align: top;
-            white-space: nowrap;
-            width: 100%;
-            z-index: 9;
-            border: 0;
-            transition: box-shadow .2s;
-        }
-
-        .button-42:hover {
-            box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
-        }
-
-        .error {
-            border: 1px solid red;
-        }
-
-        .input1 {
-            font-size: 1.2em;
-        }
-
-        /**
- * Countdown Styles
- */
-        .countdown {
-            position: relative;
-            width: 74px;
-            height: 74px;
-            border-radius: 50%;
-            background-color: #121b1c;
-            background-size: cover;
-            background-position: center center;
-            border: 3px solid grey;
-            transform-origin: center bottom;
-        }
-
-        .countdown__icon {
-            position: absolute;
-            top: -6px;
-            left: -6px;
-            width: 80px;
-            fill: transparent;
-            stroke: #76e19e;
-            stroke-width: 10px;
-            stroke-linecap: round;
-        }
-
-        .countdown__icon__circle {
-            stroke-dasharray: 375.787322998;
-        }
-
-        .countdown__number {
-            color: #fff;
-        }
-    </style>
 
     <div id="checkoutModal" class="checkoutModal" style="">
 
@@ -1009,7 +980,7 @@
                     <path
                         d="M52.071,13.208c-0.7,0.443-0.909,1.369-0.466,2.069c2.657,4.201,4.062,9.062,4.062,14.057  c0,14.521-11.813,26.333-26.333,26.333S3,43.854,3,29.333C3,14.813,14.813,3,29.333,3c5.963,0,11.587,1.943,16.262,5.621  c0.652,0.511,1.595,0.4,2.106-0.252c0.513-0.651,0.399-1.594-0.251-2.106C42.241,2.166,35.976,0,29.333,0  C13.159,0,0,13.159,0,29.333c0,16.174,13.159,29.333,29.333,29.333c16.174,0,29.333-13.159,29.333-29.333  c0-5.563-1.565-10.979-4.526-15.66C53.698,12.973,52.77,12.764,52.071,13.208z" />
                 </svg>
-                <p style="color: #47d764;">Confirmed</p>
+                <p style="color: #000000;">Confirmed</p>
             </div>
             <div id="checkout2-error" style="
         justify-content: center;
@@ -1031,7 +1002,8 @@
             </div>
             <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
             <div style="width: 80%;justify-content: center;display: flex;flex-direction: row;    margin-bottom: 11px;">
-                <button type="button" style="margin: 5px;height: 37px;width: 100px;" id="close-checkout2" onclick="this.style.visibility='hidden'">Close</button>
+                <button type="button" style="margin: 5px;height: 37px;width: 100px;" id="close-checkout2"
+                    onclick="this.style.visibility='hidden'">Close</button>
             </div>
         </div>
     </div>
