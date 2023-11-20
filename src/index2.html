@@ -277,7 +277,7 @@
             cursor: pointer;
             display: inline-flex;
             font-family: "JetBrains Mono", monospace;
-            height: 48px;
+            height: 42px;
             justify-content: center;
             line-height: 1;
             list-style: none;
@@ -838,7 +838,7 @@
                 </div>
 
                 <div style="text-align: end;">
-                    <button class="button-30" role="button" style="margin-top: 8px;font-size: 16px;">Buy with PIRI <img
+                    <button class="button-30" role="button" style="margin-top: 8px;font-size: 16px;" id="btnCheckout2">Buy with PIRI <img
                             style="margin-left: 5px;" src="images/piri.png" alt="delivery" width="32"
                             height="32" /></button>
                 </div>
@@ -1520,7 +1520,7 @@
         };
 
         var GPIRICheckout = new PIRICheckout();
-        $("#button-30").on("click", function () {
+        $("#btnCheckout2").on("click", function () {
             GPIRICheckout.run();
         });
 
