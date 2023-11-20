@@ -324,7 +324,7 @@
             cursor: pointer;
             display: inline-flex;
             font-family: "JetBrains Mono", monospace;
-            height: 48px;
+            height: 35px;
             justify-content: center;
             line-height: 1;
             list-style: none;
@@ -434,9 +434,6 @@
         }
 
 
-        #checkout2 p {
-            margin-left: 15px;
-        }
 
 
         #checkout2 {
@@ -448,8 +445,6 @@
             text-align: justify;
             border-radius: 6px;
             transition: all 0.5s ease-in;
-            bottom: 38px;
-            right: 10px;
             z-index: 21;
         }
 
@@ -476,6 +471,12 @@
             max-width: 500px;
             display: flex;
             margin-top: 70px;
+            width: 100%;
+            margin-left: 10px;
+            margin-right: 10px;
+            min-height: 100px;
+            max-height: 500px;
+            height: 100%;
         }
 
         .loader {
@@ -890,8 +891,8 @@
         <div class="checkout2-container" id="checkout2">
             <h3>PIRI Chain checkout</h3>
             <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
-            <div style="width: 75%;background: darkgray;justify-content: center;align-items: center;display: none;padding: 10px;"
-                id="checkout2-wait">
+            <div style="width: 75%;background: darkgray;justify-content: center;align-items: center;display: none;padding: 10px;margin-top: 100px;
+            margin-bottom: 100px;" id="checkout2-wait">
                 <span class="loader"></span>
             </div>
             <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;"
@@ -903,7 +904,7 @@
                 <input class="input1" type="text" id="fname" name="fname" required><br>
                 <label for="email">Email:</label>
                 <input class="input1" type="text" id="email" name="email" required><br><br>
-                <button class="button-42" role="button">Next</button>
+                <button class="button-42" role="button" style="margin-left: auto;">Next</button>
             </div>
             <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;"
                 id="checkout2-qr">
@@ -924,12 +925,12 @@
                         You have only 60 minutes, then an address will not be valid and your payment will not be
                         confirmed<br>
                     <h3>QR Code</h3>
-                    <img id="checkout2-QRimage" /><br>
+                    <div id="qrcode"></div><br>
                     <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
-                    PIRI Address:<span id="checkout2-Address"></span><br>
-                    Amount:<span id="checkout2-Amount"></span><br>
-                    Name:<span id="checkout2-Name"></span><br>
-                    Email:<span id="checkout2-Email"></span><br>
+                    <span id="checkout2-Address"></span>
+                    <span id="checkout2-Amount"></span>
+                    <span id="checkout2-Name"></span>
+                    <span id="checkout2-Email"></span>
                     </p>
                 </div>
                 <button class="button-29" role="button" id="checkout2paid">Click if paid</button>
@@ -950,7 +951,8 @@
                     Please wait for confirmation<br>
                 </p>
             </div>
-            <div id="checkout2-confirmed" style="justify-content: center;align-items: center;display: none;">
+            <div id="checkout2-confirmed"
+                style="justify-content: center;align-items: center;display: flex;margin: auto;">
                 <svg enable-background="new 0 0 59.577 58.667" height="48" id="Layer_1" version="1.1"
                     viewBox="0 0 59.577 58.667" width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -961,7 +963,8 @@
                 </svg>
                 <p style="color: #000000;">Confirmed</p>
             </div>
-            <div id="checkout2-error" style="justify-content: center;align-items: center;display: none;">
+            <div id="checkout2-error"
+                style="justify-content: center;align-items: center;display: none;margin: auto;flex-direction: column;">
                 <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32" width="48"
                     xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g>
@@ -974,13 +977,13 @@
                         </g>
                     </g>
                 </svg>
-                <p style="color: #ff1515;" >Error</p><br>
+                <p style="color: #ff1515;">Error</p><br>
                 <p style="color: #000000;" id="errorMsg">Error</p>
             </div>
-            <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
-            <div style="width: 80%;justify-content: center;display: flex;flex-direction: row;margin-bottom: 11px;">
-                <button type="button" style="margin: 5px;height: 37px;width: 100px;" id="close-checkout2"
-                    onclick="this.style.visibility='hidden'">Close</button>
+            <hr style="color: black;background-color: black;width: 90%;height: 1px;margin-top: 0px;">
+            <div style="width: 80%;justify-content: center;display: flex;flex-direction: row;margin-top: 0px;">
+                <button type="button" style="margin: 5px;height: 37px;width: 100px;margin-top: 30px;"
+                    id="close-checkout2" onclick="this.style.visibility='hidden'">Close</button>
             </div>
         </div>
     </div>
