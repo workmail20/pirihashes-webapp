@@ -899,10 +899,7 @@
             </div>
             <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
                 id="checkout2-input">
-                <form style="
-                display: flex;
-                flex-direction: column;
-                font-size: 1.2em;">
+                <form style="display: flex;flex-direction: column;font-size: 1em;">
                     <label for="fname">Full name:</label>
                     <input class="input1" type="text" id="fname" name="fname" required><br>
                     <label for="email">Email:</label>
@@ -912,14 +909,9 @@
             </div>
             <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
                 id="checkout2-qr">
-                <div class="countdown" style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            box-sizing: border-box;
-            margin: 0px;">
-                    <span class="countdown__number">10</span>
+                <div class="countdown"
+                    style="display: flex;justify-content: center;align-items: center;flex-direction: column;box-sizing: border-box;margin: 0px;">
+                    <span class="countdown__number" id="checkOuttime">0</span>
                     <svg class="countdown__icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 130"
                         overflow="visible" enable-background="new 0 0 130 130">
@@ -934,27 +926,20 @@
                         You have only 60 minutes, then an address will not be valid and your payment will not be
                         confirmed<br>
                     <h3>QR Code</h3>
-                    <img src="" id="checkout2-QRimage" /><br>
+                    <img id="checkout2-QRimage" /><br>
                     PIRI Address:<span id="checkout2-Address"></span><br>
                     Amount:<span id="checkout2-Amount"></span><br>
                     Name:<span id="checkout2-Name"></span><br>
                     Email:<span id="checkout2-Email"></span><br>
-
                     </p>
-
                 </div>
-                <button class="button-29" role="button">Click if paid</button>
+                <button class="button-29" role="button" id="checkout2paid">Click if paid</button>
             </div>
             <div style="width: 100%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
                 id="checkout2-wait">
-                <div class="countdown" style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            box-sizing: border-box;
-            margin: 0px;">
-                    <span class="countdown__number"></span>
+                <div class="countdown"
+                    style="display: flex;justify-content: center;align-items: center;flex-direction: column;box-sizing: border-box;margin: 0px;">
+                    <span class="countdown__number" id="confirmTime"></span>
                     <svg class="countdown__icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 130"
                         overflow="visible" enable-background="new 0 0 130 130">
@@ -966,10 +951,7 @@
                     Please wait for confirmation<br>
                 </p>
             </div>
-            <div id="checkout2-confirmed" style="
-        justify-content: center;
-        align-items: center;
-        display: flex;">
+            <div id="checkout2-confirmed" style="justify-content: center;align-items: center;display: flex;">
                 <svg enable-background="new 0 0 59.577 58.667" height="48" id="Layer_1" version="1.1"
                     viewBox="0 0 59.577 58.667" width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -980,10 +962,7 @@
                 </svg>
                 <p style="color: #000000;">Confirmed</p>
             </div>
-            <div id="checkout2-error" style="
-        justify-content: center;
-        align-items: center;
-        display: flex;">
+            <div id="checkout2-error" style="justify-content: center;align-items: center;display: flex;">
                 <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32" width="48"
                     xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g>
@@ -996,10 +975,10 @@
                         </g>
                     </g>
                 </svg>
-                <p style="color: #ff1515;">Error</p>
+                <p style="color: #ff1515;" id="errorMsg">Error</p>
             </div>
             <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
-            <div style="width: 80%;justify-content: center;display: flex;flex-direction: row;    margin-bottom: 11px;">
+            <div style="width: 80%;justify-content: center;display: flex;flex-direction: row;margin-bottom: 11px;">
                 <button type="button" style="margin: 5px;height: 37px;width: 100px;" id="close-checkout2"
                     onclick="this.style.visibility='hidden'">Close</button>
             </div>
@@ -1315,6 +1294,22 @@
             }
         };
         PIRICheckout.prototype = {
+            validateEmail: function (email) {
+                let res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+                return res.test(email);
+            },
+            validateInput1: function (value) {
+                if (validateEmail(value)) {
+                    return true;
+                }
+                return false;
+            },
+            validateInput2: function (value) {
+                if (value.length > 0) {
+                    return true;
+                }
+                return false;
+            },
             createInvoice: async function (name, email, product) {
                 let invoice = new Object();
                 invoice.Name = name;
@@ -1332,17 +1327,7 @@
                 invoiceJSON = response.json();
 
             },
-            showQRCountdown: function (QRCodeString) {
-                var qrcode = new QRCode(document.getElementById("qrcodeImg"), {
-                    text: QRCodeString,
-                    width: 128,
-                    height: 128,
-                    colorDark: "#000000",
-                    colorLight: "#ffffff",
-                    correctLevel: QRCode.CorrectLevel.H
-                });
-
-
+            startCountdown: function () {
                 var $circleBorder = $('.countdown__icon__circle').get(0);
                 var $countdown = $('.countdown');
 
@@ -1382,6 +1367,18 @@
                             $('.countdown__number').html('10');
                         }
                     });
+            },
+            showQRCountdown: function (QRCodeString) {
+                var qrcode = new QRCode(document.getElementById("qrcodeImg"), {
+                    text: QRCodeString,
+                    width: 128,
+                    height: 128,
+                    colorDark: "#000000",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+
+
             },
             showConfirmationCountdown: function () {
                 var $circleBorder = $('.countdown__icon__circle').get(0);
@@ -1424,18 +1421,37 @@
                         }
                     });
             },
+            checkWallet: async function (wallet) {
+                let bal = 0.0;
+                let req = new Object();
+                req.address = wallet;
+                req.assetID = "-1";
+                let jsonString = JSON.stringify(req);
+
+
+                const response = await fetch('https://core.pirichain.com/getBalance', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8'
+                    },
+                    body: jsonString,
+                });
+                invoiceJSON = response.json();
+                bal = parseFloat(invoiceJSON.balance);
+                return bal;
+            },
             showInvoice: function () {
-                let piricheckout = document.getElementById("piricheckout");
-                piricheckout.style.display = "flex";
-                let piriinput = document.getElementById("piriinput");
-                piriinput.style.display = "flex";
-                $("#pirinext").on("click", function () {
+                let checkout2 = document.getElementById("checkout2");
+                checkout2.style.display = "flex";
+                let checkout2input = document.getElementById("checkout2-input");
+                checkout2input.style.display = "flex";
+                $("#checkout2next").on("click", function () {
                     let fname = document.getElementById("fname");
                     let email = document.getElementById("email");
-                    if (fname.value.length == 0) {
-
-                    } else if (email.value.length == 0) {
-
+                    if (!validateInput2(fname.value)) {
+                        fname.style.borderColor = "red";
+                    } else if (!validateInput2(email.value)) {
+                        email.style.borderColor = "red";
                     } else {
                         createInvoice();
                         if ((invoiceJSON !== null) && (invoiceJSON !== undefined)) {
@@ -1443,35 +1459,48 @@
                             invoiceJSON.Walletid;
                             Walletid.Amount;
 
-                            let piriwait = document.getElementById("piriwait");
-                            piricheckout.style.display = "none";
+                            let checkout2qr = document.getElementById("checkout2-qr");
+                            checkout2qr.style.display = "block";
+
+                            $("#checkout2paid").on("click", function () {
+                                let checkout2wait = document.getElementById("checkout2-wait");
+                                checkout2wait.style.display = "block";
+
+                                let _t = setInterval(function () {
+                                    if (checkWallet(invoiceJSON.Walletid) >= Walletid.Amount) {
+                                        clearInterval(_t);
+                                        checkout2wait.style.display = "none";
+
+                                        let checkout2confirmed = document.getElementById("checkout2-confirmed");
+                                        checkout2confirmed.style.display = "block";
+                                    }
+                                }, 1000);
 
 
-                            let piriQR = document.getElementById("piriQR");
-                            piricheckout.style.display = "block";
+                                startCountdown(100, function () {
+                                    clearInterval(_t);
+                                    checkout2wait.style.display = "none";
 
+                                    let checkout2errormsg = document.getElementById("errorMsg");
+                                    checkout2errormsg.value = "0";
+                                    checkout2errormsg.style.display = "block";
 
-                            let piriWallet = document.getElementById("piriWallet");
-                            piricheckout.style.display = "block";
+                                    let checkout2error = document.getElementById("checkout2-error");
+                                    checkout2error.style.display = "block";
 
-
-                            let piriQRimage = document.getElementById("piriQRimage");
-                            piricheckout.style.display = "block";
-
-
-                            let piriText = document.getElementById("piriText");
-                            piricheckout.style.display = "block";
+                                });
+                            });
                         } else {
-
-                            let piricheckout = document.getElementById("pirierror");
-                            piricheckout.style.display = "block";
+                            let checkout2errormsg = document.getElementById("errorMsg");
+                            checkout2errormsg.value = "0";
+                            checkout2errormsg.style.display = "block";
                         }
                     }
                 });
             },
             closeInvoice: function () {
-                let piriwait = document.getElementById("piriwait");
-                piriwait.style.display = "block";
+                let checkoutwait = document.getElementById("checkoutwait");
+                checkoutwait.style.display = "flex";
                 createInvoice();
                 if ((invoiceJSON !== null) && (invoiceJSON !== undefined)) {
                     invoiceJSON.id;
