@@ -474,9 +474,9 @@
             width: 100%;
             margin-left: 10px;
             margin-right: 10px;
-            min-height: 100px;
-            max-height: 500px;
-            height: 100%;
+            min-height: 500px;
+            max-height: 640px;
+            height: fit-content;
         }
 
         .loader {
@@ -613,8 +613,8 @@
 
         .countdown {
             position: relative;
-            width: 74px;
-            height: 74px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background-color: #121b1c;
             background-size: cover;
@@ -627,7 +627,7 @@
             position: absolute;
             top: -6px;
             left: -6px;
-            width: 80px;
+            width: 56px;
             fill: transparent;
             stroke: #76e19e;
             stroke-width: 10px;
@@ -886,7 +886,7 @@
 
 
 
-    <div id="checkoutModal" class="checkoutModal" style="visibility:hidden">
+    <div id="checkoutModal" class="checkoutModal" style="visibility: hidden;font-size: 14px;">
 
         <div class="checkout2-container" id="checkout2">
             <h3>PIRI Chain checkout</h3>
@@ -923,9 +923,9 @@
                     <p>
                         Please transfer the full amount to the specified PIRI address.<br>
                         You have only 60 minutes, then an address will not be valid and your payment will not be
-                        confirmed<br>
-                    <h3>QR Code</h3>
-                    <div id="qrcode"></div><br>
+                        confirmed
+                    <h4>QR Code</h4>
+                    <div id="qrcode" style="width: 200px;height: 200px;"></div>
                     <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
                     <span id="checkout2-Address"></span>
                     <span id="checkout2-Amount"></span>
@@ -933,9 +933,9 @@
                     <span id="checkout2-Email"></span>
                     </p>
                 </div>
-                <button class="button-29" role="button" id="checkout2paid">Click if paid</button>
+                <button class="button-29" role="button" id="checkout2paid" style="margin-bottom: 9px; ">Click if paid</button>
             </div>
-            <div style="width: 100%;justify-content: center;align-items: center;display: none;flex-direction: column;"
+            <div style="width: 100%;justify-content: center;align-items: center;display: none;flex-direction: column;    height: 100%;"
                 id="checkout2-wait">
                 <div class="countdown"
                     style="display: flex;justify-content: center;align-items: center;flex-direction: column;box-sizing: border-box;margin: 0px;">
@@ -961,10 +961,11 @@
                     <path
                         d="M52.071,13.208c-0.7,0.443-0.909,1.369-0.466,2.069c2.657,4.201,4.062,9.062,4.062,14.057  c0,14.521-11.813,26.333-26.333,26.333S3,43.854,3,29.333C3,14.813,14.813,3,29.333,3c5.963,0,11.587,1.943,16.262,5.621  c0.652,0.511,1.595,0.4,2.106-0.252c0.513-0.651,0.399-1.594-0.251-2.106C42.241,2.166,35.976,0,29.333,0  C13.159,0,0,13.159,0,29.333c0,16.174,13.159,29.333,29.333,29.333c16.174,0,29.333-13.159,29.333-29.333  c0-5.563-1.565-10.979-4.526-15.66C53.698,12.973,52.77,12.764,52.071,13.208z" />
                 </svg>
-                <p style="color: #000000;">Confirmed</p>
+                <p style="color: #000000;margin: 0px;margin-left: 10px;">Confirmed</p>
             </div>
             <div id="checkout2-error"
                 style="justify-content: center;align-items: center;display: none;margin: auto;flex-direction: column;">
+                <div>
                 <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32" width="48"
                     xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g>
@@ -977,13 +978,14 @@
                         </g>
                     </g>
                 </svg>
-                <p style="color: #ff1515;">Error</p><br>
+                <p style="color: #ff1515;">Error</p>
+                </div>
                 <p style="color: #000000;" id="errorMsg">Error</p>
             </div>
-            <hr style="color: black;background-color: black;width: 90%;height: 1px;margin-top: 0px;">
-            <div style="width: 80%;justify-content: center;display: flex;flex-direction: row;margin-top: 0px;">
-                <button type="button" style="margin: 5px;height: 37px;width: 100px;margin-top: 30px;"
-                    id="close-checkout2" onclick="this.style.visibility='hidden'">Close</button>
+            <hr style="color: black;background-color: black;width: 90%;height: 1px;margin-top: 13px;">
+            <div style="width: 80%;justify-content: center;display: flex;flex-direction: row;margin-top: 0px;margin-bottom: 15px;">
+                <button type="button" style="margin: 5px;height: 37px;width: 100px;margin-bottom: 15px;"
+                    id="close-checkout2" onclick="$('.checkoutModal').style.visibility='hidden'">Close</button>
             </div>
         </div>
     </div>
