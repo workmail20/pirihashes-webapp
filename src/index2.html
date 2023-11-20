@@ -607,12 +607,9 @@
         }
 
         .input1 {
-            font-size: 1.2em;
+            font-size: 1.0em;
         }
 
-        /**
- * Countdown Styles
- */
         .countdown {
             position: relative;
             width: 74px;
@@ -888,26 +885,27 @@
 
 
 
-    <div id="checkoutModal" class="checkoutModal" style="">
+    <div id="checkoutModal" class="checkoutModal" style="visibility:hidden">
 
         <div class="checkout2-container" id="checkout2">
             <h3>PIRI Chain checkout</h3>
             <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
-            <div style="width: 75%;background: darkgray;justify-content: center;align-items: center;display: flex;padding: 10px;"
+            <div style="width: 75%;background: darkgray;justify-content: center;align-items: center;display: none;padding: 10px;"
                 id="checkout2-wait">
                 <span class="loader"></span>
             </div>
-            <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
+            <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;"
                 id="checkout2-input">
-                <form style="display: flex;flex-direction: column;font-size: 1em;">
-                    <label for="fname">Full name:</label>
-                    <input class="input1" type="text" id="fname" name="fname" required><br>
-                    <label for="email">Email:</label>
-                    <input class="input1" type="text" id="email" name="email" required><br><br>
-                    <button class="button-42" role="button">Next</button>
-                </form>
+                <p>
+                    Please fill the fields.
+                </p>
+                <label for="fname">Full name:</label>
+                <input class="input1" type="text" id="fname" name="fname" required><br>
+                <label for="email">Email:</label>
+                <input class="input1" type="text" id="email" name="email" required><br><br>
+                <button class="button-42" role="button">Next</button>
             </div>
-            <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
+            <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;"
                 id="checkout2-qr">
                 <div class="countdown"
                     style="display: flex;justify-content: center;align-items: center;flex-direction: column;box-sizing: border-box;margin: 0px;">
@@ -927,6 +925,7 @@
                         confirmed<br>
                     <h3>QR Code</h3>
                     <img id="checkout2-QRimage" /><br>
+                    <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
                     PIRI Address:<span id="checkout2-Address"></span><br>
                     Amount:<span id="checkout2-Amount"></span><br>
                     Name:<span id="checkout2-Name"></span><br>
@@ -935,7 +934,7 @@
                 </div>
                 <button class="button-29" role="button" id="checkout2paid">Click if paid</button>
             </div>
-            <div style="width: 100%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
+            <div style="width: 100%;justify-content: center;align-items: center;display: none;flex-direction: column;"
                 id="checkout2-wait">
                 <div class="countdown"
                     style="display: flex;justify-content: center;align-items: center;flex-direction: column;box-sizing: border-box;margin: 0px;">
@@ -951,7 +950,7 @@
                     Please wait for confirmation<br>
                 </p>
             </div>
-            <div id="checkout2-confirmed" style="justify-content: center;align-items: center;display: flex;">
+            <div id="checkout2-confirmed" style="justify-content: center;align-items: center;display: none;">
                 <svg enable-background="new 0 0 59.577 58.667" height="48" id="Layer_1" version="1.1"
                     viewBox="0 0 59.577 58.667" width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -962,7 +961,7 @@
                 </svg>
                 <p style="color: #000000;">Confirmed</p>
             </div>
-            <div id="checkout2-error" style="justify-content: center;align-items: center;display: flex;">
+            <div id="checkout2-error" style="justify-content: center;align-items: center;display: none;">
                 <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32" width="48"
                     xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g>
@@ -975,7 +974,8 @@
                         </g>
                     </g>
                 </svg>
-                <p style="color: #ff1515;" id="errorMsg">Error</p>
+                <p style="color: #ff1515;" >Error</p><br>
+                <p style="color: #000000;" id="errorMsg">Error</p>
             </div>
             <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
             <div style="width: 80%;justify-content: center;display: flex;flex-direction: row;margin-bottom: 11px;">
