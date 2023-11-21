@@ -1398,7 +1398,7 @@
                     } else if (!_self.validateEmail(email.val())) {
                         email.css("borderColor", "red");
                     } else {
-                        _self.createInvoice(fname,email,"1");
+                        _self.createInvoice(fname.val(),email.val(),"1");
                         if ((_self.invoiceJSON !== null) && (_self.invoiceJSON !== undefined)) {
                             let checkout2qr = document.getElementById("checkout2-qr");
                             checkout2qr.style.display = "block";
