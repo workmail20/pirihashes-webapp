@@ -1292,23 +1292,24 @@
             });
         }
 
- 
-        function PIRICheckout () {
-            this.invoiceJSON=null;
-            this.loadedJS=0;
+
+        function PIRICheckout() {
+            this.invoiceJSON = null;
+            this.loadedJS = 0;
+            this._self = this;
         };
         const PIRICheckoutPrototype = {
-            validateEmail (email) {
+            validateEmail(email) {
                 let res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
                 return res.test(email);
             },
-            validateLength (value) {
+            validateLength(value) {
                 if (value.length > 0) {
                     return true;
                 }
                 return false;
             },
-            async createInvoice (name, email, product) {
+            async createInvoice(name, email, product) {
                 let invoice = new Object();
                 invoice.Name = name;
                 invoice.Email = email;
@@ -1325,7 +1326,7 @@
                 invoiceJSON = response.json();
 
             },
-            startCountdown (seconds, callback) {
+            startCountdown(seconds, callback) {
                 var $circleBorder = $('.countdown__icon__circle').get(0);
                 var $countdown = $('.countdown');
 
@@ -1366,7 +1367,7 @@
                         }
                     });
             },
-            async checkWallet (wallet) {
+            async checkWallet(wallet) {
                 let bal = 0.0;
                 let req = new Object();
                 req.address = wallet;
@@ -1385,7 +1386,7 @@
                 bal = parseFloat(invoiceJSON.balance);
                 return bal;
             },
-            showInvoice () {
+            showInvoice() {
                 $('#checkoutModal').style.visibility = "visible";
                 $('#checkout2-input').style.display = "flex";
 
@@ -1461,10 +1462,11 @@
                     }
                 });
             },
-            closeInvoice () {
+            closeInvoice() {
                 $('#checkoutModal').style.visibility = 'hidden';
             },
-            preRun () {
+            preRun() {
+                let _self = this;
                 let jsLinks = ["https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js",
                     "/js/qrgen.js"];
                 for (let js of jsLinks) {
@@ -1472,11 +1474,10 @@
                     usedLaterScript.src = js;
                     usedLaterScript.async = true;
                     usedLaterScript.onload = () => {
-                        this.loadedJS++;
+                        _self.loadedJS++;
                     }
                     document.body.appendChild(usedLaterScript);
                 };
-                let _self=this;
                 let _int = setInterval(function () {
 
                     if (_self.loadedJS == 2) {
