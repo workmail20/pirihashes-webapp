@@ -1298,17 +1298,17 @@
             this.loadedJS=0;
         };
         const PIRICheckoutPrototype = {
-            validateEmail: function (email) {
+            validateEmail (email) {
                 let res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
                 return res.test(email);
             },
-            validateLength: function (value) {
+            validateLength (value) {
                 if (value.length > 0) {
                     return true;
                 }
                 return false;
             },
-            createInvoice: async function (name, email, product) {
+            async createInvoice (name, email, product) {
                 let invoice = new Object();
                 invoice.Name = name;
                 invoice.Email = email;
@@ -1325,7 +1325,7 @@
                 invoiceJSON = response.json();
 
             },
-            startCountdown: function (seconds, callback) {
+            startCountdown (seconds, callback) {
                 var $circleBorder = $('.countdown__icon__circle').get(0);
                 var $countdown = $('.countdown');
 
@@ -1366,7 +1366,7 @@
                         }
                     });
             },
-            checkWallet: async function (wallet) {
+            async checkWallet (wallet) {
                 let bal = 0.0;
                 let req = new Object();
                 req.address = wallet;
@@ -1385,7 +1385,7 @@
                 bal = parseFloat(invoiceJSON.balance);
                 return bal;
             },
-            showInvoice: function () {
+            showInvoice () {
                 $('#checkoutModal').style.visibility = "visible";
                 $('#checkout2-input').style.display = "flex";
 
@@ -1461,7 +1461,7 @@
                     }
                 });
             },
-            closeInvoice: function () {
+            closeInvoice () {
                 $('#checkoutModal').style.visibility = 'hidden';
             },
             preRun () {
@@ -1476,11 +1476,12 @@
                     }
                     document.body.appendChild(usedLaterScript);
                 };
+                let _self=this;
                 let _int = setInterval(function () {
 
-                    if (this.loadedJS == 2) {
+                    if (_self.loadedJS == 2) {
                         clearInterval(_int);
-                        this.run();
+                        _self.run();
                     }
                 }, 50);
             },
