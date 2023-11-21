@@ -1387,8 +1387,9 @@
                 return bal;
             },
             showInvoice() {
-                $('#checkout2Modal').style.visibility = "visible";
-                $('#checkout2-input').style.display = "flex";
+                $('#checkout2Modal').css("visibility","visible");
+                $('#checkout2Modal').css("display","flex");
+
 
                 $("#checkout2next").on("click", function () {
                     let fname = $('#fname');
