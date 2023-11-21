@@ -1294,11 +1294,10 @@
 
  
         var PIRICheckout = function () {
+            this.invoiceJSON=null;
+            this.loadedJS=0;
         };
-        PIRICheckout.prototype = {
-            invoiceJSON: null,
-            loadedJS: 0,
-            _self: this,
+        const PIRICheckoutPrototype = {
             validateEmail: function (email) {
                 let res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
                 return res.test(email);
@@ -1489,6 +1488,8 @@
                 _self.showInvoice();
             }
         };
+
+        Object.assign(PIRICheckout.prototype, PIRICheckoutPrototype);
 
         var GPIRICheckout = null;
         $("#btnCheckout2").on("click", function () {
