@@ -1472,13 +1472,13 @@
                     usedLaterScript.src = js;
                     usedLaterScript.async = true;
                     usedLaterScript.onload = () => {
-                        loadedJS++;
+                        this.loadedJS++;
                     }
                     document.body.appendChild(usedLaterScript);
                 };
                 let _int = setInterval(function () {
                     clearInterval(_int);
-                    if (loadedJS == 2) {
+                    if (this.loadedJS == 2) {
                         this.run();
                     }
                 }, 50);
