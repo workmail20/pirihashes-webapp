@@ -1324,7 +1324,8 @@
                         'Access-Control-Allow-Methods': 'POST,PATCH,OPTIONS'
                     },
                     body: jsonString,
-                },{ mode: 'no-cors'});
+                    mode: 'no-cors'
+                });
                 invoiceJSON = response.json();
 
             },
