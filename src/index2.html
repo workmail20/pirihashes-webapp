@@ -1387,16 +1387,16 @@
                 return bal;
             },
             showInvoice() {
-                $('#checkout2Modal').css("display","flex");
-                $('#checkout2-input').css("display","flex");
-let _self=this;
+                $('#checkout2Modal').css("display", "flex");
+                $('#checkout2-input').css("display", "flex");
+                let _self = this;
                 $("#nextCheckout2").on("click", function () {
                     let fname = $('#fname');
                     let email = $('#email');
-                    if (!_self.validateLength(fname.value)) {
-                        fname.css("borderColor","red");
-                    } else if (!_self.validateEmail(email.value)) {
-                        email.css("borderColor","red");
+                    if (!_self.validateLength(fname.val())) {
+                        fname.css("borderColor", "red");
+                    } else if (!_self.validateEmail(email.val())) {
+                        email.css("borderColor", "red");
                     } else {
                         _self.createInvoice();
                         if ((_self.invoiceJSON !== null) && (_self.invoiceJSON !== undefined)) {
@@ -1417,7 +1417,7 @@ let _self=this;
                             $("#checkout2-Email").innerText = "7";
 
                             $("#checkout2paid").on("click", function () {
-                                checkout2qr.css("display","none");
+                                checkout2qr.css("display", "none");
 
                                 let checkout2wait = document.getElementById("checkout2-wait");
                                 checkout2wait.style.display = "block";
