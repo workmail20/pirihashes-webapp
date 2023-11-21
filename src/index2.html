@@ -1294,8 +1294,8 @@
 
 
         var PIRICheckout = function () {
-            var invoiceJSON;
-            var loadedJS = 0;
+            this.invoiceJSON;
+            this.loadedJS = 0;
         };
         PIRICheckout.prototype = {
             validateEmail: function (email) {
