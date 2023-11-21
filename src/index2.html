@@ -1313,7 +1313,7 @@
                 let invoice = new Object();
                 invoice.Name = name;
                 invoice.Email = email;
-                invoice.Product = Product;
+                invoice.Product = product;
                 let jsonString = JSON.stringify(invoice);
 
                 const response = await fetch('https://checkoutpiri.azurewebsites.net/api/CheckoutAPI?code=TjPLuNeU_35LH8TDIY6byBmEMx7guO4MLBldG1tDeKIZAzFuCiPJTA==', {
@@ -1398,7 +1398,7 @@
                     } else if (!_self.validateEmail(email.val())) {
                         email.css("borderColor", "red");
                     } else {
-                        _self.createInvoice();
+                        _self.createInvoice(fname,email,"1");
                         if ((_self.invoiceJSON !== null) && (_self.invoiceJSON !== undefined)) {
                             let checkout2qr = document.getElementById("checkout2-qr");
                             checkout2qr.style.display = "block";
