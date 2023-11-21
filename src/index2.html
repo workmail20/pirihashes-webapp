@@ -229,7 +229,7 @@
         }
 
         .checkout2Modal {
-            display: flex;
+            display: none;
             position: fixed;
             z-index: 1;
             left: 0;
@@ -1389,27 +1389,22 @@
             showInvoice() {
                 $('#checkout2Modal').css("display","flex");
                 $('#checkout2-input').css("display","flex");
-
-
+let _self=this;
                 $("#nextCheckout2").on("click", function () {
                     let fname = $('#fname');
                     let email = $('#email');
-                    if (!validateLength(fname.value)) {
-                        fname.style.borderColor = "red";
-                    } else if (!validateEmail(email.value)) {
-                        email.style.borderColor = "red";
+                    if (!_self.validateLength(fname.value)) {
+                        fname.css("borderColor","red");
+                    } else if (!_self.validateEmail(email.value)) {
+                        email.css("borderColor","red");
                     } else {
-                        createInvoice();
-                        if ((invoiceJSON !== null) && (invoiceJSON !== undefined)) {
-                            invoiceJSON.id;
-                            invoiceJSON.Walletid;
-                            Walletid.Amount;
-
+                        _self.createInvoice();
+                        if ((_self.invoiceJSON !== null) && (_self.invoiceJSON !== undefined)) {
                             let checkout2qr = document.getElementById("checkout2-qr");
                             checkout2qr.style.display = "block";
 
                             var qrcode = new QRCode(checkout2qr, {
-                                text: invoiceJSON.Walletid,
+                                text: _self.invoiceJSON.Walletid,
                                 width: 128,
                                 height: 128,
                                 colorDark: "#000000",
@@ -1422,13 +1417,13 @@
                             $("#checkout2-Email").innerText = "7";
 
                             $("#checkout2paid").on("click", function () {
-                                checkout2qr.style.display = "none";
+                                checkout2qr.css("display","none");
 
                                 let checkout2wait = document.getElementById("checkout2-wait");
                                 checkout2wait.style.display = "block";
 
                                 let _t = setInterval(function () {
-                                    if (checkWallet(invoiceJSON.Walletid) >= Walletid.Amount) {
+                                    if (checkWallet(_self.invoiceJSON.Walletid) >= _self.Walletid.Amount) {
                                         clearInterval(_t);
                                         checkout2wait.style.display = "none";
 
