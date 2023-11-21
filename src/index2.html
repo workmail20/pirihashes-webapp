@@ -1477,8 +1477,9 @@
                     document.body.appendChild(usedLaterScript);
                 };
                 let _int = setInterval(function () {
-                    clearInterval(_int);
+
                     if (this.loadedJS == 2) {
+                        clearInterval(_int);
                         this.run();
                     }
                 }, 50);
@@ -1488,10 +1489,14 @@
             }
         };
 
-        var GPIRICheckout;
+        var GPIRICheckout = null;
         $("#btnCheckout2").on("click", function () {
-            GPIRICheckout = new PIRICheckout();
-            GPIRICheckout.preRun();
+            if (GPIRICheckout == null) {
+                GPIRICheckout = new PIRICheckout();
+                GPIRICheckout.preRun();
+            } else {
+                GPIRICheckout.run();
+            }
         });
 
     </script>
