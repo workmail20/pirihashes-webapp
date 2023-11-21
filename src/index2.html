@@ -1326,7 +1326,7 @@
                     },
                     body: jsonString
                 });
-                invoiceJSON = response.json();
+                invoiceJSON = await response.json();
 
             },
             startCountdown(seconds, callback) {
