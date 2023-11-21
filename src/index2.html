@@ -1293,11 +1293,11 @@
         }
 
 
-        var PIRICheckout = function () {
-            this.invoiceJSON;
-            this.loadedJS = 0;
-        };
-        PIRICheckout.prototype = {
+        var PIRICheckout = {
+            invoiceJSON: null,
+            loadedJS: 0,
+
+
             validateEmail: function (email) {
                 let res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
                 return res.test(email);
