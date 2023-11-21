@@ -889,7 +889,7 @@
     <div id="checkoutModal" class="checkoutModal" style="visibility: hidden;font-size: 14px;">
 
         <div class="checkout2-container" id="checkout2">
-            <h3>PIRI Chain checkout</h3>
+            <h4>PIRI Chain checkout</h4>
             <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
             <div style="width: 75%;background: darkgray;justify-content: center;align-items: center;display: none;padding: 10px;margin-top: 100px;
             margin-bottom: 100px;" id="checkout2-wait">
@@ -898,13 +898,16 @@
             <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;"
                 id="checkout2-input">
                 <p>
-                    Please fill the fields.
+                    Please fill the fields
                 </p>
                 <label for="fname">Full name:</label>
-                <input class="input1" type="text" id="fname" name="fname" required><br>
+                <input class="input1" type="text" id="fname" name="fname" required
+                    style="min-width: 150px;max-width: 300px;width: 100%;"><br>
                 <label for="email">Email:</label>
-                <input class="input1" type="text" id="email" name="email" required><br><br>
-                <button class="button-42" role="button" style="margin-left: auto;">Next</button>
+                <input class="input1" type="text" id="email" name="email" required
+                    style="min-width: 150px;max-width: 300px;width: 100%;"><br><br>
+                <button class="button-42" role="button"
+                    style="margin-left: auto;width: 100px; font-size: 19px;">Next</button>
             </div>
             <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;"
                 id="checkout2-qr">
@@ -933,7 +936,8 @@
                     <span id="checkout2-Email"></span>
                     </p>
                 </div>
-                <button class="button-29" role="button" id="checkout2paid" style="margin-bottom: 9px; ">Click if paid</button>
+                <button class="button-29" role="button" id="checkout2paid" style="margin-bottom: 9px; ">Click if
+                    paid</button>
             </div>
             <div style="width: 100%;justify-content: center;align-items: center;display: none;flex-direction: column;    height: 100%;"
                 id="checkout2-wait">
@@ -952,7 +956,7 @@
                 </p>
             </div>
             <div id="checkout2-confirmed"
-                style="justify-content: center;align-items: center;display: flex;margin: auto;">
+                style="justify-content: center;align-items: center;display: none;margin: auto;">
                 <svg enable-background="new 0 0 59.577 58.667" height="48" id="Layer_1" version="1.1"
                     viewBox="0 0 59.577 58.667" width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -966,24 +970,26 @@
             <div id="checkout2-error"
                 style="justify-content: center;align-items: center;display: none;margin: auto;flex-direction: column;">
                 <div>
-                <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32" width="48"
-                    xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <g>
-                        <g id="Error_1_">
-                            <g id="Error">
-                                <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
-                                <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
-                                    style="fill:#E6E6E6;" />
+                    <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32"
+                        width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
                             </g>
                         </g>
-                    </g>
-                </svg>
-                <p style="color: #ff1515;">Error</p>
+                    </svg>
+                    <p style="color: #ff1515;">Error</p>
                 </div>
                 <p style="color: #000000;" id="errorMsg">Error</p>
             </div>
             <hr style="color: black;background-color: black;width: 90%;height: 1px;margin-top: 13px;">
-            <div style="width: 80%;justify-content: center;display: flex;flex-direction: row;margin-top: 0px;margin-bottom: 15px;">
+            <div
+                style="width: 80%;justify-content: center;display: flex;flex-direction: row;margin-top: 0px;margin-bottom: 15px;">
                 <button type="button" style="margin: 5px;height: 37px;width: 100px;margin-bottom: 15px;"
                     id="close-checkout2" onclick="$('.checkoutModal').style.visibility='hidden'">Close</button>
             </div>
@@ -1146,6 +1152,7 @@
         $(window).on("DOMContentLoaded", function () {
             GGenLoadWorker.run();
         });
+
         $(window).on("load", function () {
             setTimeout(function () {
                 document.getElementById("acceptCookie").addEventListener("click", () => {
@@ -1288,28 +1295,14 @@
 
         var PIRICheckout = function () {
             var invoiceJSON;
-
-            let jsLinks = ["https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js",
-                "/js/qrgen.js"];
-            for (let js of jsLinks) {
-                let usedLaterScript = document.createElement('script');
-                usedLaterScript.src = js;
-                usedLaterScript.async = true;
-                document.body.appendChild(usedLaterScript);
-            }
+            var loadedJS = 0;
         };
         PIRICheckout.prototype = {
             validateEmail: function (email) {
                 let res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
                 return res.test(email);
             },
-            validateInput1: function (value) {
-                if (validateEmail(value)) {
-                    return true;
-                }
-                return false;
-            },
-            validateInput2: function (value) {
+            validateLength: function (value) {
                 if (value.length > 0) {
                     return true;
                 }
@@ -1332,7 +1325,7 @@
                 invoiceJSON = response.json();
 
             },
-            startCountdown: function () {
+            startCountdown: function (seconds, callback) {
                 var $circleBorder = $('.countdown__icon__circle').get(0);
                 var $countdown = $('.countdown');
 
@@ -1369,60 +1362,7 @@
                         scale: 0,
                         ease: Back.easeIn.config(1.4),
                         onComplete: function () {
-                            $('.countdown__number').html('10');
-                        }
-                    });
-            },
-            showQRCountdown: function (QRCodeString) {
-                var qrcode = new QRCode(document.getElementById("qrcodeImg"), {
-                    text: QRCodeString,
-                    width: 128,
-                    height: 128,
-                    colorDark: "#000000",
-                    colorLight: "#ffffff",
-                    correctLevel: QRCode.CorrectLevel.H
-                });
-
-
-            },
-            showConfirmationCountdown: function () {
-                var $circleBorder = $('.countdown__icon__circle').get(0);
-                var $countdown = $('.countdown');
-
-                var length = $circleBorder.getTotalLength();
-                var counter = {
-                    var: 10
-                };
-
-                var tl = new TimelineMax({
-                    delay: 0.75,
-                    repeatDelay: 1,
-                    repeat: -1,
-                });
-
-                tl.play();
-
-                tl.set($countdown, {
-                    scale: 0,
-                }).to($countdown, 0.4, {
-                    scale: 1,
-                    ease: Back.easeOut.config(1.4),
-                }).to($circleBorder, 10, {
-                    strokeDashoffset: length,
-                    stroke: '#FB7593',
-                    ease: Power0.easeNone
-                }).to(counter, 10, {
-                    var: 0,
-                    onUpdate: function () {
-                        $('.countdown__number').html(Math.ceil(counter.var));
-                    },
-                    ease: Power0.easeNone
-                }, '-= 10')
-                    .to($countdown, 0.4, {
-                        scale: 0,
-                        ease: Back.easeIn.config(1.4),
-                        onComplete: function () {
-                            $('.countdown__number').html('10');
+                            callback();
                         }
                     });
             },
@@ -1446,16 +1386,15 @@
                 return bal;
             },
             showInvoice: function () {
-                let checkout2 = document.getElementById("checkoutModal");
-                checkout2.style.visibility = "visible";
-                let checkout2input = document.getElementById("checkout2-input");
-                checkout2input.style.display = "flex";
+                $('#checkoutModal').style.visibility = "visible";
+                $('#checkout2-input').style.display = "flex";
+
                 $("#checkout2next").on("click", function () {
-                    let fname = document.getElementById("fname");
-                    let email = document.getElementById("email");
-                    if (!validateInput2(fname.value)) {
+                    let fname = $('#fname');
+                    let email = $('#email');
+                    if (!validateLength(fname.value)) {
                         fname.style.borderColor = "red";
-                    } else if (!validateInput2(email.value)) {
+                    } else if (!validateEmail(email.value)) {
                         email.style.borderColor = "red";
                     } else {
                         createInvoice();
@@ -1467,7 +1406,22 @@
                             let checkout2qr = document.getElementById("checkout2-qr");
                             checkout2qr.style.display = "block";
 
+                            var qrcode = new QRCode(checkout2qr, {
+                                text: invoiceJSON.Walletid,
+                                width: 128,
+                                height: 128,
+                                colorDark: "#000000",
+                                colorLight: "#ffffff",
+                                correctLevel: QRCode.CorrectLevel.H
+                            });
+
+                            $("#checkout2-Address").innerText = "7";
+                            $("#checkout2-Amount").innerText = "7";
+                            $("#checkout2-Email").innerText = "7";
+
                             $("#checkout2paid").on("click", function () {
+                                checkout2qr.style.display = "none";
+
                                 let checkout2wait = document.getElementById("checkout2-wait");
                                 checkout2wait.style.display = "block";
 
@@ -1483,6 +1437,8 @@
 
 
                                 startCountdown(100, function () {
+
+
                                     clearInterval(_t);
                                     checkout2wait.style.display = "none";
 
@@ -1494,6 +1450,8 @@
                                     checkout2error.style.display = "block";
 
                                 });
+
+
                             });
                         } else {
                             let checkout2errormsg = document.getElementById("errorMsg");
@@ -1504,17 +1462,26 @@
                 });
             },
             closeInvoice: function () {
-                let checkoutwait = document.getElementById("checkoutwait");
-                checkoutwait.style.display = "flex";
-                createInvoice();
-                if ((invoiceJSON !== null) && (invoiceJSON !== undefined)) {
-                    invoiceJSON.id;
-                    invoiceJSON.Walletid;
-                    Walletid.Amount;
-                }
-
-                let piricheckout = document.getElementById("piricheckout");
-                piricheckout.style.display = "block";
+                $('#checkoutModal').style.visibility = 'hidden';
+            },
+            preRun: function () {
+                let jsLinks = ["https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js",
+                    "/js/qrgen.js"];
+                for (let js of jsLinks) {
+                    let usedLaterScript = document.createElement('script');
+                    usedLaterScript.src = js;
+                    usedLaterScript.async = true;
+                    usedLaterScript.onload = () => {
+                        loadedJS++;
+                    }
+                    document.body.appendChild(usedLaterScript);
+                };
+                let _int = setInterval(function () {
+                    clearInterval(_int);
+                    if (loadedJS == 2) {
+                        this.run();
+                    }
+                }, 50);
             },
             run: function () {
                 this.showInvoice();
@@ -1524,7 +1491,7 @@
         var GPIRICheckout;
         $("#btnCheckout2").on("click", function () {
             GPIRICheckout = new PIRICheckout();
-            GPIRICheckout.run();
+            GPIRICheckout.preRun();
         });
 
     </script>
