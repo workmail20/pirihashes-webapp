@@ -1314,7 +1314,7 @@
                 invoice.Name = name;
                 invoice.Email = email;
                 invoice.Product = product;
-                invoice.do="createinvoice";
+                invoice.do = "createinvoice";
                 let jsonString = JSON.stringify(invoice);
 
                 const response = await fetch('https://checkoutpiri.azurewebsites.net/api/CheckoutAPI?code=TjPLuNeU_35LH8TDIY6byBmEMx7guO4MLBldG1tDeKIZAzFuCiPJTA==', {
@@ -1326,8 +1326,7 @@
                     },
                     body: jsonString
                 });
-                invoiceJSON = await response.json();
-
+                return await response.json();
             },
             startCountdown(seconds, callback) {
                 var $circleBorder = $('.countdown__icon__circle').get(0);
@@ -1401,7 +1400,7 @@
                     } else if (!_self.validateEmail(email.val())) {
                         email.css("borderColor", "red");
                     } else {
-                        _self.createInvoice(fname.val(), email.val(), "1");
+                        _self.invoiceJSON=_self.createInvoice(fname.val(), email.val(), "1");
                         if ((_self.invoiceJSON !== null) && (_self.invoiceJSON !== undefined)) {
                             let checkout2qr = document.getElementById("checkout2-qr");
                             checkout2qr.style.display = "block";
