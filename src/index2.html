@@ -1296,9 +1296,9 @@
         var PIRICheckout = function () {
         };
         PIRICheckout.prototype = {
-            invoiceJSON:null,
-            loadedJS :0,
-
+            invoiceJSON: null,
+            loadedJS: 0,
+            _self: this,
             validateEmail: function (email) {
                 let res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
                 return res.test(email);
@@ -1473,20 +1473,20 @@
                     usedLaterScript.src = js;
                     usedLaterScript.async = true;
                     usedLaterScript.onload = () => {
-                        this.loadedJS++;
+                        _self.loadedJS++;
                     }
                     document.body.appendChild(usedLaterScript);
                 };
                 let _int = setInterval(function () {
 
-                    if (this.loadedJS == 2) {
+                    if (_self.loadedJS == 2) {
                         clearInterval(_int);
-                        this.run();
+                        _self.run();
                     }
                 }, 50);
             },
             run: function () {
-                this.showInvoice();
+                _self.showInvoice();
             }
         };
 
