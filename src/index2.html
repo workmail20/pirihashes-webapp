@@ -1472,20 +1472,20 @@
                     usedLaterScript.src = js;
                     usedLaterScript.async = true;
                     usedLaterScript.onload = () => {
-                        _self.loadedJS++;
+                        this.loadedJS++;
                     }
                     document.body.appendChild(usedLaterScript);
                 };
                 let _int = setInterval(function () {
 
-                    if (_self.loadedJS == 2) {
+                    if (this.loadedJS == 2) {
                         clearInterval(_int);
-                        _self.run();
+                        this.run();
                     }
                 }, 50);
             },
             run: function () {
-                _self.showInvoice();
+                this.showInvoice();
             }
         };
 
