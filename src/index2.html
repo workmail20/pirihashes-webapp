@@ -1412,11 +1412,11 @@
                 }).to(counter, seconds, {
                     var: 0,
                     onUpdate: function () {
-                        let minutes = Math.floor(seconds / 60);
-                        let seconds = Math.ceil(seconds - minutes * 60);
-                        minutes = minutes.padStart(2, '0');
-                        seconds = seconds.padStart(2, '0');
-                        $('.countdown__number').html(minutes+ ":"+ seconds);
+                        let _minutes = Math.floor(seconds / 60);
+                        let _seconds = Math.ceil(seconds - _minutes * 60);
+                        _minutes = _minutes.padStart(2, '0');
+                        _seconds = _seconds.padStart(2, '0');
+                        $('.countdown__number').html(_minutes+ ":"+ _seconds);
                     },
                     ease: Power0.easeNone
                 }, '-= 10')
