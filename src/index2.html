@@ -1403,7 +1403,7 @@
                         $('#checkout2-input').css("display", "none");
                         $('#checkout2-wait').css("display", "flex");
                         _self.createInvoice(fname.val(), email.val(), "1").then(function (invoiceJSON) {
-                            
+                            $('#checkout2-wait').css("display", "none");
                             if ((invoiceJSON !== null) && (invoiceJSON !== undefined)) {
                                 _self.invoiceJSON = invoiceJSON;
                                 let checkout2qr = document.getElementById("checkout2-qr");
@@ -1458,7 +1458,7 @@
                                 });
                             } else {
                                 let checkout2errormsg = document.getElementById("errorMsg");
-                                checkout2errormsg.value = "0";
+                                checkout2errormsg.value = "Something was wrong.";
                                 checkout2errormsg.style.display = "block";
                             }
                         });
