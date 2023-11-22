@@ -1487,7 +1487,7 @@
                                         checkWallet(_self.invoiceJSON.Walletid).then(function (r) {
                                             if (r >= _self.Walletid.Amount) {
                                                 clearInterval(_t);
-                                                checkout2wait.style.display = "none";
+                                                $('#checkout2-wait').css("display", "none");
 
                                                 let checkout2confirmed = document.getElementById("checkout2-confirmed");
                                                 checkout2confirmed.style.display = "flex";
@@ -1500,7 +1500,7 @@
 
 
                                         clearInterval(_t);
-                                        checkout2wait.style.display = "none";
+                                        $('#checkout2-wait').css("display", "none");
 
                                         let checkout2errormsg = document.getElementById("errorMsg");
                                         checkout2errormsg.value = "Something was wrong.";
@@ -1514,9 +1514,7 @@
 
                                 });
                             } else {
-                                let checkout2wait = document.getElementById("checkout2-wait");
-
-                                checkout2wait.style.display = "none";
+                                $('#checkout2-wait').css("display", "none");
 
                                 let checkout2errormsg = document.getElementById("errorMsg");
                                 checkout2errormsg.value = "Something was wrong.";
