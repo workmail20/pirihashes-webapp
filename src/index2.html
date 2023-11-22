@@ -1409,7 +1409,7 @@
                     strokeDashoffset: length,
                     stroke: '#FB7593',
                     ease: Power0.easeNone
-                }).to(counter, 10, {
+                }).to(counter, seconds, {
                     var: 0,
                     onUpdate: function () {
                         $('.countdown__number').html(Math.ceil(counter.var));
