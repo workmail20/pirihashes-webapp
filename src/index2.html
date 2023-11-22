@@ -1484,7 +1484,7 @@
                                     $('#checkout2-qr').css("display", "none");
 
                                     let _t = setInterval(function () {
-                                        checkWallet(_self.invoiceJSON.Walletid).then(function (r) {
+                                        _self.checkWallet(_self.invoiceJSON.Walletid).then(function (r) {
                                             if (r >= _self.Walletid.Amount) {
                                                 clearInterval(_t);
                                                 $('#checkout2-wait').css("display", "none");
@@ -1496,7 +1496,7 @@
                                     }, 1000);
 
 
-                                    startCountdown(100, function () {
+                                    _self.startCountdown(100, function () {
 
 
                                         clearInterval(_t);
