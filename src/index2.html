@@ -1389,7 +1389,7 @@
 
                 var length = $circleBorder.getTotalLength();
                 var counter = {
-                    var: 20
+                    var: seconds
                 };
 
                 var tl = new TimelineMax({
@@ -1405,11 +1405,11 @@
                 }).to($countdown, 0.4, {
                     scale: 1,
                     ease: Back.easeOut.config(1.4),
-                }).to($circleBorder, 25, {
+                }).to($circleBorder, seconds, {
                     strokeDashoffset: length,
                     stroke: '#FB7593',
                     ease: Power0.easeNone
-                }).to(counter, 30, {
+                }).to(counter, 10, {
                     var: 0,
                     onUpdate: function () {
                         $('.countdown__number').html(Math.ceil(counter.var));
