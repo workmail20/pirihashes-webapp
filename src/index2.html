@@ -1459,6 +1459,21 @@
                         $('#checkout2-wait').css("display", "flex");
                         _self.createInvoice(fname.val(), email.val(), "1").then(function (invoiceJSON) {
                             $('#checkout2-wait').css("display", "none");
+
+                            
+                            _self.startCountdown(100, function () {
+                                $('#checkout2-qr').css("display", "none");
+
+                                let checkout2errormsg = document.getElementById("errorMsg");
+                                checkout2errormsg.value = "Something was wrong.";
+                                checkout2errormsg.style.display = "flex";
+
+                                let checkout2error = document.getElementById("checkout2-error");
+                                checkout2error.style.display = "flex";
+
+                            });
+
+
                             if ((invoiceJSON !== null) && (invoiceJSON !== undefined)) {
                                 _self.invoiceJSON = invoiceJSON;
 
