@@ -1401,7 +1401,10 @@
                         email.css("borderColor", "red");
                     } else {
                         _self.createInvoice(fname.val(), email.val(), "1").then(function (invoiceJSON) {
-                            if ((_invoiceJSON !== null) && (invoiceJSON !== undefined)) {
+                            
+                            $('#checkout2-input').css("display", "none");
+                            $('#checkout2-wait').css("display", "flex");
+                            if ((invoiceJSON !== null) && (invoiceJSON !== undefined)) {
                                 _self.invoiceJSON = invoiceJSON;
                                 let checkout2qr = document.getElementById("checkout2-qr");
                                 checkout2qr.style.display = "block";
