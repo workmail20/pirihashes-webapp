@@ -1483,9 +1483,6 @@
                                 $("#checkout2paid").on("click", function () {
                                     $('#checkout2-qr').css("display", "none");
 
-                                    let checkout2wait = document.getElementById("checkout2-wait");
-                                    checkout2wait.style.display = "flex";
-
                                     let _t = setInterval(function () {
                                         checkWallet(_self.invoiceJSON.Walletid).then(function (r) {
                                             if (r >= _self.Walletid.Amount) {
