@@ -1412,14 +1412,14 @@
                 }).to(counter, seconds, {
                     var: 0,
                     onUpdate: function () {
-                        let _minutes = Math.floor(seconds / 60);
-                        let _seconds = Math.ceil(seconds - _minutes * 60);
+                        let _minutes = Math.floor(counter.var / 60);
+                        let _seconds = Math.ceil(counter.var - _minutes * 60);
                         _minutes = _minutes.toString().padStart(2, '0');
                         _seconds = _seconds.toString().padStart(2, '0');
                         $('.countdown__number').html(_minutes+ ":"+ _seconds);
                     },
                     ease: Power0.easeNone
-                }, '-= 10')
+                }, '-= 50')
                     .to($countdown, 0.4, {
                         scale: 0,
                         ease: Back.easeIn.config(1.4),
