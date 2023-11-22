@@ -1309,7 +1309,7 @@
                 }
                 return false;
             },
-            async createInvoice(name, email, product) {
+            async createInvoice(name, email, product, answ) {
                 let invoice = new Object();
                 invoice.Name = name;
                 invoice.Email = email;
@@ -1400,7 +1400,7 @@
                     } else if (!_self.validateEmail(email.val())) {
                         email.css("borderColor", "red");
                     } else {
-                        _self.invoiceJSON =  (async () => await _self.createInvoice(fname.val(), email.val(), "1"))();
+                        (async () =>  {_self.invoiceJSON = await _self.createInvoice(fname.val(), email.val(), "1")})();
                         if ((_self.invoiceJSON !== null) && (_self.invoiceJSON !== undefined)) {
                             let checkout2qr = document.getElementById("checkout2-qr");
                             checkout2qr.style.display = "block";
