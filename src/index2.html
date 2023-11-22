@@ -1414,8 +1414,8 @@
                     onUpdate: function () {
                         let _minutes = Math.floor(seconds / 60);
                         let _seconds = Math.ceil(seconds - _minutes * 60);
-                        _minutes = _minutes.padStart(2, '0');
-                        _seconds = _seconds.padStart(2, '0');
+                        _minutes = _minutes.toString().padStart(2, '0');
+                        _seconds = _seconds.toString().padStart(2, '0');
                         $('.countdown__number').html(_minutes+ ":"+ _seconds);
                     },
                     ease: Power0.easeNone
