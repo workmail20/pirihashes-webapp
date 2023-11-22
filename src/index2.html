@@ -929,11 +929,30 @@
                         confirmed
                     <h4>QR Code</h4>
                     <div id="qrcode" style="width: 200px;height: 200px;"></div>
-                    <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
-                    <span id="checkout2-Address"></span>
-                    <span id="checkout2-Amount"></span>
-                    <span id="checkout2-Name"></span>
-                    <span id="checkout2-Email"></span>
+                    <div>
+                        <span id="checkout2-Address"></span>
+                        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" height="48" width="48"
+                            onclick="copyTextToClipboard(document.getElementById('checkout2-Address').text)">
+                            <path
+                                d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span id="checkout2-Amount"></span>
+                        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" height="48" width="48"
+                            onclick="copyTextToClipboard(document.getElementById('checkout2-Amount').text)">
+                            <path
+                                d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span id="checkout2-Email"></span>
+                        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" height="48" width="48"
+                            onclick="copyTextToClipboard(document.getElementById('checkout2-Email').text)">
+                            <path
+                                d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z" />
+                        </svg>
+                    </div>
                     </p>
                 </div>
                 <button class="button-29" role="button" id="checkout2paid" style="margin-bottom: 9px; ">Click if
@@ -1292,6 +1311,35 @@
             });
         }
 
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+            } catch (err) {
+            }
+
+            document.body.removeChild(textArea);
+        }
+        function copyTextToClipboard(text) {
+            if (!navigator.clipboard) {
+                fallbackCopyTextToClipboard(text);
+                return;
+            }
+            navigator.clipboard.writeText(text).then(function () {
+            }, function (err) {
+            });
+        }
+
+
 
         function PIRICheckout() {
             this.invoiceJSON = null;
@@ -1406,21 +1454,21 @@
                             $('#checkout2-wait').css("display", "none");
                             if ((invoiceJSON !== null) && (invoiceJSON !== undefined)) {
                                 _self.invoiceJSON = invoiceJSON;
-                                let checkout2qr = document.getElementById("checkout2-qr");
-                                checkout2qr.style.display = "block";
+                                let checkout2qr = document.getElementById("qrcode");
+                                checkout2qr.style.display = "flex";
 
                                 var qrcode = new QRCode(checkout2qr, {
                                     text: _self.invoiceJSON.Walletid,
-                                    width: 128,
-                                    height: 128,
+                                    width: 200,
+                                    height: 200,
                                     colorDark: "#000000",
                                     colorLight: "#ffffff",
                                     correctLevel: QRCode.CorrectLevel.H
                                 });
 
-                                $("#checkout2-Address").innerText = "7";
-                                $("#checkout2-Amount").innerText = "7";
-                                $("#checkout2-Email").innerText = "7";
+                                $("#checkout2-Address").text(_self.invoiceJSON.Walletid);
+                                $("#checkout2-Amount").text(_self.invoiceJSON.Amount);
+                                $("#checkout2-Email").text(_self.invoiceJSON.Email);
 
                                 $("#checkout2paid").on("click", function () {
                                     checkout2qr.css("display", "none");
