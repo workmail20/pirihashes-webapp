@@ -1400,63 +1400,64 @@
                     } else if (!_self.validateEmail(email.val())) {
                         email.css("borderColor", "red");
                     } else {
-                        (async () =>  {_self.invoiceJSON = await _self.createInvoice(fname.val(), email.val(), "1")})();
-                        if ((_self.invoiceJSON !== null) && (_self.invoiceJSON !== undefined)) {
-                            let checkout2qr = document.getElementById("checkout2-qr");
-                            checkout2qr.style.display = "block";
+                        _self.createInvoice(fname.val(), email.val(), "1").then(function () {
+                            if ((_self.invoiceJSON !== null) && (_self.invoiceJSON !== undefined)) {
+                                let checkout2qr = document.getElementById("checkout2-qr");
+                                checkout2qr.style.display = "block";
 
-                            var qrcode = new QRCode(checkout2qr, {
-                                text: _self.invoiceJSON.Walletid,
-                                width: 128,
-                                height: 128,
-                                colorDark: "#000000",
-                                colorLight: "#ffffff",
-                                correctLevel: QRCode.CorrectLevel.H
-                            });
+                                var qrcode = new QRCode(checkout2qr, {
+                                    text: _self.invoiceJSON.Walletid,
+                                    width: 128,
+                                    height: 128,
+                                    colorDark: "#000000",
+                                    colorLight: "#ffffff",
+                                    correctLevel: QRCode.CorrectLevel.H
+                                });
 
-                            $("#checkout2-Address").innerText = "7";
-                            $("#checkout2-Amount").innerText = "7";
-                            $("#checkout2-Email").innerText = "7";
+                                $("#checkout2-Address").innerText = "7";
+                                $("#checkout2-Amount").innerText = "7";
+                                $("#checkout2-Email").innerText = "7";
 
-                            $("#checkout2paid").on("click", function () {
-                                checkout2qr.css("display", "none");
+                                $("#checkout2paid").on("click", function () {
+                                    checkout2qr.css("display", "none");
 
-                                let checkout2wait = document.getElementById("checkout2-wait");
-                                checkout2wait.style.display = "block";
+                                    let checkout2wait = document.getElementById("checkout2-wait");
+                                    checkout2wait.style.display = "block";
 
-                                let _t = setInterval(function () {
-                                    if (checkWallet(_self.invoiceJSON.Walletid) >= _self.Walletid.Amount) {
+                                    let _t = setInterval(function () {
+                                        if (checkWallet(_self.invoiceJSON.Walletid) >= _self.Walletid.Amount) {
+                                            clearInterval(_t);
+                                            checkout2wait.style.display = "none";
+
+                                            let checkout2confirmed = document.getElementById("checkout2-confirmed");
+                                            checkout2confirmed.style.display = "block";
+                                        }
+                                    }, 1000);
+
+
+                                    startCountdown(100, function () {
+
+
                                         clearInterval(_t);
                                         checkout2wait.style.display = "none";
 
-                                        let checkout2confirmed = document.getElementById("checkout2-confirmed");
-                                        checkout2confirmed.style.display = "block";
-                                    }
-                                }, 1000);
+                                        let checkout2errormsg = document.getElementById("errorMsg");
+                                        checkout2errormsg.value = "0";
+                                        checkout2errormsg.style.display = "block";
 
+                                        let checkout2error = document.getElementById("checkout2-error");
+                                        checkout2error.style.display = "block";
 
-                                startCountdown(100, function () {
+                                    });
 
-
-                                    clearInterval(_t);
-                                    checkout2wait.style.display = "none";
-
-                                    let checkout2errormsg = document.getElementById("errorMsg");
-                                    checkout2errormsg.value = "0";
-                                    checkout2errormsg.style.display = "block";
-
-                                    let checkout2error = document.getElementById("checkout2-error");
-                                    checkout2error.style.display = "block";
 
                                 });
-
-
-                            });
-                        } else {
-                            let checkout2errormsg = document.getElementById("errorMsg");
-                            checkout2errormsg.value = "0";
-                            checkout2errormsg.style.display = "block";
-                        }
+                            } else {
+                                let checkout2errormsg = document.getElementById("errorMsg");
+                                checkout2errormsg.value = "0";
+                                checkout2errormsg.style.display = "block";
+                            }
+                        });
                     }
                 });
             },
