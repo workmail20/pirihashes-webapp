@@ -456,6 +456,7 @@
             position: relative;
             margin: auto;
             border-radius: 5px;
+            cursor: pointer;
         }
 
         #checkout2-Popup a {
@@ -975,7 +976,7 @@
                 <button class="button-29" role="button" id="checkout2paid" style="margin-bottom: 0px; ">Click if
                     paid</button>
             </div>
-            <div style="width: 100%;justify-content: center;align-items: center;display: none;flex-direction: column;    height: 100%;"
+            <div style="width: 100%;justify-content: center;align-items: center;display: none;flex-direction: column;height: 400px;"
                 id="checkout2-waitconfirm">
                 <div class="countdown"
                     style="display: flex;justify-content: center;align-items: center;flex-direction: column;box-sizing: border-box;margin: 0px;">
@@ -987,7 +988,7 @@
                             d="M5,64.8a59.8,59.8 0 1,0 119.6,0a59.8,59.8 0 1,0 -119.6,0" />
                     </svg>
                 </div>
-                <p>
+                <p style="font-size: 16px;">
                     Please wait for confirmation<br>
                 </p>
             </div>
@@ -1007,7 +1008,7 @@
                 style="justify-content: center;align-items: center;display: none;margin: auto;flex-direction: column;">
                 <div
                     style="justify-content: center;align-items: center;display: none;margin: auto;flex-direction: row;">
-                    <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32"
+                    <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32;margin-bottom: -15px;" viewBox="0 0 32 32"
                         width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g>
@@ -1020,9 +1021,9 @@
                             </g>
                         </g>
                     </svg>
-                    <p style="color: #ff1515;">Error</p>
+                    <span style="color: #ff1515;font-size: 17px;margin-left: 10px;margin-top: ps;padding-bottom: 10px;">Error</span>
                 </div>
-                <p style="color: #000000;" id="errorMsg">Error mesage</p>
+                <p style="font-size: 18px;color: rgb(0, 0, 0);display: flex;margin-top: 30px;" id="errorMsg">Error mesage</p>
             </div>
             <hr style="color: black;background-color: black;width: 90%;height: 1px;margin-top: 13px;">
             <div
