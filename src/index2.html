@@ -926,7 +926,7 @@
                         Please transfer the full amount to the specified PIRI address.<br>
                         You have only 60 minutes, then an address will not be valid and your payment will not be
                         confirmed
-                    <h4 style="margin: 0px;">QR Code</h4>
+                    <h4 style="margin-bottom: 10px;margin-top:0px">QR Code</h4>
                     <div id="qrcode" style="width: 180px;height: 180px;"></div>
 
                     <div
@@ -1460,7 +1460,7 @@
                 };
 
                 var tl = new TimelineMax({
-                    delay: 0.75,
+                    delay: 0.0,
                     repeatDelay: 1,
                     repeat: -1,
                 });
@@ -1524,6 +1524,13 @@
 
                 $('#checkout2Modal').css("display", "flex");
                 $('#checkout2-input').css("display", "flex");
+
+                const list = document.getElementById("qrcode");
+
+                while (list.hasChildNodes()) {
+                    list.removeChild(list.firstChild);
+                }
+
                 let _self = this;
                 $("#nextCheckout2").on("click", function () {
 
