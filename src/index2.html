@@ -610,7 +610,7 @@
             font-size: 1.0em;
         }
 
-        .countdown {
+        .countdown,.countdown2 {
             position: relative;
             width: 50px;
             height: 50px;
@@ -622,7 +622,7 @@
             transform-origin: center bottom;
         }
 
-        .countdown__icon {
+        .countdown__icon,.countdown__icon2 {
             position: absolute;
             top: -6px;
             left: -6px;
@@ -633,11 +633,11 @@
             stroke-linecap: round;
         }
 
-        .countdown__icon__circle {
+        .countdown__icon__circle,.countdown__icon__circle2 {
             stroke-dasharray: 375.787322998;
         }
 
-        .countdown__number {
+        .countdown__number,.countdown__number2 {
             color: #fff;
         }
     </style>
@@ -908,7 +908,7 @@
                 <button id="nextCheckout2" class="button-42" role="button"
                     style="margin-left: auto;width: 100px;font-size: 15px;">Next</button>
             </div>
-            <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;"
+            <div style="width: 95%;justify-content: center;align-items: center;display: none;flex-direction: column;"
                 id="checkout2-qr">
                 <div class="countdown"
                     style="display: flex;justify-content: center;align-items: center;flex-direction: column;box-sizing: border-box;margin: 0px;">
@@ -921,13 +921,13 @@
                     </svg>
                 </div>
                 <div
-                    style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;">
+                    style="width: 100%;justify-content: center;align-items: center;display: flex;flex-direction: column;">
                     <p style="font-size: 14px;margin-top: 5px;margin-bottom: 4px;">
                         Please transfer the full amount to the specified PIRI address.<br>
                         You have only 60 minutes, then an address will not be valid and your payment will not be
                         confirmed
                     <h4 style="margin-bottom: 10px;margin-top:0px">QR Code</h4>
-                    <div id="qrcode" style="width: 180px;height: 180px;"></div>
+                    <div id="qrcode" style="width: 170px;height: 170px;"></div>
 
                     <div
                         style="display: flex; flex-direction:column;align-items:start;overflow-wrap: break-word;word-break: break-all;margin-top: 15px;font-size: 12px;">
@@ -1450,8 +1450,8 @@
                 });
                 return await response.json();
             },
-            startCountdown(seconds, callback) {
-                var $circleBorder = $('.countdown__icon__circle').get(0);
+            startCountdown(c,seconds, callback) {
+                var $circleBorder = $('.countdown__icon__circle').get(c);
                 var $countdown = $('.countdown');
 
                 var length = $circleBorder.getTotalLength();
@@ -1548,7 +1548,7 @@
                         _self.createInvoice(fname.val(), email.val(), "1").then(function (invoiceJSON) {
                             $('#checkout2-wait').css("display", "none");
 
-                            let anim1 = _self.startCountdown(3600, function () {
+                            let anim1 = _self.startCountdown(0,3600, function () {
                                 $('#checkout2-qr').css("display", "none");
                                 $('#errorMsg').text = "Something was wrong.";
                                 $('#errorMsg').css("display", "flex");
@@ -1597,7 +1597,7 @@
                                         });
                                     }, 2000);
 
-                                    anim2 = _self.startCountdown(180, function () {
+                                    anim2 = _self.startCountdown(1,180, function () {
                                         clearInterval(_t);
                                         $('#checkout2-waitconfirm').css("display", "none");
 
