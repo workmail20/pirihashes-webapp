@@ -919,8 +919,7 @@
                             d="M5,64.8a59.8,59.8 0 1,0 119.6,0a59.8,59.8 0 1,0 -119.6,0" />
                     </svg>
                 </div>
-                <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
-                    id="">
+                <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;">
                     <p style="font-size: 14px;margin-top: 5px;margin-bottom: 4px;">
                         Please transfer the full amount to the specified PIRI address.<br>
                         You have only 60 minutes, then an address will not be valid and your payment will not be
@@ -977,7 +976,7 @@
                     paid</button>
             </div>
             <div style="width: 100%;justify-content: center;align-items: center;display: none;flex-direction: column;    height: 100%;"
-                id="checkout2-wait">
+                id="checkout2-waitconfirm">
                 <div class="countdown"
                     style="display: flex;justify-content: center;align-items: center;flex-direction: column;box-sizing: border-box;margin: 0px;">
                     <span class="countdown__number" id="confirmTime"></span>
@@ -1517,10 +1516,11 @@
                                 $("#checkout2paid").on("click", function () {
                                     anim1.pause();
                                     $('#checkout2-qr').css("display", "none");
+                                    $('#checkout2-waitconfirm').css("display", "flex");
 
                                     let anim2 = _self.startCountdown(180, function () {
                                         clearInterval(_t);
-                                        $('#checkout2-wait').css("display", "none");
+                                        $('#checkout2-waitconfirm').css("display", "none");
 
                                         let checkout2errormsg = document.getElementById("errorMsg");
                                         checkout2errormsg.value = "Something was wrong.";
