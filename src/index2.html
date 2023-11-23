@@ -324,7 +324,7 @@
             cursor: pointer;
             display: inline-flex;
             font-family: "JetBrains Mono", monospace;
-            height: 35px;
+            height: 30px;
             justify-content: center;
             line-height: 1;
             list-style: none;
@@ -889,7 +889,7 @@
     <div id="checkout2Modal" class="checkout2Modal" style="font-size: 14px;">
 
         <div class="checkout2-container" id="checkout2">
-            <h4>PIRI Chain checkout</h4>
+            <h4 style="margin: 5px;margin-top: 14px;">PIRI Chain checkout</h4>
             <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
             <div style="width: 75%;background: darkgray;justify-content: center;align-items: center;display: none;padding: 10px;margin-top: 100px;
             margin-bottom: 100px;" id="checkout2-wait">
@@ -897,7 +897,7 @@
             </div>
             <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;height: 400px;"
                 id="checkout2-input">
-                <p>
+                <p style="margin-bottom: 40px;">
                     Please fill the fields
                 </p>
                 <label for="fname">Full name:</label>
@@ -923,15 +923,15 @@
                 </div>
                 <div style="width: 90%;justify-content: center;align-items: center;display: flex;flex-direction: column;"
                     id="">
-                    <p>
+                    <p style="font-size: 12px;margin-top: 5px;margin-bottom: 4px;">
                         Please transfer the full amount to the specified PIRI address.<br>
                         You have only 60 minutes, then an address will not be valid and your payment will not be
                         confirmed
-                    <h4 style="margin: 5px;">QR Code</h4>
+                    <h4 style="margin: 0px;">QR Code</h4>
                     <div id="qrcode" style="width: 180px;height: 180px;"></div>
 
                     <div
-                        style="display: flex; flex-direction:column;align-items:start;overflow-wrap: break-word;word-break: break-all;margin-top: 15px;">
+                        style="display: flex; flex-direction:column;align-items:start;overflow-wrap: break-word;word-break: break-all;margin-top: 15px;font-size: 12px;">
                         <div>
                             <span><strong>Address:</strong></span><span id="checkout2-Address"></span>
                             <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" height="20" width="20"
@@ -962,7 +962,7 @@
                     </div>
                     </p>
                 </div>
-                <button class="button-29" role="button" id="checkout2paid" style="margin-bottom: 9px; ">Click if
+                <button class="button-29" role="button" id="checkout2paid" style="margin-bottom: 0px; ">Click if
                     paid</button>
             </div>
             <div style="width: 100%;justify-content: center;align-items: center;display: none;flex-direction: column;    height: 100%;"
@@ -995,7 +995,7 @@
             </div>
             <div id="checkout2-error"
                 style="justify-content: center;align-items: center;display: none;margin: auto;flex-direction: column;">
-                <div>
+                <div  style="justify-content: center;align-items: center;display: none;margin: auto;flex-direction: row;">
                     <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32"
                         width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -1011,12 +1011,12 @@
                     </svg>
                     <p style="color: #ff1515;">Error</p>
                 </div>
-                <p style="color: #000000;" id="errorMsg">Error</p>
+                <p style="color: #000000;" id="errorMsg">Error mesage</p>
             </div>
             <hr style="color: black;background-color: black;width: 90%;height: 1px;margin-top: 13px;">
             <div
                 style="width: 80%;justify-content: center;display: flex;flex-direction: row;margin-top: 0px;margin-bottom: 15px;">
-                <button type="button" style="margin: 5px;height: 37px;width: 100px;margin-bottom: 15px;"
+                <button type="button" style="margin: 5px;height: 37px;width: 100px;margin-bottom: 5px;margin-top: 10px;"
                     id="close-checkout2" onclick="$('#checkout2Modal').css('display','none')">Close</button>
             </div>
         </div>
@@ -1413,7 +1413,7 @@
                     var: 0,
                     onUpdate: function () {
                         let _minutes = Math.floor(counter.var / 60);
-                        let _seconds = Math.ceil(counter.var - _minutes * 60);
+                        let _seconds = Math.floor(counter.var - _minutes * 60);
                         _minutes = _minutes.toString().padStart(2, '0');
                         _seconds = _seconds.toString().padStart(2, '0');
                         $('.countdown__number').html(_minutes + ":" + _seconds);
