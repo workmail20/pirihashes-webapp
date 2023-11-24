@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- scarlett  -->
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description"
         content="The Software for generation hashes(crypto-pairs from pub/private keys) of the PiriChain system.">
@@ -13,8 +15,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+
     <!-- Google tag (gtag.js) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTGW85D79N"></script> -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -213,9 +215,6 @@
             max-width: fit-content;
             width: 80%;
 
-        }
-
-        .modal-content {
             animation-name: zoom;
             animation-duration: 0.6s;
         }
@@ -228,6 +227,19 @@
             to {
                 transform: scale(1)
             }
+        }
+
+        .checkout2Modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
         }
 
         .close {
@@ -251,6 +263,464 @@
             .modal-content {
                 width: 100%;
             }
+        }
+
+        /* CSS */
+        .button-30 {
+            align-items: center;
+            appearance: none;
+            background-color: #FCFCFD;
+            border-radius: 4px;
+            border-width: 0;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #36395A;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono", monospace;
+            height: 42px;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            font-size: 18px;
+        }
+
+        .button-30:focus {
+            box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        }
+
+        .button-30:hover {
+            box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .button-30:active {
+            box-shadow: #D6D6E7 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+
+        /* CSS */
+        .button-29 {
+            align-items: center;
+            appearance: none;
+            background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+            border: 0;
+            border-radius: 6px;
+            box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono", monospace;
+            height: 30px;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            font-size: 18px;
+        }
+
+        .button-29:focus {
+            box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+        }
+
+        .button-29:hover {
+            box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .button-29:active {
+            box-shadow: #3c4fe0 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+
+
+        /* CSS */
+        .button-23 {
+            background-color: #FFFFFF;
+            border: 1px solid #222222;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #222222;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0;
+            outline: none;
+            padding: 4px 10px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            touch-action: manipulation;
+            transition: box-shadow .2s, -ms-transform .1s, -webkit-transform .1s, transform .1s;
+            user-select: none;
+            -webkit-user-select: none;
+            width: 160px;
+        }
+
+        .button-23:focus-visible {
+            box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+            transition: box-shadow .2s;
+        }
+
+        .button-23:active {
+            background-color: #F7F7F7;
+            border-color: #000000;
+            transform: scale(.96);
+        }
+
+        .button-23:disabled {
+            border-color: #DDDDDD;
+            color: #DDDDDD;
+            cursor: not-allowed;
+            opacity: 1;
+        }
+
+        #cookiePopup {
+            background-color: #bbbbbb;
+            position: fixed;
+            box-shadow: 0 0 2em rgba(5, 0, 31, 1.15);
+            text-align: justify;
+            border-radius: 6px;
+            transition: all 0.5s ease-in;
+            bottom: 38px;
+            right: 10px;
+            z-index: 21;
+        }
+
+        @media (max-width: 537px) {
+            #cookiePopup {
+                left: 10px;
+            }
+        }
+
+        @media (min-width: 537px) {
+            #cookiePopup {
+                left: unset;
+            }
+        }
+
+        #cookiePopup p {
+            margin-left: 15px;
+        }
+
+        #acceptCookie {
+            background-color: #3520FE;
+            border: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            display: block;
+            position: relative;
+            margin: auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #closeCookie {
+            background-color: #A80000;
+            border: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            display: block;
+            position: relative;
+            margin: auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #cookiePopup a {
+            color: #000699;
+        }
+
+        .gdpr-container {
+            display: none;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-width: 200px;
+            max-width: 500px;
+
+        }
+
+        .ingdpr-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+
+        #checkout2 {
+            background-color: #ffffff;
+            border: none;
+            color: #000000;
+            box-shadow: 0 0 2em rgba(5, 0, 31, 1.15);
+            text-align: justify;
+            border-radius: 6px;
+            transition: all 0.5s ease-in;
+            z-index: 21;
+        }
+
+        #close-checkout2 {
+            background-color: #A80000;
+            border: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            display: block;
+            position: relative;
+            margin: auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #checkout2-Popup a {
+            color: #000699;
+        }
+
+        .checkout2-container {
+            flex-direction: column;
+            align-items: center;
+            min-width: 200px;
+            max-width: 500px;
+            display: flex;
+            margin-top: 50px;
+            width: 100%;
+            margin-left: 10px;
+            margin-right: 10px;
+            min-height: 500px;
+            max-height: 800px;
+            height: min-content;
+        }
+
+        .loader {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 50px;
+            height: 80px;
+            border-top: 5px solid #fff;
+            border-bottom: 5px solid #fff;
+            position: relative;
+            background: linear-gradient(#FF3D00 30px, transparent 0) no-repeat;
+            background-size: 2px 40px;
+            background-position: 50% 0px;
+            animation: spinx 5s linear infinite;
+        }
+
+        .loader:before,
+        .loader:after {
+            content: "";
+            width: 40px;
+            left: 50%;
+            height: 35px;
+            position: absolute;
+            top: 0;
+            transform: translatex(-50%);
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 0 0 20px 20px;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: 0 0px;
+            animation: lqt 5s linear infinite;
+        }
+
+        .loader:after {
+            top: auto;
+            bottom: 0;
+            border-radius: 20px 20px 0 0;
+            animation: lqb 5s linear infinite;
+        }
+
+        @keyframes lqt {
+
+            0%,
+            100% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0% 0px;
+            }
+
+            50% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0% 40px;
+            }
+
+            50.1% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0% -40px;
+            }
+        }
+
+        @keyframes lqb {
+            0% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0 40px;
+            }
+
+            100% {
+                background-image: linear-gradient(#FF3D00 40px, transparent 0);
+                background-position: 0 -40px;
+            }
+        }
+
+        @keyframes spinx {
+
+            0%,
+            49% {
+                transform: rotate(0deg);
+                background-position: 50% 36px;
+            }
+
+            51%,
+            98% {
+                transform: rotate(180deg);
+                background-position: 50% 4px;
+            }
+
+            100% {
+                transform: rotate(360deg);
+                background-position: 50% 36px;
+            }
+        }
+
+
+
+        /* CSS */
+        .button-42 {
+            background-color: initial;
+            background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+            height: 33px;
+            line-height: 33px;
+            outline: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            pointer-events: auto;
+            position: relative;
+            text-align: center;
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+            vertical-align: top;
+            white-space: nowrap;
+            width: 100%;
+            z-index: 9;
+            border: 0;
+            transition: box-shadow .2s;
+        }
+
+        .button-42:hover {
+            box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+        }
+
+
+        /* CSS */
+        .button-22 {
+            align-items: center;
+            appearance: button;
+            background-color: #0276FF;
+            border-radius: 8px;
+            border-style: none;
+            box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            flex-shrink: 0;
+            font-family: "RM Neue", sans-serif;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+            padding: 10px 21px;
+            text-align: center;
+            text-transform: none;
+            transition: color .13s ease-in-out, background .13s ease-in-out, opacity .13s ease-in-out, box-shadow .13s ease-in-out;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-22:active {
+            background-color: #006AE8;
+        }
+
+        .button-22:hover {
+            background-color: #1C84FF;
+        }
+
+        .error {
+            border: 1px solid red;
+        }
+
+        .input1 {
+            font-size: 1.0em;
+        }
+
+        .countdown {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #121b1c;
+            background-size: cover;
+            background-position: center center;
+            border: 3px solid grey;
+            transform-origin: center bottom;
+        }
+
+        .countdown__icon {
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            width: 56px;
+            fill: transparent;
+            stroke: #76e19e;
+            stroke-width: 10px;
+            stroke-linecap: round;
+        }
+
+        .countdown__icon__circle {
+            stroke-dasharray: 375.787322998;
+        }
+
+        .countdown__number {
+            color: #fff;
         }
     </style>
 </head>
@@ -430,7 +900,9 @@
                         Automatic delivery<br>
                         <img style="margin-bottom:-0.5em" src="images/crypto.png" alt="crypto" width="32" height="32" />
                         Cryptocurrency friendly<br><br>
-                        &#x2022; <strong>Support:</strong> mail@hashesgenerator.com
+                        &#x2022; <strong>Support e-mail:</strong>&nbsp;&nbsp;mail@hashesgenerator.com<br>
+                        &#x2022; <strong>Support Skype:</strong>&nbsp;&nbsp;<a
+                            href="skype:live:.cid.81cfc5e2e202b002?chat">live:.cid.81cfc5e2e202b002</a>
                     </p>
                 </div>
                 <hr>
@@ -448,7 +920,12 @@
                         </script>
                 </div>
 
-
+                <div style="text-align: end;align-items: end;display: flex;flex-direction: column;">
+                    <button class="button-23" role="button"
+                        style="margin-top: 8px;font-size: 15px;text-align: justify;align-items: center;display: flex;justify-content: space-between;"
+                        id="btnCheckout2" type="button">Buy with PIRI <img 
+                            src="images/piri.png" alt="delivery" width="32" height="32" /></button>
+                </div>
             </div>
 
         </div>
@@ -466,83 +943,6 @@
         </div>
     </div>
 
-    <style>
-        #cookiePopup {
-            background-color: #bbbbbb;
-            position: fixed;
-            box-shadow: 0 0 2em rgba(5, 0, 31, 1.15);
-            text-align: justify;
-            border-radius: 6px;
-            transition: all 0.5s ease-in;
-            bottom: 38px;
-            right: 10px;
-            z-index: 21;
-
-        }
-
-        @media (max-width: 537px) {
-            #cookiePopup {
-                left: 10px;
-            }
-        }
-
-        @media (min-width: 537px) {
-            #cookiePopup {
-                left: unset;
-            }
-        }
-
-        #cookiePopup p {
-            margin-left: 15px;
-        }
-
-        #acceptCookie {
-            background-color: #3520FE;
-            border: none;
-            color: #ffffff;
-            font-size: 1.2em;
-            display: block;
-            position: relative;
-            margin: auto;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #closeCookie {
-            background-color: #A80000;
-            border: none;
-            color: #ffffff;
-            font-size: 1.2em;
-            display: block;
-            position: relative;
-            margin: auto;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #cookiePopup a {
-            color: #000699;
-        }
-
-        .gdpr-container {
-            display: none;
-            flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            min-width: 200px;
-            max-width: 500px;
-
-        }
-
-        .ingdpr-container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
     <div class="gdpr-container" id="cookiePopup">
         <h3>Our cookies policy</h3>
         <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
@@ -568,9 +968,219 @@
         </div>
     </div>
 
+
+
+    <div id="checkout2Modal" class="checkout2Modal" style="font-size: 14px;">
+
+        <div class="checkout2-container" id="checkout2">
+            <h4 style="margin: 5px;margin-top: 14px;">PIRI Chain checkout</h4>
+            <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
+            <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;min-height: 457px;"
+                id="checkout2-wait">
+                <div
+                    style="width: 100%;background: darkgray;justify-content: center;align-items: center;display: flex;padding: 10px;margin-top: 100px;margin-bottom: 100px; ">
+                    <span class="loader"></span>
+                </div>
+            </div>
+            <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;min-height: 457px;"
+                id="checkout2-input">
+                <p style="margin-bottom: 40px;">
+                    Please fill the fields
+                </p>
+                <label for="fname">Full name:</label>
+                <input class="input1" type="text" id="fname" name="fname" required
+                    style="min-width: 150px;max-width: 300px;width: 100%;"><br>
+                <label for="email">E-mail:</label>
+                <input class="input1" type="text" id="email" name="email" required
+                    style="min-width: 150px;max-width: 300px;width: 100%;"><br><br>
+                <button id="nextCheckout2" class="button-22" role="button"
+                    style="margin-left: auto;width: 100px;font-size: 15px;;margin-top:20px;">Next</button>
+            </div>
+            <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;min-height: 457px;"
+                id="checkout2-qr">
+                <div class="countdown"
+                    style="display: flex;justify-content: center;align-items: center;flex-direction: column;box-sizing: border-box;margin: 0px;">
+                    <span class="countdown__number" id="checkOuttime">0</span>
+                    <svg class="countdown__icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 130"
+                        overflow="visible" enable-background="new 0 0 130 130">
+                        <path id="countdown1" class="countdown__icon__circle"
+                            d="M5,64.8a59.8,59.8 0 1,0 119.6,0a59.8,59.8 0 1,0 -119.6,0" />
+                    </svg>
+                </div>
+                <div
+                    style="width: 100%;justify-content: center;align-items: center;display: flex;flex-direction: column;">
+                    <p style="font-size: 14px;margin-top: 5px;margin-bottom: 4px;">
+                        Please transfer the full amount to the specified PIRI address.<br>
+                        You have only 60 minutes, then an address will not be valid and your payment will not be
+                        confirmed
+                    <h4 style="margin-bottom: 10px;margin-top:0px">QR Code</h4>
+                    <div id="qrcode" style="width: 170px;height: 170px;"></div>
+
+                    <div
+                        style="display: flex; flex-direction:column;align-items:start;overflow-wrap: break-word;word-break: break-all;margin-top: 15px;font-size: 12px;">
+                        <div>
+                            <svg id="copy1" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" height="18"
+                                width="18" onclick="copyTextToClipboard($('#checkout2-Address').text())"
+                                style="margin-bottom: -0.3em;cursor:pointer;">
+                                <path
+                                    d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z" />
+                            </svg>
+                            <svg height="18" width="18" id="confirm1"
+                                style="enable-background:new 0 0 128 128;margin-bottom: -0.3em;display:none;"
+                                version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <style type="text/css">
+                                    .st0 {
+                                        fill: #31AF91;
+                                    }
+
+                                    .st1 {
+                                        fill: #FFFFFF;
+                                    }
+                                </style>
+                                <g>
+                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                </g>
+                                <g>
+                                    <path class="st1"
+                                        d="M54.3,97.2L24.8,67.7c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0L55,78.1l38.2-38.2   c0.4-0.4,1-0.4,1.4,0l8.5,8.5c0.4,0.4,0.4,1,0,1.4L55.7,97.2C55.3,97.6,54.7,97.6,54.3,97.2z" />
+                                </g>
+                            </svg>
+                            <span><strong>Address:&nbsp;&nbsp;</strong></span><span id="checkout2-Address"></span>
+
+                        </div>
+                        <div>
+                            <svg id="copy2" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" height="18"
+                                width="18" onclick="copyTextToClipboard($('#checkout2-Amount').text())"
+                                style="margin-bottom: -0.3em;margin-top: 5px;cursor:pointer;">
+                                <path
+                                    d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z" />
+                            </svg>
+                            <svg height="18" width="18" id="confirm2"
+                                style="enable-background:new 0 0 128 128;margin-bottom: -0.3em;margin-top: 5px;display:none;"
+                                version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <style type="text/css">
+                                    .st0 {
+                                        fill: #31AF91;
+                                    }
+
+                                    .st1 {
+                                        fill: #FFFFFF;
+                                    }
+                                </style>
+                                <g>
+                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                </g>
+                                <g>
+                                    <path class="st1"
+                                        d="M54.3,97.2L24.8,67.7c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0L55,78.1l38.2-38.2   c0.4-0.4,1-0.4,1.4,0l8.5,8.5c0.4,0.4,0.4,1,0,1.4L55.7,97.2C55.3,97.6,54.7,97.6,54.3,97.2z" />
+                                </g>
+                            </svg>
+                            <span><strong>Amount:&nbsp;&nbsp;</strong></span><span
+                                id="checkout2-Amount"></span><span>&nbsp;PIRI</span>
+                        </div>
+                        <div>
+                            <svg id="copy3" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" height="18"
+                                width="18" onclick="copyTextToClipboard($('#checkout2-Email').text())"
+                                style="margin-bottom: -0.3em;margin-top: 5px;cursor:pointer;">
+                                <path
+                                    d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z" />
+                            </svg>
+                            <svg height="18" width="18" id="confirm3"
+                                style="enable-background:new 0 0 128 128;margin-bottom: -0.3em;margin-top: 5px;display:none;"
+                                version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <style type="text/css">
+                                    .st0 {
+                                        fill: #31AF91;
+                                    }
+
+                                    .st1 {
+                                        fill: #FFFFFF;
+                                    }
+                                </style>
+                                <g>
+                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                </g>
+                                <g>
+                                    <path class="st1"
+                                        d="M54.3,97.2L24.8,67.7c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0L55,78.1l38.2-38.2   c0.4-0.4,1-0.4,1.4,0l8.5,8.5c0.4,0.4,0.4,1,0,1.4L55.7,97.2C55.3,97.6,54.7,97.6,54.3,97.2z" />
+                                </g>
+                            </svg>
+                            <span><strong>Email:&nbsp;&nbsp;</strong></span><span id="checkout2-Email"></span>
+                        </div>
+                    </div>
+                    </p>
+                </div>
+                <button class="button-22" role="button" id="checkout2paid" style="margin-bottom: 0px; ">Click if
+                    paid</button>
+            </div>
+            <div style="width: 100%;justify-content: center;align-items: center;display: none;flex-direction: column;min-height: 457px;"
+                id="checkout2-waitconfirm">
+                <div class="countdown"
+                    style="display: flex;justify-content: center;align-items: center;flex-direction: column;box-sizing: border-box;margin: 0px;">
+                    <span class="countdown__number" id="confirmTime"></span>
+                    <svg class="countdown__icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 130"
+                        overflow="visible" enable-background="new 0 0 130 130">
+                        <path id="countdown2" class="countdown__icon__circle"
+                            d="M5,64.8a59.8,59.8 0 1,0 119.6,0a59.8,59.8 0 1,0 -119.6,0" />
+                    </svg>
+                </div>
+                <p style="font-size: 16px;">
+                    Please wait for confirmation<br>
+                </p>
+            </div>
+            <div id="checkout2-confirmed"
+                style="justify-content: center;align-items: center;display: none;margin: auto;min-height: 457px;">
+                <svg enable-background="new 0 0 59.577 58.667" height="48" id="Layer_1" version="1.1"
+                    viewBox="0 0 59.577 58.667" width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path
+                        d="M59.039,0.35c-0.636-0.532-1.583-0.447-2.112,0.189L27.766,35.419l-9.655-7.594c-0.652-0.512-1.595-0.4-2.106,0.252  c-0.512,0.651-0.399,1.594,0.252,2.106l10.8,8.494c0.089,0.07,0.189,0.109,0.287,0.156c0.051,0.024,0.096,0.063,0.148,0.08  c0.16,0.056,0.326,0.085,0.492,0.085c0.109,0,0.218-0.013,0.325-0.036c0.036-0.008,0.068-0.023,0.103-0.034  c0.07-0.021,0.141-0.04,0.208-0.071c0.042-0.02,0.08-0.048,0.121-0.072c0.055-0.032,0.111-0.062,0.162-0.101  c0.043-0.033,0.079-0.075,0.119-0.113c0.039-0.037,0.081-0.068,0.115-0.11L59.227,2.462C59.759,1.827,59.674,0.881,59.039,0.35z" />
+                    <path
+                        d="M52.071,13.208c-0.7,0.443-0.909,1.369-0.466,2.069c2.657,4.201,4.062,9.062,4.062,14.057  c0,14.521-11.813,26.333-26.333,26.333S3,43.854,3,29.333C3,14.813,14.813,3,29.333,3c5.963,0,11.587,1.943,16.262,5.621  c0.652,0.511,1.595,0.4,2.106-0.252c0.513-0.651,0.399-1.594-0.251-2.106C42.241,2.166,35.976,0,29.333,0  C13.159,0,0,13.159,0,29.333c0,16.174,13.159,29.333,29.333,29.333c16.174,0,29.333-13.159,29.333-29.333  c0-5.563-1.565-10.979-4.526-15.66C53.698,12.973,52.77,12.764,52.071,13.208z" />
+                </svg>
+                <p style="color: #000000;margin: 0px;margin-left: 10px;">Confirmed</p>
+            </div>
+            <div id="checkout2-error"
+                style="justify-content: center;align-items: center;display: none;margin: auto;flex-direction: column;min-height: 457px;">
+                <div
+                    style="justify-content: center;align-items: center;display: flex;margin: auto;flex-direction: row;">
+                    <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32;margin-bottom: -15px;"
+                        viewBox="0 0 32 32" width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <span
+                        style="color: #ff1515;font-size: 22px;margin-left: 10px;margin-top: 28px;padding-bottom: 10px;">Error</span>
+                </div>
+                <p style="font-size: 18px;color: rgb(0, 0, 0);display: flex;margin-top: 30px;margin-bottom: 200px;"
+                    id="errorMsg">Error
+                    mesage</p>
+            </div>
+            <hr style="color: black;background-color: black;width: 90%;height: 1px;margin-top: 13px;">
+            <div
+                style="width: 80%;justify-content: center;display: flex;flex-direction: row;margin-top: 0px;margin-bottom: 15px;">
+                <button type="button" style="margin: 5px;height: 37px;width: 100px;margin-bottom: 5px;margin-top: 10px;"
+                    id="close-checkout2">Close</button>
+            </div>
+        </div>
+    </div>
+
     <style>
         #toast {
-            visibility: hidden;
+            display: none;
             min-width: 200px;
             background-color: white;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -587,7 +1197,6 @@
         }
 
         #toast.show {
-            visibility: visible;
             -webkit-animation: fadein 0.5s;
             animation: fadein 0.5s;
         }
@@ -649,7 +1258,7 @@
 
     <div id="toast">
         <div class="checkicon" style="width: 30px;">
-            <svg onclick="document.getElementById('toast').style.visibility='hidden'" style="cursor:pointer;left: 10px;"
+            <svg onclick="document.getElementById('toast').style.display='none'" style="cursor:pointer;left: 10px;"
                 width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
@@ -724,6 +1333,7 @@
         $(window).on("DOMContentLoaded", function () {
             GGenLoadWorker.run();
         });
+
         $(window).on("load", function () {
             setTimeout(function () {
                 document.getElementById("acceptCookie").addEventListener("click", () => {
@@ -863,6 +1473,343 @@
             });
         }
 
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+            } catch (err) {
+            }
+
+            document.body.removeChild(textArea);
+        }
+        function copyTextToClipboard(text) {
+            if (!navigator.clipboard) {
+                fallbackCopyTextToClipboard(text);
+                return;
+            }
+            navigator.clipboard.writeText(text).then(function () {
+            }, function (err) {
+            });
+        }
+
+
+
+        function PIRICheckout() {
+            this.invoiceJSON = null;
+            this.loadedJS = 0;
+            this._self = this;
+            this.working = true;
+        };
+        const PIRICheckoutPrototype = {
+            validateEmail(email) {
+                let res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+                return res.test(email);
+            },
+            validateLength(value) {
+                if (value.length > 0) {
+                    return true;
+                }
+                return false;
+            },
+            async createInvoice(name, email, product, answ) {
+                let invoice = new Object();
+                invoice.Name = name;
+                invoice.Email = email;
+                invoice.Product = product;
+                invoice.do = "createinvoice";
+                let jsonString = JSON.stringify(invoice);
+
+                const response = await fetch('https://checkoutpiri.azurewebsites.net/api/CheckoutAPI?code=TjPLuNeU_35LH8TDIY6byBmEMx7guO4MLBldG1tDeKIZAzFuCiPJTA==', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8',
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Methods': 'POST,PATCH,OPTIONS'
+                    },
+                    body: jsonString
+                });
+                return await response.json();
+            },
+            startCountdown(c, seconds, callback) {
+                var $circleBorder = $('.countdown__icon__circle').get(c);
+                $('.countdown__icon__circle').css("stroke-dashoffset", 0);
+                $('.countdown__icon__circle').css("stroke", '#76e19e');
+                $('.countdown__icon__circle').css("stroke-dasharray", 375.787322998);
+
+                var $countdown = $('.countdown');
+
+                var length = $circleBorder.getTotalLength();
+                var counter = {
+                    var: seconds
+                };
+
+                var tl = new TimelineMax({
+                    delay: 0.0,
+                });
+
+                tl.play();
+
+                tl.set($countdown, {
+                    scale: 0,
+                }).to($countdown, 0.4, {
+                    scale: 1,
+                    ease: Back.easeOut.config(1.4),
+                }).to($circleBorder, seconds, {
+                    strokeDashoffset: length,
+                    stroke: '#FB7593',
+                    ease: Power0.easeNone
+                }).to(counter, seconds, {
+                    var: 0,
+                    onUpdate: function () {
+                        let _minutes = Math.floor(counter.var / 60);
+                        let _seconds = Math.floor(counter.var - _minutes * 60);
+                        _minutes = _minutes.toString().padStart(2, '0');
+                        _seconds = _seconds.toString().padStart(2, '0');
+                        $('.countdown__number').html(_minutes + ":" + _seconds);
+                    },
+                    ease: Power0.easeNone
+                }, '-= 10')
+                    .to($countdown, 0.4, {
+                        scale: 0,
+                        ease: Back.easeIn.config(1.4),
+                        onComplete: function () {
+                            callback();
+                        }
+                    });
+                return tl;
+            },
+            async checkWallet(wallet) {
+                let bal = 0.0;
+                let req = new Object();
+                req.address = wallet;
+                req.assetID = "-1";
+                let jsonString = JSON.stringify(req);
+
+
+                const response = await fetch('https://core.pirichain.com/getBalance', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8'
+                    },
+                    body: jsonString,
+                });
+                let invoiceJSON = await response.json();
+                bal = parseFloat(invoiceJSON.balance);
+                return bal;
+            },
+            showInvoice() {
+                let anim1 = null;
+                let anim2 = null;
+                let _t= null;
+                let _self = this;
+
+                $('#checkout2-wait').css("display", "none");
+                $('#checkout2-qr').css("display", "none");
+                $('#checkout2-error').css("display", "none");
+                $('#checkout2-confirmed').css("display", "none");
+                $('#checkout2-waitconfirm').css("display", "none");
+
+                $('#checkout2Modal').css("display", "flex");
+                $('#checkout2-input').css("display", "flex");
+
+                $('#close-checkout2').off().on("click", function () {
+
+                    $('#checkout2Modal').css('display', 'none');
+                    if (anim1 != null) anim1.pause();
+                    if (anim2 != null) anim2.pause();
+                    if (_t != null) clearInterval(_t);
+                });
+
+                const list = document.getElementById("qrcode");
+
+                while (list.hasChildNodes()) {
+                    list.removeChild(list.firstChild);
+                }
+
+                $("#nextCheckout2").off().on("click", function () {
+
+                    let fname = $('#fname');
+                    let email = $('#email');
+                    fname.css("borderColor", "black");
+                    email.css("borderColor", "black");
+                    if (!_self.validateLength(fname.val())) {
+                        fname.css("borderColor", "red");
+                    } else if (!_self.validateEmail(email.val())) {
+                        email.css("borderColor", "red");
+                    } else {
+                        $('#checkout2-input').css("display", "none");
+                        $('#checkout2-wait').css("display", "flex");
+                        _self.createInvoice(fname.val(), email.val(), "1").then(function (invoiceJSON) {
+                            if(_self.working!==true)return;
+
+                            $('#checkout2-wait').css("display", "none");
+
+                            anim1 = _self.startCountdown(0, 3600, function () {
+                                if(_self.working!==true)return;
+                                $('#checkout2-qr').css("display", "none");
+                                $('#checkout2-error').css("display", "flex");
+
+
+                                let checkout2errormsg = document.getElementById("errorMsg");
+                                checkout2errormsg.innerText = "Time is over.";
+                                checkout2errormsg.style.display = "flex";
+                            });
+
+
+                            if ((invoiceJSON !== null) && (invoiceJSON !== undefined)) {
+                                _self.invoiceJSON = invoiceJSON;
+
+                                $('#checkout2-qr').css("display", "flex");
+
+                                let checkout2qr = document.getElementById("qrcode");
+                                checkout2qr.style.display = "flex";
+
+                                var qrcode = new QRCode(checkout2qr, {
+                                    text: _self.invoiceJSON.Walletid,
+                                    width: 170,
+                                    height: 170,
+                                    colorDark: "#000000",
+                                    colorLight: "#ffffff",
+                                    correctLevel: QRCode.CorrectLevel.H
+                                });
+
+                                $("#checkout2-Address").text(_self.invoiceJSON.Walletid);
+                                $("#checkout2-Amount").text(_self.invoiceJSON.Amount);
+                                $("#checkout2-Email").text(_self.invoiceJSON.Email);
+
+                                $("#checkout2paid").off().on("click", function () {
+                                    if(_self.working!==true)return;
+                                    anim1.pause();
+                                    $('#checkout2-qr').css("display", "none");
+                                    $('#checkout2-waitconfirm').css("display", "flex");
+
+                                    
+
+                                    anim2 = _self.startCountdown(1, 180, function () {
+                                        if(_self.working!==true)return;
+
+                                        clearInterval(_t);
+                                        $('#checkout2-waitconfirm').css("display", "none");
+
+                                        let checkout2errormsg = document.getElementById("errorMsg");
+                                        checkout2errormsg.innerText = "Time is over.";
+                                        checkout2errormsg.style.display = "flex";
+
+                                        let checkout2error = document.getElementById("checkout2-error");
+                                        checkout2error.style.display = "flex";
+                                    });
+
+                                    _t = setInterval(function () {
+                                        _self.checkWallet(_self.invoiceJSON.Walletid).then(function (r) {
+                                            if(_self.working!==true)return;
+                                            if (r >= parseFloat(_self.invoiceJSON.Amount)) {
+                                                anim2.pause();
+                                                clearInterval(_t);
+                                                $('#checkout2-waitconfirm').css("display", "none");
+
+                                                let checkout2confirmed = document.getElementById("checkout2-confirmed");
+                                                checkout2confirmed.style.display = "flex";
+
+                                                let audio = new Audio('sounds/notification.wav');
+                                                setTimeout(function () {
+                                                    let toast = document.getElementById("toast");
+                                                    toast.classList.remove("show");
+                                                    document.getElementById("oid").innerText = _self.invoiceJSON.id;
+                                                    audio.play();
+                                                    toast.className = "show";
+                                                    toast.style.display = "block";
+                                                }, 1000);
+                                            }
+                                        });
+                                    }, 2000);
+                                });
+                            } else {
+                                $('#checkout2-wait').css("display", "none");
+
+                                let checkout2errormsg = document.getElementById("errorMsg");
+                                checkout2errormsg.innerText = "Something was wrong.";
+                                checkout2errormsg.style.display = "flex";
+
+                                let checkout2error = document.getElementById("checkout2-error");
+                                checkout2error.style.display = "flex";
+                            }
+                        });
+                    }
+                });
+            },
+            preRun() {
+                let _self = this;
+                let jsLinks = ["https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js",
+                    "/js/qrgen.js"];
+                for (let js of jsLinks) {
+                    let usedLaterScript = document.createElement('script');
+                    usedLaterScript.src = js;
+                    usedLaterScript.async = true;
+                    usedLaterScript.onload = () => {
+                        _self.loadedJS++;
+                    }
+                    document.body.appendChild(usedLaterScript);
+                };
+                let _int = setInterval(function () {
+
+                    if (_self.loadedJS == 2) {
+                        clearInterval(_int);
+                        _self.run();
+                    }
+                }, 50);
+            },
+            run: function () {
+                this.showInvoice();
+            }
+        };
+
+        Object.assign(PIRICheckout.prototype, PIRICheckoutPrototype);
+
+        var GPIRICheckout = null;
+        $("#btnCheckout2").on("click", function () {
+            if (GPIRICheckout == null) {
+                GPIRICheckout = new PIRICheckout();
+                GPIRICheckout.preRun();
+            } else {
+                GPIRICheckout.run();
+            }
+        });
+
+        $("#copy1").on("click", function () {
+            $('#copy1').css("display", "none");
+            $('#confirm1').css("display", "unset");
+            setTimeout(function () {
+                $('#copy1').css("display", "unset");
+                $('#confirm1').css("display", "none");
+            }, 2000);
+        });
+
+        $("#copy2").on("click", function () {
+            $('#copy2').css("display", "none");
+            $('#confirm2').css("display", "unset");
+            setTimeout(function () {
+                $('#copy2').css("display", "unset");
+                $('#confirm2').css("display", "none");
+            }, 2000);
+        });
+
+        $("#copy3").on("click", function () {
+            $('#copy3').css("display", "none");
+            $('#confirm3').css("display", "unset");
+            setTimeout(function () {
+                $('#copy3').css("display", "unset");
+                $('#confirm3').css("display", "none");
+            }, 2000);
+        });
     </script>
 </body>
 
