@@ -610,7 +610,7 @@
             font-size: 1.0em;
         }
 
-        .countdown,.countdown2 {
+        .countdown {
             position: relative;
             width: 50px;
             height: 50px;
@@ -622,7 +622,7 @@
             transform-origin: center bottom;
         }
 
-        .countdown__icon,.countdown__icon2 {
+        .countdown__icon {
             position: absolute;
             top: -6px;
             left: -6px;
@@ -633,11 +633,11 @@
             stroke-linecap: round;
         }
 
-        .countdown__icon__circle,.countdown__icon__circle2 {
+        .countdown__icon__circle {
             stroke-dasharray: 375.787322998;
         }
 
-        .countdown__number,.countdown__number2 {
+        .countdown__number {
             color: #fff;
         }
     </style>
@@ -890,9 +890,10 @@
         <div class="checkout2-container" id="checkout2">
             <h4 style="margin: 5px;margin-top: 14px;">PIRI Chain checkout</h4>
             <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
-            <div style="width: 75%;background: darkgray;justify-content: center;align-items: center;display: none;padding: 10px;margin-top: 100px;
-            margin-bottom: 100px;" id="checkout2-wait">
-                <span class="loader"></span>
+            <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;height: 400px;" id="checkout2-wait">
+                <div style="width: 100%;background: darkgray;justify-content: center;align-items: center;display: flex;padding: 10px;margin-top: 100px;margin-bottom: 100px; ">
+                    <span class="loader"></span>
+                </div>
             </div>
             <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;height: 400px;"
                 id="checkout2-input">
@@ -1060,7 +1061,7 @@
             <div id="checkout2-error"
                 style="justify-content: center;align-items: center;display: none;margin: auto;flex-direction: column;">
                 <div
-                    style="justify-content: center;align-items: center;display: none;margin: auto;flex-direction: row;">
+                    style="justify-content: center;align-items: center;display: flex;margin: auto;flex-direction: row;">
                     <svg height="48" style="overflow:visible;enable-background:new 0 0 32 32;margin-bottom: -15px;"
                         viewBox="0 0 32 32" width="48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -1450,9 +1451,9 @@
                 });
                 return await response.json();
             },
-            startCountdown(c,seconds, callback) {
-                var $circleBorder = $('.countdown__icon__circle').get(c);
-                $('.countdown__icon__circle').css("stroke-dasharray",375.787322998);     
+            startCountdown(c, seconds, callback) {
+                var $circleBorder = $('.countdown__icon__circle').get(0);
+                $('.countdown__icon__circle').css("stroke-dasharray", 375.787322998);
                 var $countdown = $('.countdown');
 
                 var length = $circleBorder.getTotalLength();
@@ -1549,9 +1550,9 @@
                         _self.createInvoice(fname.val(), email.val(), "1").then(function (invoiceJSON) {
                             $('#checkout2-wait').css("display", "none");
 
-                            let anim1 = _self.startCountdown(0,3600, function () {
+                            let anim1 = _self.startCountdown(0, 3600, function () {
                                 $('#checkout2-qr').css("display", "none");
-                                $('#errorMsg').text = "Something was wrong.";
+                                $('#errorMsg').text = "Time is over.";
                                 $('#errorMsg').css("display", "flex");
                                 $('#checkout2-error').css("display", "flex");
                             });
@@ -1567,8 +1568,8 @@
 
                                 var qrcode = new QRCode(checkout2qr, {
                                     text: _self.invoiceJSON.Walletid,
-                                    width: 180,
-                                    height: 180,
+                                    width: 170,
+                                    height: 170,
                                     colorDark: "#000000",
                                     colorLight: "#ffffff",
                                     correctLevel: QRCode.CorrectLevel.H
@@ -1598,20 +1599,17 @@
                                         });
                                     }, 2000);
 
-                                    anim2 = _self.startCountdown(1,180, function () {
+                                    anim2 = _self.startCountdown(1, 180, function () {
                                         clearInterval(_t);
                                         $('#checkout2-waitconfirm').css("display", "none");
 
                                         let checkout2errormsg = document.getElementById("errorMsg");
-                                        checkout2errormsg.text = "Something was wrong.";
+                                        checkout2errormsg.text = "Time is over.";
                                         checkout2errormsg.style.display = "flex";
 
                                         let checkout2error = document.getElementById("checkout2-error");
                                         checkout2error.style.display = "flex";
                                     });
-
-
-
                                 });
                             } else {
                                 $('#checkout2-wait').css("display", "none");
