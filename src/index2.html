@@ -1653,7 +1653,7 @@
 
                             $('#checkout2-wait').css("display", "none");
 
-                            anim1 = _self.startCountdown(0, 15, function () {
+                            anim1 = _self.startCountdown(0, 3600, function () {
                                 if(_self.working!==true)return;
                                 $('#checkout2-qr').css("display", "none");
                                 $('#checkout2-error').css("display", "flex");
@@ -1694,7 +1694,7 @@
 
                                     
 
-                                    anim2 = _self.startCountdown(1, 20, function () {
+                                    anim2 = _self.startCountdown(1, 180, function () {
                                         if(_self.working!==true)return;
 
                                         clearInterval(_t);
