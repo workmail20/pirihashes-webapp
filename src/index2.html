@@ -1179,7 +1179,7 @@
 
     <style>
         #toast {
-            visibility: hidden;
+            display: none;
             min-width: 200px;
             background-color: white;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -1196,7 +1196,7 @@
         }
 
         #toast.show {
-            visibility: visible;
+            display: block;
             -webkit-animation: fadein 0.5s;
             animation: fadein 0.5s;
         }
@@ -1258,7 +1258,7 @@
 
     <div id="toast">
         <div class="checkicon" style="width: 30px;">
-            <svg onclick="document.getElementById('toast').style.visibility='hidden'" style="cursor:pointer;left: 10px;"
+            <svg onclick="document.getElementById('toast').style.display='none'" style="cursor:pointer;left: 10px;"
                 width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
