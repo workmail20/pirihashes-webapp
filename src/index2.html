@@ -1638,9 +1638,12 @@
 
                             let anim1 = _self.startCountdown(0, 15, function () {
                                 $('#checkout2-qr').css("display", "none");
-                                $('#errorMsg').text = "Time is over.";
-                                $('#errorMsg').css("display", "flex");
                                 $('#checkout2-error').css("display", "flex");
+
+                                
+                                let checkout2errormsg = document.getElementById("errorMsg");
+                                checkout2errormsg.innerText = "Time is over.";
+                                checkout2errormsg.style.display = "flex";
                             });
 
 
