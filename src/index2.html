@@ -1452,6 +1452,7 @@
             },
             startCountdown(c,seconds, callback) {
                 var $circleBorder = $('.countdown__icon__circle').get(c);
+                $('.countdown__icon__circle').css("stroke-dasharray",375.787322998);     
                 var $countdown = $('.countdown');
 
                 var length = $circleBorder.getTotalLength();
