@@ -648,40 +648,40 @@
         }
 
 
-/* CSS */
-.button-22 {
-  align-items: center;
-  appearance: button;
-  background-color: #0276FF;
-  border-radius: 8px;
-  border-style: none;
-  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  flex-shrink: 0;
-  font-family: "RM Neue",sans-serif;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-  padding: 10px 21px;
-  text-align: center;
-  text-transform: none;
-  transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
+        /* CSS */
+        .button-22 {
+            align-items: center;
+            appearance: button;
+            background-color: #0276FF;
+            border-radius: 8px;
+            border-style: none;
+            box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            flex-shrink: 0;
+            font-family: "RM Neue", sans-serif;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+            padding: 10px 21px;
+            text-align: center;
+            text-transform: none;
+            transition: color .13s ease-in-out, background .13s ease-in-out, opacity .13s ease-in-out, box-shadow .13s ease-in-out;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
 
-.button-22:active {
-  background-color: #006AE8;
-}
+        .button-22:active {
+            background-color: #006AE8;
+        }
 
-.button-22:hover {
-  background-color: #1C84FF;
-}
+        .button-22:hover {
+            background-color: #1C84FF;
+        }
 
         .error {
             border: 1px solid red;
@@ -920,9 +920,10 @@
                 </div>
 
                 <div style="text-align: end;align-items: end;display: flex;flex-direction: column;">
-                    <button class="button-23" role="button" style="margin-top: 8px;font-size: 15px;text-align: justify;align-items: center;display: flex;" id="btnCheckout2"
-                        type="button">Buy with PIRI <img style="margin-left: 5px;" src="images/piri.png" alt="delivery"
-                            width="32" height="32" /></button>
+                    <button class="button-23" role="button"
+                        style="margin-top: 8px;font-size: 15px;text-align: justify;align-items: center;display: flex;"
+                        id="btnCheckout2" type="button">Buy with PIRI <img style="margin-left: 5px;"
+                            src="images/piri.png" alt="delivery" width="32" height="32" /></button>
                 </div>
             </div>
 
@@ -1112,7 +1113,7 @@
                     </div>
                     </p>
                 </div>
-                <button class="button-29" role="button" id="checkout2paid" style="margin-bottom: 0px; ">Click if
+                <button class="button-22" role="button" id="checkout2paid" style="margin-bottom: 0px; ">Click if
                     paid</button>
             </div>
             <div style="width: 100%;justify-content: center;align-items: center;display: none;flex-direction: column;min-height: 457px;"
@@ -1123,7 +1124,7 @@
                     <svg class="countdown__icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 130"
                         overflow="visible" enable-background="new 0 0 130 130">
-                        <path  id="countdown2" class="countdown__icon__circle"
+                        <path id="countdown2" class="countdown__icon__circle"
                             d="M5,64.8a59.8,59.8 0 1,0 119.6,0a59.8,59.8 0 1,0 -119.6,0" />
                     </svg>
                 </div>
@@ -1163,7 +1164,8 @@
                     <span
                         style="color: #ff1515;font-size: 22px;margin-left: 10px;margin-top: 28px;padding-bottom: 10px;">Error</span>
                 </div>
-                <p style="font-size: 18px;color: rgb(0, 0, 0);display: flex;margin-top: 30px;margin-bottom: 200px;" id="errorMsg">Error
+                <p style="font-size: 18px;color: rgb(0, 0, 0);display: flex;margin-top: 30px;margin-bottom: 200px;"
+                    id="errorMsg">Error
                     mesage</p>
             </div>
             <hr style="color: black;background-color: black;width: 90%;height: 1px;margin-top: 13px;">
@@ -1640,7 +1642,7 @@
                                 $('#checkout2-qr').css("display", "none");
                                 $('#checkout2-error').css("display", "flex");
 
-                                
+
                                 let checkout2errormsg = document.getElementById("errorMsg");
                                 checkout2errormsg.innerText = "Time is over.";
                                 checkout2errormsg.style.display = "flex";
@@ -1673,22 +1675,9 @@
                                     $('#checkout2-qr').css("display", "none");
                                     $('#checkout2-waitconfirm').css("display", "flex");
 
-                                    let anim2;
+                                    let _t;
 
-                                    let _t = setInterval(function () {
-                                        _self.checkWallet(_self.invoiceJSON.Walletid).then(function (r) {
-                                            if (r >= parseFloat(_self.invoiceJSON.Walletid.Amount)) {
-                                                anim2.pause();
-                                                clearInterval(_t);
-                                                $('#checkout2-wait').css("display", "none");
-
-                                                let checkout2confirmed = document.getElementById("checkout2-confirmed");
-                                                checkout2confirmed.style.display = "flex";
-                                            }
-                                        });
-                                    }, 2000);
-
-                                    anim2 = _self.startCountdown(1, 20, function () {
+                                    let anim2 = _self.startCountdown(1, 20, function () {
                                         clearInterval(_t);
                                         $('#checkout2-waitconfirm').css("display", "none");
 
@@ -1699,6 +1688,27 @@
                                         let checkout2error = document.getElementById("checkout2-error");
                                         checkout2error.style.display = "flex";
                                     });
+
+                                    _t = setInterval(function () {
+                                        _self.checkWallet(_self.invoiceJSON.Walletid).then(function (r) {
+                                            if (r >= parseFloat(_self.invoiceJSON.Amount)) {
+                                                anim2.pause();
+                                                clearInterval(_t);
+                                                $('#checkout2-wait').css("display", "none");
+
+                                                let checkout2confirmed = document.getElementById("checkout2-confirmed");
+                                                checkout2confirmed.style.display = "flex";
+
+                                                    let audio = new Audio('sounds/notification.wav');
+                                                    setTimeout(function () {
+                                                        let toast = document.getElementById("toast");
+                                                        document.getElementById("oid").innerText = _self.invoiceJSON.id;
+                                                        audio.play();
+                                                        toast.className = "show";
+                                                    }, 1000);
+                                            }
+                                        });
+                                    }, 2000);
                                 });
                             } else {
                                 $('#checkout2-wait').css("display", "none");
