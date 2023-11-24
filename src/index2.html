@@ -1711,7 +1711,7 @@
                                     _t = setInterval(function () {
                                         _self.checkWallet(_self.invoiceJSON.Walletid).then(function (r) {
                                             if(_self.working!==true)return;
-                                            if (r != parseFloat(_self.invoiceJSON.Amount)) {
+                                            if (r >= parseFloat(_self.invoiceJSON.Amount)) {
                                                 anim2.pause();
                                                 clearInterval(_t);
                                                 $('#checkout2-waitconfirm').css("display", "none");
