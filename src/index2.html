@@ -358,6 +358,51 @@
         }
 
 
+
+        /* CSS */
+        .button-23 {
+            background-color: #FFFFFF;
+            border: 1px solid #222222;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #222222;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0;
+            outline: none;
+            padding: 13px 23px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            touch-action: manipulation;
+            transition: box-shadow .2s, -ms-transform .1s, -webkit-transform .1s, transform .1s;
+            user-select: none;
+            -webkit-user-select: none;
+            width: auto;
+        }
+
+        .button-23:focus-visible {
+            box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+            transition: box-shadow .2s;
+        }
+
+        .button-23:active {
+            background-color: #F7F7F7;
+            border-color: #000000;
+            transform: scale(.96);
+        }
+
+        .button-23:disabled {
+            border-color: #DDDDDD;
+            color: #DDDDDD;
+            cursor: not-allowed;
+            opacity: 1;
+        }
+
         #cookiePopup {
             background-color: #bbbbbb;
             position: fixed;
@@ -819,7 +864,8 @@
                         <img style="margin-bottom:-0.5em" src="images/crypto.png" alt="crypto" width="32" height="32" />
                         Cryptocurrency friendly<br><br>
                         &#x2022; <strong>Support e-mail:</strong> mail@hashesgenerator.com<br>
-                        &#x2022; <strong>Support Skype:</strong><a href="skype:live:.cid.81cfc5e2e202b002?chat">live:.cid.81cfc5e2e202b002</a>
+                        &#x2022; <strong>Support Skype:</strong><a
+                            href="skype:live:.cid.81cfc5e2e202b002?chat">live:.cid.81cfc5e2e202b002</a>
                     </p>
                 </div>
                 <hr>
@@ -838,7 +884,7 @@
                 </div>
 
                 <div style="text-align: end;">
-                    <button class="button-30" role="button" style="margin-top: 8px;font-size: 16px;" id="btnCheckout2"
+                    <button class="button-23" role="button" style="margin-top: 8px;font-size: 16px;" id="btnCheckout2"
                         type="button">Buy with PIRI <img style="margin-left: 5px;" src="images/piri.png" alt="delivery"
                             width="32" height="32" /></button>
                 </div>
@@ -891,8 +937,10 @@
         <div class="checkout2-container" id="checkout2">
             <h4 style="margin: 5px;margin-top: 14px;">PIRI Chain checkout</h4>
             <hr style="color: black;background-color: black;width: 90%;    height: 1px;">
-            <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;min-height: 457px;" id="checkout2-wait">
-                <div style="width: 100%;background: darkgray;justify-content: center;align-items: center;display: flex;padding: 10px;margin-top: 100px;margin-bottom: 100px; ">
+            <div style="width: 90%;justify-content: center;align-items: center;display: none;flex-direction: column;min-height: 457px;"
+                id="checkout2-wait">
+                <div
+                    style="width: 100%;background: darkgray;justify-content: center;align-items: center;display: flex;padding: 10px;margin-top: 100px;margin-bottom: 100px; ">
                     <span class="loader"></span>
                 </div>
             </div>
@@ -904,7 +952,7 @@
                 <label for="fname">Full name:</label>
                 <input class="input1" type="text" id="fname" name="fname" required
                     style="min-width: 150px;max-width: 300px;width: 100%;"><br>
-                <label for="email">Email:</label>
+                <label for="email">E-mail:</label>
                 <input class="input1" type="text" id="email" name="email" required
                     style="min-width: 150px;max-width: 300px;width: 100%;"><br><br>
                 <button id="nextCheckout2" class="button-42" role="button"
