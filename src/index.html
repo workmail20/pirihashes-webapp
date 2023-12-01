@@ -771,18 +771,6 @@
             To randomize secret phrases, we use a [BIP39-NET, 1.0.1] library with checksum check.<br>
             The program has been tested and is guaranteed to work with the English mnemonic.<br><br>
             <strong>Windows only x32/x64, Minimum support version Windows 10 - 17763.0</strong><br><br>
-            <h3 style="color: red;">Security notes</h3>
-            A PIRI Hashes Generator uses local generation of public and private keys:<br>
-            &nbsp;this data is not transferred anywhere and can be saved and encrypted using a password.<br><br>
-
-            The "Send PIRI" - uses a local signature of the transaction block, and send to PIRI network through<br>
-            sendRawTransaction API.<br>
-            This is maximum security like with BitcoinCore. (all your keys saving localy and in secure file)<br><br>
-
-            The bottleneck is the data transfer to a blockchain(DBs workspace), and working with a blockchain database.<br>
-            In this case, the commands are transmitted to the PIRIChain API, along with the private key through SSL.<br>
-            So use this command carefully. Dont use your main Wallet with big balance for work with DB. This is you need<br>
-            to know and understand.<br>
             </P>
         </div>
         <div class="flex-item" id="slideshowzone"
@@ -892,6 +880,19 @@
                 <span class="dot" onclick="currentSlide(18)"></span>
                 <span class="dot" onclick="currentSlide(19)"></span>
             </div>
+            <p>
+                <h3 style="color: red;">Security notes</h3>
+                A PIRI Hashes Generator uses local generation of public and private keys - this data is not transferred <br>
+                anywhere and can be saved and encrypted using a password.<br><br>
+    
+                The "Send PIRI" - uses a local signature of the transaction block, and send to PIRI network through sendRawTransaction API.<br>
+                This is maximum security like with BitcoinCore. (all your keys saving localy and in secure file)<br><br>
+    
+                The bottleneck is the data transfer to a blockchain(DBs workspace), and working with a blockchain database.<br>
+                In this case, the commands are transmitted to the PIRIChain API, along with the private key through SSL.<br>
+                So use this command carefully. Dont use your main Wallet with big balance for work with DB. This is you need<br>
+                to know and understand.<br>
+            </p>
         </div>
         <div class="flex-item" id="checkoutzone"
             style="margin-bottom: 15px;overflow-wrap: break-word;word-break: break-all;">
