@@ -770,8 +770,19 @@
             <br>
             To randomize secret phrases, we use a [BIP39-NET, 1.0.1] library with checksum check.<br>
             The program has been tested and is guaranteed to work with the English mnemonic.<br><br>
-            <strong>Windows only x32/x64, Minimum support version Windows 10 - 17763.0</strong>
+            <strong>Windows only x32/x64, Minimum support version Windows 10 - 17763.0</strong><br><br>
+            <h3 style="color: red;">Security notes</h3>
+            A PIRI Hashes Generator uses local generation of public and private keys:<br>
+            &nbsp;this data is not transferred anywhere and can be saved and encrypted using a password.<br><br>
 
+            The "Send PIRI" - uses a local signature of the transaction block, and send to PIRI network through<br>
+            sendRawTransaction API.<br>
+            This is maximum security like with BitcoinCore. (all your keys saving localy and in secure file)<br><br>
+
+            The bottleneck is the data transfer to a blockchain(DBs workspace), and working with a blockchain database.<br>
+            In this case, the commands are transmitted to the PIRIChain API, along with the private key through SSL.<br>
+            So use this command carefully. Dont use your main Wallet with big balance for work with DB. This is you need<br>
+            to know and understand.<br>
             </P>
         </div>
         <div class="flex-item" id="slideshowzone"
@@ -882,17 +893,20 @@
                 <span class="dot" onclick="currentSlide(19)"></span>
             </div>
         </div>
-        <div class="flex-item" id="checkoutzone" style="margin-bottom: 15px;overflow-wrap: break-word;word-break: break-all;">
+        <div class="flex-item" id="checkoutzone"
+            style="margin-bottom: 15px;overflow-wrap: break-word;word-break: break-all;">
             <hr>
             <h2>Download zone</h2>
             <div>
-                Download 1.0.5.0 from Google Drive: <a href="https://drive.google.com/file/d/1lwMbanIN7n0XsXHu97fHSJZG-6D012f1/">https://drive.google.com/file/d/1lwMbanIN7n0XsXHu97fHSJZG-6D012f1/</a>
+                Download 1.0.5.0 from Google Drive: <a
+                    href="https://drive.google.com/file/d/1lwMbanIN7n0XsXHu97fHSJZG-6D012f1/">https://drive.google.com/file/d/1lwMbanIN7n0XsXHu97fHSJZG-6D012f1/</a>
                 <p>VirusTotal:
-                    <ul>
-                        <li>
-                            PIRIHashesGenerator.exe&nbsp;<a href="https://www.virustotal.com/gui/file/b01d17b8234ca1dd3f1b6071f08abe526c8fd73a514848f5d1641d7545521601/detection">https://www.virustotal.com/gui/file/b01d17b8234ca1dd3f1b6071f08abe526c8fd73a514848f5d1641d7545521601/detection</a>
-                        </li>
-                    </ul>
+                <ul>
+                    <li>
+                        PIRIHashesGenerator.exe&nbsp;<a
+                            href="https://www.virustotal.com/gui/file/b01d17b8234ca1dd3f1b6071f08abe526c8fd73a514848f5d1641d7545521601/detection">https://www.virustotal.com/gui/file/b01d17b8234ca1dd3f1b6071f08abe526c8fd73a514848f5d1641d7545521601/detection</a>
+                    </li>
+                </ul>
                 </p>
                 <p>
                     &#x2022; <strong>Support e-mail:</strong>&nbsp;&nbsp;mail@hashesgenerator.com<br>
@@ -900,7 +914,8 @@
                         href="skype:live:.cid.81cfc5e2e202b002?chat">live:.cid.81cfc5e2e202b002</a>
                 </p>
             </div>
-<a href="https://www.buymeacoffee.com/sensativ77x"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=sensativ77x&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" /></a>
+            <a href="https://www.buymeacoffee.com/sensativ77x"><img
+                    src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=sensativ77x&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" /></a>
         </div>
     </main>
     <br><br>
